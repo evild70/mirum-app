@@ -1,9 +1,10 @@
+import 'react-hot-loader/patch';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import { browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
-import { configureStore } from './store';
+import { configureStore } from './store/config';
 import Root from './root';
 import './styles/main.css';
 

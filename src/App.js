@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CSSTransitionGroup from 'react-addons-css-transition-group';
 
+import Footer from './components/Footer/Footer';
 import MainNav from './components/MainNav/MainNav';
 
 class App extends Component {
@@ -49,6 +50,7 @@ class App extends Component {
                         {React.cloneElement(this.props.children, { key: this.props.location.pathname })}
                     </CSSTransitionGroup>
                     {/*{this.props.children || <Home />}*/}
+                    <Footer />
                 </div>
             </div>
         );

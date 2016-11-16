@@ -1,10 +1,27 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { IndexLink } from 'react-router';
-import MainNavLink from './MainNavLink';
-
+import { connect } from 'react-redux';
+import { Link } from 'react-router'
+import { toggleMainNav } from '../../store/actions';
 import mainNavBkgd from '../../images/main-nav-bkgd-fpo.jpg';
 
 export class MainNav extends Component {
+
+    static propTypes = {
+        children: PropTypes.node,
+        toggleMainNav: PropTypes.func,
+        mainNavIsOpen: PropTypes.bool
+    }
+
+    links = [
+        {title: 'Work', path: '/work'},
+        {title: 'About', path: '/about'},
+        {title: 'News', path: '/news'},
+        {title: 'Capabilities', path: '/capabilities'},
+        {title: 'Careers', path: '/careers'},
+        {title: 'Contact', path: '/contact'}
+    ]
+
     render() {
         const bkgd = {
             backgroundImage: 'url(' + mainNavBkgd + ')',
@@ -12,11 +29,12 @@ export class MainNav extends Component {
             backgroundRepeat: 'no-repeat'
         }
 
-        return (
-            <div className={"main-nav " + (this.props.navIsOpen ? 'is-open' : '')}>
-                <div className="main-nav-button" onClick={() => this.props.clickMainNavButton()}>
-                    <div className="box">
+        const { toggleMainNav, mainNavIsOpen } = this.props;
 
+        return (
+            <div className={"main-nav " + (mainNavIsOpen ? 'is-open' : '')}>
+                <div className="main-nav-button" onClick={toggleMainNav}>
+                    <div className="box">
                     </div>
                 </div>
 
@@ -29,12 +47,11 @@ export class MainNav extends Component {
                         </IndexLink>
                     </div>
                     <ul>
-                        <MainNavLink to="/work" onClick={() => this.props.clickMainNavButton()}>Work</MainNavLink>
-                        <MainNavLink to="/about" onClick={() => this.props.clickMainNavButton()}>About Us</MainNavLink>
-                        <MainNavLink to="/news" onClick={() => this.props.clickMainNavButton()}>News</MainNavLink>
-                        <MainNavLink to="/capabilities" onClick={() => this.props.clickMainNavButton()}>Capabilities</MainNavLink>
-                        <MainNavLink to="/careers" onClick={() => this.props.clickMainNavButton()}>Careers</MainNavLink>
-                        <MainNavLink to="/contact" onClick={() => this.props.clickMainNavButton()}>Contact</MainNavLink>
+                        { this.links.map(link => (
+                            <li key={link.path}>
+                                <Link to={link.path} onClick={toggleMainNav} activeClassName="active">{link.title}</Link>
+                            </li>
+                        ))}
                     </ul>
                 </div>
             </div>
@@ -42,4 +59,15 @@ export class MainNav extends Component {
     }
 }
 
-export default MainNav;
+const mapStateToProps = (state) => ({
+  mainNavIsOpen: state.ui.mainNavIsOpen
+});
+
+const mapDispatchToProps = {
+  toggleMainNav: toggleMainNav
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(MainNav);

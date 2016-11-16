@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Footer from '../Footer/Footer';
 
 export class WorkPage extends Component {
     render() {
@@ -7,7 +6,6 @@ export class WorkPage extends Component {
             <div className="work page-position">
                 <h2 className="component-header">Work</h2>
                 <button onClick={this.props.callFromWork}>callFromWork</button>
-                <Footer />
             </div>
         );
     }
