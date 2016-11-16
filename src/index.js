@@ -21,35 +21,11 @@ function render(Root) {
   );
 }
 
-const Root = () => {
-    return (
-        <Router history={browserHistory}>
-
-            <Route path="/" component={App}>
-                <IndexRoute component={Home} />
-
-                <Route path="/work" component={Work} />
-                <Route path="/work/case-study/:caseId" component={CaseStudy} />
-
-                <Route path="/about" component={About}/>
-                <Route path="/news" component={News}/>
-                <Route path="/news/:storyId" component={News} />
-                <Route path="/capabilities" component={Capabilities}/>
-                <Route path="/careers" component={Careers}/>
-                <Route path="/contact" component={Contact}/>
-
-                <Route path="/locations" component={Locations} />
-                <Route path="/locations/:locationId" component={Location} />
-            </Route>
-
-        </Router>
-    )
 
 if (module.hot) {
   module.hot.accept('./root', () => {
     render(require('./root').default);
   });
-
 }
 
 render(Root)
