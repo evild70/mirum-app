@@ -1,14 +1,14 @@
 import App from './App';
-import Home from './components/Home/Home';
-import Work from './components/Work/Work';
-import About from './components/About/About';
-import News from './components/News/News';
-import Capabilities from './components/Capabilities/Capabilities';
-import Careers from './components/Careers/Careers';
-import Contact from './components/Contact/Contact';
-import Locations from './components/Locations/Locations';
-import Location from './components/Location/Location';
-import CaseStudy from './components/CaseStudy/CaseStudy';
+import HomePage from './components/HomePage/HomePage';
+import WorkPage from './components/WorkPage/WorkPage';
+import AboutPage from './components/AboutPage/AboutPage';
+import NewsPage from './components/NewsPage/NewsPage';
+import CapabilitiesPage from './components/CapabilitiesPage/CapabilitiesPage';
+import CareersPage from './components/CareersPage/CareersPage';
+import ContactPage from './components/ContactPage/ContactPage';
+import LocationsPage from './components/LocationsPage/LocationsPage';
+import LocationPage from './components/LocationPage/LocationPage';
+import CaseStudyPage from './components/CaseStudyPage/CaseStudyPage';
 
 export const getRoutes = getState => {
     return {
@@ -17,44 +17,44 @@ export const getRoutes = getState => {
         childRoutes: [
             {
                 indexRoute: {
-                    component: Home
+                    component: HomePage
                 }
             },
             {
                 path: '/work',
-                component: Work
+                component: WorkPage
             },
             {
                 path: '/work/case-study/:caseId',
-                component: CaseStudy
+                component: CaseStudyPage
             },
             {
                 path: '/about',
-                component: About
+                component: AboutPage
             },
             {
                 path: '/news',
-                component: News
+                component: NewsPage
             },
             {
                 path: '/capabilities',
-                component: Capabilities
+                component: CapabilitiesPage
             },
             {
                 path: '/careers',
-                component: Careers
+                component: CareersPage
             },
             {
                 path: '/contact',
-                component: Contact
+                component: ContactPage
             },
             {
                 path: '/locations',
-                component: Locations
+                component: LocationsPage
             },
             {
                 path: '/locations/:locationId',
-                component: Location
+                component: LocationPage
             }
         ]
     };

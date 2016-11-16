@@ -8,9 +8,7 @@ export class NavOverlay extends Component {
     render() {
         return (
             <div
-                className={"nav-overlay " + (this.props.navIsOpen ? 'show' : '')}
-
-            >
+                className={"nav-overlay " + (this.props.navIsOpen ? 'show' : '')}>
             </div>
         );
     }

@@ -3,14 +3,13 @@ import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import { browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
-
-import './styles/main.css';
 import { configureStore } from './store';
 import Root from './root';
+import './styles/main.css';
+
 const store = configureStore();
 const history = syncHistoryWithStore(browserHistory, store);
 const rootElement = document.getElementById('root');
-
 
 function render(Root) {
   ReactDOM.render(
@@ -20,7 +19,6 @@ function render(Root) {
     rootElement
   );
 }
-
 
 if (module.hot) {
   module.hot.accept('./root', () => {
