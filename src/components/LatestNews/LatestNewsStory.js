@@ -10,8 +10,8 @@ export class LatestNewsStory extends Component {
 
     handleClick(story) {
         // console.log(story.headlineLink);
-        const path = "/news/" + story.headlineLink
-        this.context.router.push(path)
+        const path = "/news/" + story.headlineLink;
+        this.context.router.push(path);
     }
 
     render() {
