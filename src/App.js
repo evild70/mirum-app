@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
-import CSSTransitionGroup from 'react-addons-css-transition-group'
+import CSSTransitionGroup from 'react-addons-css-transition-group';
 
-// import Home from './Home/Home';
-import MainNav from './MainNav/MainNav';
-// import Footer from './Footer/Footer';
-// import NavOverlay from './NavOverlay';
+import MainNav from './components/MainNav/MainNav';
 
 class App extends Component {
     constructor() {
@@ -43,7 +40,6 @@ class App extends Component {
                     navIsOpen={this.state.mainNav.isOpen}
                     clickMainNavButton={this.clickMainNavButton}
                 />
-                {/*<NavOverlay navIsOpen={this.state.navIsOpen} />*/}
                 <div className="app-content">
                     <CSSTransitionGroup
                         transitionName="appear"

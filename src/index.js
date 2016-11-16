@@ -1,20 +1,25 @@
 import React from 'react';
-import { render } from 'react-dom';
-import { Router, Route, browserHistory, IndexRoute } from 'react-router';
-
-import App from './components/App';
-import Home from './components/Home/Home';
-import Work from './components/Work/Work';
-import About from './components/About/About';
-import News from './components/News/News';
-import Capabilities from './components/Capabilities/Capabilities';
-import Careers from './components/Careers/Careers';
-import Contact from './components/Contact/Contact';
-import Locations from './components/Locations/Locations';
-import Location from './components/Location/Location';
-import CaseStudy from './components/CaseStudy/CaseStudy';
+import ReactDOM from 'react-dom';
+import { AppContainer } from 'react-hot-loader';
+import { browserHistory } from 'react-router';
+import { syncHistoryWithStore } from 'react-router-redux';
 
 import './styles/main.css';
+import { configureStore } from './store';
+import Root from './root';
+const store = configureStore();
+const history = syncHistoryWithStore(browserHistory, store);
+const rootElement = document.getElementById('root');
+
+
+function render(Root) {
+  ReactDOM.render(
+    <AppContainer>
+      <Root history={history} store={store} />
+    </AppContainer>,
+    rootElement
+  );
+}
 
 const Root = () => {
     return (
@@ -39,9 +44,12 @@ const Root = () => {
 
         </Router>
     )
+
+if (module.hot) {
+  module.hot.accept('./root', () => {
+    render(require('./root').default);
+  });
+
 }
 
-render(
-  <Root />,
-  document.getElementById('root')
-);
+render(Root)
