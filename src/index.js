@@ -14,8 +14,6 @@ import Locations from './components/Locations/Locations';
 import Location from './components/Location/Location';
 import CaseStudy from './components/CaseStudy/CaseStudy';
 
-import './helpers/modernizr-custom.js';
-
 import './styles/main.css';
 
 const Root = () => {
