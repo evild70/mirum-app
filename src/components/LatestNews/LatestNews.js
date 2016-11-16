@@ -63,10 +63,13 @@ export class LatestNews extends Component {
 
         return (
             <div className="latest-news">
-                <h1 className="latest-news-headline">Sometimes what we make is headlines</h1>
-                <div className="view-all-link">
-                    <Link to="/news">View All News</Link>
+                <div className="headline-container">
+                    <h1 className="latest-news-headline">Sometimes what we make is headlines</h1>
+                    <div className="view-all-link">
+                        <Link to="/news">View All News</Link>
+                    </div>
                 </div>
+
                 <div className="latest-stories">
                     <ul>
                         {stories.map(this.renderStories)}
