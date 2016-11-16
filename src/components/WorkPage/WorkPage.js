@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Footer from '../Footer/Footer';
 
-export class Work extends Component {
+export class WorkPage extends Component {
     render() {
         return (
             <div className="work page-position">
@@ -13,4 +13,4 @@ export class Work extends Component {
     }
 }
 
-export default Work;
+export default WorkPage;

@@ -4,7 +4,7 @@ import ExperimentsContainer from '../Experiments/ExperimentsContainer';
 import LatestNews from '../LatestNews/LatestNews';
 import Footer from '../Footer/Footer';
 
-export class Home extends Component {
+export class HomePage extends Component {
     render() {
         return (
             <div>
@@ -16,4 +16,4 @@ export class Home extends Component {
     }
 }
 
-export default Home;
+export default HomePage;

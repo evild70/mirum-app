@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export class News extends Component {
+export class NewsPage extends Component {
     render() {
         return (
             <div>
@@ -11,4 +11,4 @@ export class News extends Component {
     }
 }
 
-export default News;
+export default NewsPage;

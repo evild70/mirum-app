@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export class Locations extends Component {
+export class LocationsPage extends Component {
     render() {
         return (
             <div>
@@ -10,4 +10,4 @@ export class Locations extends Component {
     }
 }
 
-export default Locations;
+export default LocationsPage;

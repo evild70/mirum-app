@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export class Capabilities extends Component {
+export class CapabilitiesPage extends Component {
     render() {
         return (
             <div>
@@ -10,4 +10,4 @@ export class Capabilities extends Component {
     }
 }
 
-export default Capabilities;
+export default CapabilitiesPage;

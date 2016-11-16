@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Footer from '../Footer/Footer';
 
-export class CaseStudy extends Component {
+export class CaseStudyPage extends Component {
     render() {
         return (
             <div className="page-position">
@@ -12,4 +12,4 @@ export class CaseStudy extends Component {
     }
 }
 
-export default CaseStudy;
+export default CaseStudyPage;
