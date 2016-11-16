@@ -1,0 +1,85 @@
+.main-nav {
+    // display: none;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 9999;
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    transition: all .2s $easeOut;
+
+    &.is-open {
+        right: 350px;
+
+        .box {
+            background-color: $mirum-blue;
+            border: 0;
+        }
+    }
+}
+
+.main-nav-button {
+    z-index: 500;
+    position: absolute;
+    top: 29px;
+    left: -125px;
+    cursor: pointer;
+    transition: all .1s $easeOut;
+    .box {
+        width: 35px;
+        height: 35px;
+        border-radius: 2px;
+        background-color: $mirum-dark-purple;
+        border: 1px solid #fff;
+        transition: all .2s $easeOut;
+    }
+}
+
+
+.main-nav-container {
+    // background: $mirum-blue url(/images/main-nav-bkgd-fpo.jpg) 0 0 no-repeat;
+    background-color: $mirum-blue;
+    height: 100%;
+    width: 80%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: 109px;
+
+    @include breakpoint($breakpoint-large) {
+        width: 350px;
+    }
+
+    ul {
+        padding-bottom: 60px;
+    }
+
+    li a {
+        background-color: transparent;
+        color: #fff;
+        display: inline-block;
+        font-size: 1.75em;
+        line-height: 1;
+        padding: 14px 0 14px 58px;
+        text-decoration: none;
+        width: 100%;
+        transition: all .1s $easeOut;
+        &.active {
+            background-color: $mirum-dark-purple;
+        }
+        &:hover {
+            background-color: $mirum-dark-purple;
+        }
+    }
+}
+
+.main-logo {
+    height: 71px;
+    margin-left: 58px;
+    width: 197px;
+    margin-bottom: 46px;
+}

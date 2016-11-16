@@ -1,0 +1,28 @@
+{
+  "name": "mirum-app",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "autoprefixer": "^6.5.1",
+    "concurrently": "^2.2.0",
+    "cssnano": "^3.7.7",
+    "gulp": "^3.9.1",
+    "gulp-postcss": "^6.2.0",
+    "gulp-sass": "^2.3.2",
+    "moment": "^2.15.1",
+    "react-router": "^2.8.1",
+    "react-scripts": "0.6.1",
+    "susy": "^2.2.12"
+  },
+  "dependencies": {
+    "react": "^15.3.2",
+    "react-addons-css-transition-group": "15.3.2",
+    "react-dom": "^15.3.2"
+  },
+  "scripts": {
+    "start": "concurrently --kill-others 'react-scripts start' 'gulp'",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

@@ -1,0 +1,86 @@
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+
+/**
+ * Set up a decent box model on the root element
+ */
+html {
+    box-sizing: border-box;
+}
+
+/**
+ * Make all elements from the DOM inherit from the parent box-sizing
+ * Since `*` has a specificity of 0, it does not override the `html` value
+ * making all elements inheriting from the root box-sizing value
+ * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: $mirum-sans-regular;
+    font-size: em(16);
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+}
+
+#svg-icons {
+    display: none;
+}
+
+#root {
+    // background-color: #fafafa;
+    margin: 0 auto;
+    max-width: 80em;
+}
+
+img {
+    display: block;
+}
+
+a {
+    color: $mirum-dark-purple;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+    @include over {
+        text-decoration: underline;
+    }
+}
+
+// .page-position {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     z-index: 1000;
+// }
+
+.appear-enter {
+    transition: opacity .2s ease-out;
+    opacity: 0;
+    position: relative;
+}
+
+.appear-enter.appear-enter-active {
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.appear-leave {
+    opacity: 1;
+}
+
+.appear-leave.appear-leave-active {
+    transition: opacity .2s ease-out;
+    opacity: 0;
+}

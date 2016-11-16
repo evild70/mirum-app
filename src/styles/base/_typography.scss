@@ -1,0 +1,33 @@
+h2.component-header {
+    margin: 0;
+    padding: 10px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $mirum-sans-regular;
+    font-weight: normal;
+}
+
+h1 {
+    font-size: em(36);
+}
+
+h2 {
+    font-size: em(22);
+}
+
+h3 {
+    font-family: $mirum-sans-bold;
+    font-size: em(18);
+    text-transform: uppercase;
+}
+
+h4 {
+    font-size: em(18);
+}
+
+.numbers-timing {
+    font-size: em(14);
+    text-transform: uppercase;
+}
+

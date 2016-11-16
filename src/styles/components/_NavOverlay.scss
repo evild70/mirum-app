@@ -1,0 +1,19 @@
+.nav-overlay {
+    display: block;
+    opacity: 0;
+    position: absolute;
+    top: -9999px;
+    left: 0;
+    // bottom: 0;
+    // right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: opacity .2s;
+
+    &.show {
+        top: 0;
+        opacity: 1;
+        display: block;
+    }
+}

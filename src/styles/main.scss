@@ -1,0 +1,45 @@
+@charset 'UTF-8';
+
+@import "susy";
+@import 'vendor/normalize';
+
+// Configuration and helpers
+@import
+    'abstracts/breakpoints',
+    'abstracts/functions',
+    'abstracts/mixins',
+    'abstracts/variables';
+
+// Vendors
+@import 'vendor/breakpoint';
+
+// Base stuff
+@import
+    'base/base',
+    'base/fonts',
+    'base/typography',
+    'base/reset',
+    'base/helpers';
+
+// Layout-related sections
+@import
+    'layout/header',
+    'layout/footer',
+    'layout/forms';
+
+// Components
+@import
+    'components/App',
+    'components/MainNav',
+    'components/ExperimentsContainer',
+    'components/NavOverlay',
+    'components/LatestNews',
+    'components/buttons';
+
+// Page-specific styles
+@import
+    'pages/home';
+
+// Themes
+@import
+    'themes/default';

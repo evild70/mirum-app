@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'mirum_sansregular';
+    src: url("https://jwt-assets.s3.amazonaws.com/mirum-fonts/mirum_sans-webfont.eot");
+    src: url("https://jwt-assets.s3.amazonaws.com/mirum-fonts/mirum_sans-webfont.eot?#iefix") format("embedded-opentype"), url("https://jwt-assets.s3.amazonaws.com/mirum-fonts/mirum_sans-webfont.woff2") format("woff2"), url("https://jwt-assets.s3.amazonaws.com/mirum-fonts/mirum_sans-webfont.woff") format("woff"), url("https://jwt-assets.s3.amazonaws.com/mirum-fonts/mirum_sans-webfont.ttf") format("truetype"), url("https://jwt-assets.s3.amazonaws.com/mirum-fonts/mirum_sans-webfont.svg#mirum_sansregular") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'mirum_serifregular';
+    src: url("https://jwt-assets.s3.amazonaws.com/mirum-fonts/mirum_serif-webfont.eot");
+    src: url("https://jwt-assets.s3.amazonaws.com/mirum-fonts/mirum_serif-webfont.eot?#iefix")
+    format("embedded-opentype"), url("https://jwt-assets.s3.amazonaws.com/mirum-fonts/mirum_serif-webfont.woff2") format("woff2"), url("https://jwt-assets.s3.amazonaws.com/mirum-fonts/mirum_serif-webfont.woff") format("woff"), url("https://jwt-assets.s3.amazonaws.com/mirum-fonts/mirum_serif-webfont.ttf") format("truetype"), url("https://jwt-assets.s3.amazonaws.com/mirum-fonts/mirum_serif-webfont.svg#mirum_serifregular") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}

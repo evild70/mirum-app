@@ -1,0 +1,110 @@
+.latest-news {
+    @include container();
+    padding: 35px 15px;
+    position: relative;
+
+    @include breakpoint($breakpoint-large) {
+        padding: 70px 35px;
+    }
+
+    h1.latest-news-headline {
+        font-size: em(28);
+        text-align: center;
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0;
+
+        @include breakpoint($breakpoint-medium) {
+            font-size: inherit;
+        }
+    }
+
+    .view-all-link {
+        text-align: center;
+        margin-bottom: 20px;
+        a {
+
+        }
+
+        @include breakpoint($breakpoint-medium) {
+
+        }
+
+        @include breakpoint($breakpoint-large) {
+
+        }
+    }
+}
+
+.latest-stories {
+    @include clearfix;
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        @include breakpoint($breakpoint-medium) {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        @include breakpoint($breakpoint-large) {
+
+        }
+    }
+}
+
+.story-card {
+    // @include span(4);
+    background-color: #fff;
+    border-top: 1px solid $mirum-blue;
+    color: $mirum-dark-purple;
+    cursor: pointer;
+    padding: 40px 20px;
+    transition: all .2s $easeOut;
+
+    @include breakpoint($breakpoint-medium) {
+        flex: 0 1 calc(50% - 8px);
+        margin-right: 15px;
+    }
+
+    @include breakpoint($breakpoint-large) {
+        flex: 0 1 calc(33.33% - 10px);
+    }
+
+    &:last-of-type {
+        // @include span(last 4);
+        margin-right: 0;
+    }
+
+    &:nth-child(2) {
+        @include breakpoint($breakpoint-medium) {
+            margin-right: 0;
+        }
+
+        @include breakpoint($breakpoint-large) {
+            margin-right: 15px;
+        }
+    }
+
+    &:hover {
+        background-color: $mirum-blue;
+    }
+}
+
+.story-type, .story-time {
+    text-transform: uppercase;
+}
+
+.story-type {
+
+}
+
+.story-headline {
+    font-size: em(16);
+}
+
+.story-time {
+    @extend .numbers-timing;
+}
