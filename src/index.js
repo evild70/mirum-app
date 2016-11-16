@@ -28,6 +28,7 @@ const Root = () => {
 
                 <Route path="/about" component={About}/>
                 <Route path="/news" component={News}/>
+                <Route path="/news/:storyId" component={News} />
                 <Route path="/capabilities" component={Capabilities}/>
                 <Route path="/careers" component={Careers}/>
                 <Route path="/contact" component={Contact}/>

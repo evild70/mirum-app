@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import moment from 'moment';
 
+// import LatestNewsStory from './LatestNewsStory';
+
 export class LatestNews extends Component {
     constructor() {
         super();
@@ -43,15 +45,21 @@ export class LatestNews extends Component {
         });
     }
 
+    handleClick(story) {
+        console.log(story.headlineLink);
+    //     // const path = "/news/" + story.headlineLink
+    //     // this.context.router.push(path)
+    }
+
     renderStories(key) {
         const stories = this.state.stories;
         const story = stories[key];
 
         return (
-            <li className="story-card" key={key}>
+            <li className="story-card" key={key} onClick={() => this.handleClick(story)}>
                 <div className="story-type">{story.type}</div>
                 <h3 className="story-headline">
-                    <Link to={"/news/" + story.headlineLink}>{story.headlineText}</Link>
+                    {story.headlineText}
                 </h3>
                 <span className="story-time">{moment(story.time, "YYYYMMDD").fromNow()}</span>
             </li>
@@ -60,7 +68,9 @@ export class LatestNews extends Component {
 
     render() {
         const stories = Object.keys(this.state.stories);
-
+        /*
+            {stories.map(key => <LatestNewsStory key={key} story={this.state.stories[key]} />)}
+        */
         return (
             <div className="latest-news">
                 <div className="headline-container">
@@ -72,12 +82,21 @@ export class LatestNews extends Component {
 
                 <div className="latest-stories">
                     <ul>
-                        {stories.map(this.renderStories)}
+                    {stories.map(this.renderStories)}
                     </ul>
                 </div>
             </div>
         );
     }
+
+}
+
+LatestNews.contextTypes = {
+    router: React.PropTypes.object
 }
 
 export default LatestNews;
+
+
+
+
