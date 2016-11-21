@@ -9,7 +9,7 @@ import LatestNewsStory from './LatestNewsStory';
 export class LatestNewsContainer extends Component {
 
     static propTypes = {
-        latestNews: PropTypes.array
+        latestNews: PropTypes.object
     }
 
     componentWillMount() {
@@ -17,6 +17,7 @@ export class LatestNewsContainer extends Component {
     }
 
     render() {
+        const { latestNews } = this.props;
         return (
             <div className="latest-news">
                 <div className="headline-container">
@@ -27,9 +28,12 @@ export class LatestNewsContainer extends Component {
                 </div>
 
                 <div className="latest-stories">
-                    <ul>
-                        {this.props.latestNews.map(key => <LatestNewsStory key={key.key} story={key} />)}
-                    </ul>
+                    { latestNews.hasLoaded ?
+                        <ul>
+                            {latestNews.items.map(key => <LatestNewsStory key={key.key} story={key} />)}
+                        </ul> :
+                        <p>Loading</p>
+                    }
                 </div>
             </div>
         );

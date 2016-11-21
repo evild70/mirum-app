@@ -1,6 +1,7 @@
 import * as t from './actionTypes';
 
 export const fetchLatestNewsSuccess = payload => {
+    // remap the json objects to an array
     const news = Object.keys(payload).map(item => {
         return {...payload[item], key: item}
     })
