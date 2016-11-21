@@ -14,20 +14,10 @@ class App extends Component {
                 isOpen: false
             }
         }
-
-        this.clickMainNavButton = this.clickMainNavButton.bind(this);
     }
 
     componentWillUpdate() {
         console.log('componentWillUpdate');
-    }
-
-    clickMainNavButton() {
-        if (this.state.mainNav.isOpen === false) {
-            this.setState({ mainNav: { isOpen: true }})
-        } else {
-            this.setState({ mainNav: { isOpen: false }})
-        }
     }
 
     callFromWork() {
@@ -37,10 +27,7 @@ class App extends Component {
     render() {
         return (
             <div className="app">
-                <MainNav
-                    navIsOpen={this.state.mainNav.isOpen}
-                    clickMainNavButton={this.clickMainNavButton}
-                />
+                <MainNav />
                 <div className="app-content">
                     <CSSTransitionGroup
                         transitionName="appear"

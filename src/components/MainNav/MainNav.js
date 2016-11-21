@@ -22,6 +22,18 @@ export class MainNav extends Component {
         {title: 'Contact', path: '/contact'}
     ]
 
+    renderNavLinks() {
+        return (
+            <ul>
+                { this.links.map(link => (
+                    <li key={link.path}>
+                        <Link to={link.path} onClick={this.props.toggleMainNav} activeClassName="active">{link.title}</Link>
+                    </li>
+                ))}
+            </ul>
+        )
+    }
+
     render() {
         const bkgd = {
             backgroundImage: 'url(' + mainNavBkgd + ')',
@@ -29,7 +41,7 @@ export class MainNav extends Component {
             backgroundRepeat: 'no-repeat'
         }
 
-        const { toggleMainNav, mainNavIsOpen } = this.props;
+        const { mainNavIsOpen, toggleMainNav } = this.props;
 
         return (
             <div className={"main-nav " + (mainNavIsOpen ? 'is-open' : '')}>
@@ -46,13 +58,7 @@ export class MainNav extends Component {
                             </svg>
                         </IndexLink>
                     </div>
-                    <ul>
-                        { this.links.map(link => (
-                            <li key={link.path}>
-                                <Link to={link.path} onClick={toggleMainNav} activeClassName="active">{link.title}</Link>
-                            </li>
-                        ))}
-                    </ul>
+                    { this.renderNavLinks() }
                 </div>
             </div>
         );
