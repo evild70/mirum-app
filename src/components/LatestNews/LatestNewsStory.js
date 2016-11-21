@@ -2,23 +2,18 @@ import React, { Component } from 'react';
 import moment from 'moment';
 
 export class LatestNewsStory extends Component {
-    constructor() {
-        super();
 
-        this.handleClick = this.handleClick.bind(this);
-    }
-
-    handleClick(story) {
-        // console.log(story.headlineLink);
-        const path = "/news/" + story.headlineLink;
-        this.context.router.push(path);
+    handleClick = () => {
+        const { link } = this.props.story;
+        const path = `/news/${link}`
+        this.context.router.push(path)
     }
 
     render() {
         const story = this.props.story;
 
         return (
-            <li className="story-card" onClick={() => this.handleClick(story)}>
+            <li className="story-card" onClick={this.handleClick}>
                 <div className="story-type">{story.type}</div>
                 <h3 className="story-headline">
                     {story.title}

@@ -36,8 +36,6 @@ export class LatestNewsContainer extends Component {
     }
 }
 
-// {stories.map(key => <LatestNewsStory key={key} story={this.state.stories[key]} />)}
-
 const mapStateToProps = state => ({
   latestNews: state.data.latestNews
 });
