@@ -1,0 +1,70 @@
+.post-collection {
+    @include clearfix;
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        @include breakpoint($breakpoint-medium) {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        @include breakpoint($breakpoint-large) {
+
+        }
+    }
+}
+
+.post-collection-item {
+
+    background-color: #fff;
+    border-top: 1px solid $mirum-blue;
+    color: $mirum-dark-purple;
+    cursor: pointer;
+    padding: 40px 20px;
+    transition: all .2s $easeOut;
+
+    @include breakpoint($breakpoint-medium) {
+        flex: 0 1 calc(50% - 8px);
+        margin-right: 15px;
+    }
+
+    @include breakpoint($breakpoint-large) {
+        flex: 0 1 calc(33.33% - 10px);
+    }
+
+    &:last-of-type {
+        // @include span(last 4);
+        margin-right: 0;
+    }
+
+    &:nth-child(2) {
+        @include breakpoint($breakpoint-medium) {
+            margin-right: 0;
+        }
+
+        @include breakpoint($breakpoint-large) {
+            margin-right: 15px;
+        }
+    }
+
+    &:hover {
+        background-color: $mirum-blue;
+    }
+
+    &__type,
+    &__time {
+        text-transform: uppercase;
+    }
+
+    &__time {
+        @extend .numbers-timing;
+    }
+
+    &__headline {
+        font-size: em(16);
+    }
+
+}

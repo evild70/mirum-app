@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 
 import ExperimentsContainer from '../Experiments/ExperimentsContainer';
-import LatestNewsContainer from '../LatestNews/LatestNewsContainer';
+import LatestNews from '../LatestNews/containers/LatestNews';
 
 export class HomePage extends Component {
     render() {
         return (
             <div>
                 <ExperimentsContainer />
-                <LatestNewsContainer />
+                <LatestNews location='Minneapolis' />
             </div>
         );
     }

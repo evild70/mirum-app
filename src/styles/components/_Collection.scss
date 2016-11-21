@@ -1,0 +1,41 @@
+.collection {
+    @include container();
+    @include component();
+
+    &__header {
+        position: relative;
+    }
+
+    &__title {
+        font-size: em(28);
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0;
+
+        @include breakpoint($breakpoint-medium) {
+            font-size: em(36);
+        }
+
+        @include breakpoint($breakpoint-large) {
+            max-width: 80%;
+        }
+    }
+
+    &__action {
+        text-align: center;
+        margin-bottom: 20px;
+
+        a {
+            font-family: $mirum-sans-bold;
+            font-size: em(16);
+        }
+
+        @include breakpoint($breakpoint-large) {
+            margin: 0;
+            position: absolute;
+            right: 0;
+            bottom: 5px;
+        }
+    }
+}
