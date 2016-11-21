@@ -1,9 +1,9 @@
 .latest-news {
     @include container();
-    padding: 35px 15px;
+    @include component();
 
     @include breakpoint($breakpoint-large) {
-        padding: 70px 35px;
+
     }
 
     .headline-container {

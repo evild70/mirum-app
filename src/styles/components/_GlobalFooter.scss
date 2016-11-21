@@ -1,0 +1,45 @@
+.global-footer {
+    @include container();
+    @include component();
+
+    background-color: $mirum-dark-purple;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+
+    @include breakpoint($breakpoint-medium) {
+
+    }
+
+    @include breakpoint($breakpoint-large) {
+        min-height: 381px;
+    }
+}
+
+.gf-link-container {
+    border-top: 1px solid #000;
+
+    @include breakpoint($breakpoint-large) {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+    }
+}
+
+.gf-social, .gf-nav {
+    ul {
+        @include reset-list;
+    }
+
+    li {
+        float: left;
+    }
+}
+.gf-social {
+
+}
+
+.gf-nav {
+
+}

@@ -1,3 +1,11 @@
+@mixin component {
+    padding: 35px 15px;
+
+    @include breakpoint($breakpoint-large) {
+        padding: 70px 35px;
+    }
+}
+
 @mixin over($mobile-touch-class:false) {
     html.no-touchevents & {
         &:hover,
@@ -42,3 +50,5 @@
     margin: 0;
     padding: 0;
 }
+
+
