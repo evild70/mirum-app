@@ -21,9 +21,9 @@ export class LatestNewsStory extends Component {
             <li className="story-card" onClick={() => this.handleClick(story)}>
                 <div className="story-type">{story.type}</div>
                 <h3 className="story-headline">
-                    {story.headlineText}
+                    {story.title}
                 </h3>
-                <span className="story-time">{moment(story.time, "YYYYMMDD").fromNow()}</span>
+                <span className="story-time">{moment.unix(story.published).fromNow()}</span>
             </li>
         )
     }
