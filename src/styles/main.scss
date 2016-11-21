@@ -8,6 +8,7 @@
     'abstracts/breakpoints',
     'abstracts/functions',
     'abstracts/mixins',
+    'abstracts/extends',
     'abstracts/variables';
 
 // Vendors
@@ -30,11 +31,12 @@
 // Components
 @import
     'components/App',
-    'components/MainNav',
+    'components/buttons',
     'components/ExperimentsContainer',
-    'components/NavOverlay',
+    'components/GlobalFooter',
     'components/LatestNews',
-    'components/buttons';
+    'components/MainNav',
+    'components/NavOverlay';
 
 // Page-specific styles
 @import

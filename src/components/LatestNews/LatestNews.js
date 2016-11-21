@@ -69,7 +69,6 @@ export class LatestNews extends Component {
     render() {
         const stories = Object.keys(this.state.stories);
         /*
-
             {stories.map(this.renderStories)}
         */
         return (
