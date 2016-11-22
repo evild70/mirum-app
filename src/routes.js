@@ -7,7 +7,7 @@ import CapabilitiesPage from './components/CapabilitiesPage/CapabilitiesPage';
 import CareersPage from './components/CareersPage/CareersPage';
 import ContactPage from './components/ContactPage/ContactPage';
 import LocationsPage from './components/LocationsPage/LocationsPage';
-import LocationPage from './components/LocationPage/LocationPage';
+import LocationPage from './components/LocationPage/containers/LocationPage';
 import CaseStudyPage from './components/CaseStudyPage/CaseStudyPage';
 
 export const getRoutes = getState => {

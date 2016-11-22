@@ -1,6 +1,6 @@
 import * as t from './actionTypes';
 
-export const fetchLatestNewsSuccess = payload => {
+export const fetchWorkSuccess = payload => {
     // remap the json objects to an array
     const { data } = payload;
     var items;
@@ -13,16 +13,12 @@ export const fetchLatestNewsSuccess = payload => {
         })
     }
     return {
-        type: t.FETCH_LATEST_NEWS_SUCCESS,
-        payload: {
-            items,
-            location
-        }
+        type: t.FETCH_WORK_SUCCESS,
+        payload: { items }
     }
-
 }
 
-export const fetchLatestNewsError = error => ({
-    type: t.FETCH_LATEST_NEWS_ERROR,
+export const fetchWorkError = error => ({
+    type: t.FETCH_WORK_ERROR,
     error
 })

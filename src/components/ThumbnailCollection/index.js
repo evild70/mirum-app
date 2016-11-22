@@ -1,13 +1,13 @@
 import React, { Component, PropTypes } from 'react';
-import PostCollectionItem from './PostCollectionItem';
+import ThumbnailCollectionItem from './ThumbnailCollectionItem';
 
-class PostCollection extends Component {
+class ThumbnailCollection extends Component {
 
     static propTypes = {
         items: PropTypes.array,
-        headline: PropTypes.string,
+        title: PropTypes.string,
+        image: PropTypes.string,
         label: PropTypes.string,
-        published: PropTypes.string,
         link: PropTypes.string,
         loaded: PropTypes.bool,
         path: PropTypes.string
@@ -15,19 +15,18 @@ class PostCollection extends Component {
 
     render() {
 
-        const { items, headline, label, published, link, loaded, path } = this.props;
+        const { items, title, image, label, link, loaded, path } = this.props;
 
         return (
             <div className="collection-list">
-
                 { loaded ?
                     <ul>
                         {items.map( (item, index) =>
-                            <PostCollectionItem
+                            <ThumbnailCollectionItem
                                 key={index}
-                                headline={ item[headline] }
+                                title={ item[title] }
+                                image={ item[image] }
                                 label={ item[label] }
-                                published={ item[published] }
                                 link={ item[link] }
                                 path={ path }
                             />
@@ -35,11 +34,9 @@ class PostCollection extends Component {
                     </ul> :
                     <p>Loading</p>
                 }
-
-
             </div>
         );
     }
 }
 
-export default PostCollection;
+export default ThumbnailCollection;
