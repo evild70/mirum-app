@@ -1,5 +1,7 @@
 .app {
-    @include container();
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
     overflow: hidden;
     position: relative;
 

@@ -436,7 +436,7 @@ body {
 
 #root {
   margin: 0 auto;
-  max-width: 80em;
+  max-width: 1400px;
 }
 
 img {
@@ -536,17 +536,11 @@ h4 {
 }
 
 .app {
-  max-width: 1280px;
+  max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
   overflow: hidden;
   position: relative;
-}
-
-.app:after {
-  content: " ";
-  display: block;
-  clear: both;
 }
 
 .app .app-content {
@@ -562,10 +556,6 @@ h4 {
 }
 
 .global-footer {
-  max-width: 1280px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 35px 15px;
   background-color: #25172a;
   background-position: 0 0;
   background-repeat: no-repeat;
@@ -573,21 +563,28 @@ h4 {
   color: #fff;
 }
 
-.global-footer:after {
+@media (min-width: 60em) {
+  .global-footer {
+    min-height: 381px;
+  }
+}
+
+.gf-container {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 35px 15px;
+}
+
+.gf-container:after {
   content: " ";
   display: block;
   clear: both;
 }
 
 @media (min-width: 60em) {
-  .global-footer {
+  .gf-container {
     padding: 70px 35px;
-  }
-}
-
-@media (min-width: 60em) {
-  .global-footer {
-    min-height: 381px;
   }
 }
 
@@ -606,6 +603,7 @@ h4 {
     -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    padding-top: 35px;
   }
 }
 

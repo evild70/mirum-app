@@ -1,7 +1,4 @@
 .global-footer {
-    @include container();
-    @include component();
-
     background-color: $mirum-dark-purple;
     background-position: 0 0;
     background-repeat: no-repeat;
@@ -17,13 +14,20 @@
     }
 }
 
+.gf-container {
+    @include container();
+    @include component();
+}
+
 .gf-link-container {
+
     border-top: 1px solid #000;
 
     @include breakpoint($breakpoint-large) {
         display: flex;
         align-items: flex-end;
         justify-content: space-between;
+        padding-top: 35px;
     }
 }
 
