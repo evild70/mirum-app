@@ -5,8 +5,8 @@ export class LatestNewsStory extends Component {
 
     handleClick = () => {
         const { link } = this.props.story;
-        const path = `/news/${link}`
-        this.context.router.push(path)
+        const path = `/news/${link}`;
+        this.context.router.push(path);
     }
 
     render() {
