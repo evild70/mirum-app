@@ -1,10 +1,10 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
-import { fetchLatestGlobalNews, fetchLatestNewsForLocation } from '../thunks';
-import PostCollection from '../../PostCollection';
+import { fetchLatestGlobalNews, fetchLatestNewsForLocation } from './thunks';
+import PostCollection from '../PostCollection';
 
-export class LatestNews extends Component {
+export class LatestNewsContainer extends Component {
 
     static propTypes = {
         news: PropTypes.object,
@@ -56,4 +56,4 @@ const mapDispatchToProps = {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(LatestNews);
+)(LatestNewsContainer);
