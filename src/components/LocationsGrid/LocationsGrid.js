@@ -12,6 +12,34 @@ export class LocationsGrid extends Component {
                     <h1>2,403 employees. 42 offices. 1 drive to create.</h1>
 
                     <div className="locations-grid__grid">
+                        <div className="locations-grid__box">
+                            <div className="locations-grid__city">Minneapolis</div>
+                            <div className="locations-grid__time">12:07:01 PST</div>
+                        </div>
+                        <div className="locations-grid__box">
+                            <div className="locations-grid__city">Minneapolis</div>
+                            <div className="locations-grid__time">12:07:01 PST</div>
+                        </div>
+                        <div className="locations-grid__box">
+                            <div className="locations-grid__city">Minneapolis</div>
+                            <div className="locations-grid__time">12:07:01 PST</div>
+                        </div>
+                        <div className="locations-grid__box">
+                            <div className="locations-grid__city">Minneapolis</div>
+                            <div className="locations-grid__time">12:07:01 PST</div>
+                        </div>
+                        <div className="locations-grid__box">
+                            <div className="locations-grid__city">Minneapolis</div>
+                            <div className="locations-grid__time">12:07:01 PST</div>
+                        </div>
+                        <div className="locations-grid__box">
+                            <div className="locations-grid__city">Minneapolis</div>
+                            <div className="locations-grid__time">12:07:01 PST</div>
+                        </div>
+                        <div className="locations-grid__box">
+                            <div className="locations-grid__city">Minneapolis</div>
+                            <div className="locations-grid__time">12:07:01 PST</div>
+                        </div>
 
                     </div>
                 </div>

@@ -10,6 +10,58 @@
 }
 
 .locations-grid__grid {
+    background-color: transparent;
+    color: #000;
     display: flex;
+    flex-wrap: wrap;
+    padding: 1px 0 0;
 
+    &.open-city {
+        color: #fff;
+        background-color: #fff;
+    }
 }
+
+.locations-grid__box {
+    flex: 1 1 50%;
+    flex-basis: 50%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 1px 1px;
+    background-color: #fff;
+    height: 100px;
+
+    @include breakpoint($breakpoint-medium) {
+
+    }
+
+    @include breakpoint($breakpoint-large) {
+        max-width: 201px;
+        flex: 1 1 calc(16% - 2px);
+        // flex-basis: 0.16666666666667%
+    }
+
+    &:active {
+        background-color: $mirum-dark-purple;
+    }
+
+    &:hover {
+        background-color: $mirum-dark-purple;
+        color: #fff;
+    }
+}
+
+.location-grid__city {
+    font-size: em(14);
+    margin-bottom: 5px;
+}
+
+.location-grid__time {
+    font-size: em(14);
+}
+
+

@@ -7,7 +7,7 @@ import LatestNewsCollection from '../LatestNews/LatestNewsCollection';
 export class HomePage extends Component {
     render() {
         return (
-            <div className="container">
+            <div>
                 <ExperimentsContainer />
                 <LatestNewsCollection />
                 <LocationsGrid />
