@@ -1,6 +1,6 @@
 .collection {
     @include container();
-    @include component();
+    @include component-padding();
 
     &__header {
         position: relative;

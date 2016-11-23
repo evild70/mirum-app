@@ -1,4 +1,4 @@
-@mixin component {
+@mixin component-padding {
     padding: 35px 15px;
 
     @include breakpoint($breakpoint-large) {
@@ -49,6 +49,10 @@
     list-style: none;
     margin: 0;
     padding: 0;
+}
+
+@mixin grey-bkgd {
+    background-color: $color-light-grey;
 }
 
 

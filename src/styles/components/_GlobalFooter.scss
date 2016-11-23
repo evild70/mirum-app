@@ -16,34 +16,117 @@
 
 .gf-container {
     @include container();
-    @include component();
+    @include component-padding();
 }
 
 .gf-link-container {
-
     border-top: 1px solid #000;
+    padding-top: 34px;
+
+    @include breakpoint($breakpoint-medium) {
+        display: block;
+    }
 
     @include breakpoint($breakpoint-large) {
         display: flex;
         align-items: flex-end;
         justify-content: space-between;
-        padding-top: 35px;
+    }
+}
+
+.gf-logo {
+
+    @include breakpoint($breakpoint-medium) {
+
     }
 }
 
 .gf-social, .gf-nav {
+    padding-bottom: 30px;
+
+    @include breakpoint($breakpoint-large) {
+        padding-bottom: 0;
+    }
+
     ul {
         @include reset-list;
+        @include clearfix;
     }
 
-    li {
-        float: left;
+    a {
+        color: $color-white;
+        font-size: inherit;
+        text-decoration: none;
+        &:not(.link):hover {
+            text-decoration: underline;
+        }
     }
 }
-.gf-social {
 
+.gf-logo {
+    height: 165px;
+    margin: 0 auto;
+    width: 165px;
+
+    .icon {
+        width: 100%;
+    }
+}
+
+.gf-social {
+    li {
+        float: left;
+        margin-right: 18px;
+    }
+
+    .icon {
+        fill: $color-white;
+        height: 1.3125em;
+        width: 1.3125em;
+    }
+
+    a {
+        display: block;
+        line-height: 1;
+        transition: transform 0.1s ease-in-out;
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
 }
 
 .gf-nav {
+    padding-bottom: 0;
 
+    li {
+        margin-bottom: 15px;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+
+        @include breakpoint($breakpoint-medium) {
+            float: left;
+            margin-right: 35px;
+
+            &:first-of-type {
+                float: none;
+            }
+
+            &:last-of-type {
+                margin-right: 0;
+                margin-bottom: 0;
+            }
+        }
+
+        @include breakpoint($breakpoint-large) {
+            float: left;
+            margin-bottom: 0;
+            margin-top: 4px;
+
+            &:first-of-type {
+                float: left;
+            }
+        }
+    }
 }

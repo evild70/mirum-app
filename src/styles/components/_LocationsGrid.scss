@@ -1,0 +1,15 @@
+.locations-grid {
+    @include grey-bkgd();
+}
+
+.locations-grid__container {
+    @include container();
+    @include component-padding();
+
+    text-align: center;
+}
+
+.locations-grid__grid {
+    display: flex;
+
+}
