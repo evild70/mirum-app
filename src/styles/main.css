@@ -882,14 +882,6 @@ body {
   display: none;
 }
 
-<<<<<<< HEAD
-=======
-#root {
-  margin: 0 auto;
-  max-width: 1400px;
-}
-
->>>>>>> a67c50d6469c0ab2ef16ca883a33a38da97bb08f
 img {
   display: block;
 }
@@ -986,18 +978,12 @@ h4 {
   text-transform: uppercase;
 }
 
-<<<<<<< HEAD
 .container {
   max-width: 1280px;
-=======
-.app {
-  max-width: 1400px;
->>>>>>> a67c50d6469c0ab2ef16ca883a33a38da97bb08f
   margin-left: auto;
   margin-right: auto;
 }
 
-<<<<<<< HEAD
 .container:after {
   content: " ";
   display: block;
@@ -1009,8 +995,6 @@ h4 {
   position: relative;
 }
 
-=======
->>>>>>> a67c50d6469c0ab2ef16ca883a33a38da97bb08f
 .app .app-content {
   position: relative;
   min-height: 100vh;

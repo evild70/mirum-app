@@ -8,7 +8,7 @@ export class HomePage extends Component {
         return (
             <div className="container">
                 <ExperimentsContainer />
-                <LatestNewsCollection location='Minneapolis' />
+                <LatestNewsCollection />
             </div>
         );
     }
