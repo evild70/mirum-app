@@ -1,15 +1,15 @@
 import * as t from './actionTypes';
 
-export const LatestNewsState = {
+export const CareersState = {
     items: [],
     hasLoaded: false
 }
 
-export const latestNewsReducer = (state = LatestNewsState, action) => {
+export const careersReducer = (state = CareersState, action) => {
 
     switch (action.type) {
 
-        case t.FETCH_LATEST_NEWS_SUCCESS:
+        case t.FETCH_CAREERS_SUCCESS:
             const { items } = action.payload
             return {
                 ...state,
@@ -17,7 +17,7 @@ export const latestNewsReducer = (state = LatestNewsState, action) => {
                 hasLoaded: true
             }
 
-        case t.FETCH_LATEST_NEWS_ERROR:
+        case t.FETCH_CAREERS_ERROR:
             return {
                 ...state,
                 items: [],

@@ -9,10 +9,7 @@ class App extends Component {
         super();
 
         this.state = {
-            transitioning: false,
-            mainNav: {
-                isOpen: false
-            }
+            transitioning: false
         }
     }
 
@@ -36,7 +33,6 @@ class App extends Component {
                         transitionLeaveTimeout={200}>
                         {React.cloneElement(this.props.children, { key: this.props.location.pathname })}
                     </CSSTransitionGroup>
-                    {/*{this.props.children || <Home />}*/}
                     <GlobalFooter />
                 </div>
             </div>

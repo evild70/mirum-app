@@ -1,10 +1,10 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
-import { fetchLatestGlobalNews, fetchLatestNewsForLocation } from './thunks';
+import { fetchLatestNews } from './thunks';
 import PostCollection from '../PostCollection';
 
-export class LatestNewsContainer extends Component {
+export class LatestNewsCollection extends Component {
 
     static propTypes = {
         news: PropTypes.object,
@@ -12,12 +12,8 @@ export class LatestNewsContainer extends Component {
     }
 
     componentWillMount() {
-        const { fetchLatestGlobalNews, fetchLatestNewsForLocation, location } = this.props;
-        if (location) {
-            fetchLatestNewsForLocation(location)
-        } else {
-            fetchLatestGlobalNews()
-        }
+        const { fetchLatestNews, location } = this.props;
+        fetchLatestNews(location)
     }
 
     render() {
@@ -37,7 +33,15 @@ export class LatestNewsContainer extends Component {
                     </div>
                 </div>
 
-                <PostCollection posts={news.items} loaded={news.hasLoaded} path='/news' />
+                <PostCollection
+                    items={news.items}
+                    headline="title"
+                    label="type"
+                    link="key"
+                    published="published"
+                    loaded={news.hasLoaded}
+                    path='/news'
+                />
 
             </div>
         );
@@ -49,11 +53,10 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-  fetchLatestGlobalNews,
-  fetchLatestNewsForLocation: location => fetchLatestNewsForLocation(location)
+  fetchLatestNews: location => fetchLatestNews(location)
 };
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(LatestNewsContainer);
+)(LatestNewsCollection);

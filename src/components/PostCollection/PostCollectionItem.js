@@ -1,28 +1,44 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import moment from 'moment';
 
-export class PostCollectionItem extends Component {
+class PostCollectionItem extends Component {
 
     handleClick = () => {
-        const { post, path } = this.props;
-        const routerPath = `${path}/${post.link}`
-        this.context.router.push(routerPath)
+
+        const { link, path } = this.props;
+
+        if (path && link) {
+            const routerPath = `${path}/${link}`
+            this.context.router.push(routerPath)
+        }
+
+
     }
 
     render() {
-        const { post } = this.props;
+        const { label, headline, published } = this.props;
 
         return (
-            <li className="post-collection-item" onClick={this.handleClick}>
-                <div className="post-collection-item__type">{post.type}</div>
-                <h3 className="post-collection-item__headline">
-                    {post.title}
+            <li className="post-item" onClick={this.handleClick}>
+                <div className="post-item__label">{label}</div>
+                <h3 className="post-item__headline">
+                    {headline}
                 </h3>
-                <span className="post-collection-item__time">{moment.unix(post.published).fromNow()}</span>
+                <span className="post-item__time">{moment.unix(published).fromNow()}</span>
             </li>
+
         )
     }
 }
+
+PostCollectionItem.propTypes = {
+    image: PropTypes.string,
+    label: PropTypes.string,
+    published: PropTypes.number,
+    title: PropTypes.string,
+    link: PropTypes.string,
+    path: PropTypes.string
+};
 
 PostCollectionItem.contextTypes = {
     router: React.PropTypes.object

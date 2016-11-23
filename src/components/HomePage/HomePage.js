@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 
 import ExperimentsContainer from '../Experiments/ExperimentsContainer';
-import LatestNewsContainer from '../LatestNews/LatestNewsContainer';
 import LocationsGrid from '../LocationsGrid/LocationsGrid';
+import LatestNewsCollection from '../LatestNews/LatestNewsCollection';
 
 export class HomePage extends Component {
     render() {
         return (
-            <div>
+            <div className="container">
                 <ExperimentsContainer />
-                <LatestNewsContainer location='Minneapolis' />
+                <LatestNewsCollection />
                 <LocationsGrid />
             </div>
         );

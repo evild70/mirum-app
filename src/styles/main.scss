@@ -1,6 +1,7 @@
 @charset 'UTF-8';
 
-@import "susy";
+@import 'base/reset';
+@import 'susy';
 @import 'vendor/normalize';
 
 // Configuration and helpers
@@ -19,14 +20,14 @@
     'base/base',
     'base/fonts',
     'base/typography',
-    'base/reset',
     'base/helpers';
 
 // Layout-related sections
 @import
     'layout/header',
     'layout/footer',
-    'layout/forms';
+    'layout/forms',
+    'layout/container';
 
 // Components
 @import
@@ -37,7 +38,8 @@
     'components/LocationsGrid',
     'components/Collection',
     'components/MainNav',
-    'components/PostCollection',
+    'components/Hero',
+    'components/CollectionList',
     'components/NavOverlay';
 
 // Page-specific styles
