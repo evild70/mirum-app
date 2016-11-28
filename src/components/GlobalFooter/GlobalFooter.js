@@ -1,11 +1,16 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
-// import { connect } from 'react-redux';
-// import { fetchGlobalFooterNav } from './thunks';
+import { connect } from 'react-redux';
+import { fetchGlobalFooterNav } from './thunks';
 
 import footerBkgd from './footer-bkgd.jpg';
 
 export class GlobalFooter extends Component {
+
+    static propTypes = {
+        items: PropTypes.array
+    }
+
     constructor() {
         super();
 
@@ -17,43 +22,15 @@ export class GlobalFooter extends Component {
     }
 
     componentWillMount() {
-        // const { fetchGlobalFooterNav } = this.props;
+        const { fetchGlobalFooterNav } = this.props;
 
-        // fetchGlobalFooterNav();
-
-        const items = {
-            "nav1":
-                {
-                    "url": "locations",
-                    "text": "Directions"
-                },
-            "nav2":
-                {
-                    "url": "/",
-                    "text": "Your Privacy"
-                },
-            "nav3":
-                {
-                    "url": "news",
-                    "text": "News"
-                },
-            "nav4":
-                {
-                    "url": "contact",
-                    "text": "Connect with Us"
-                }
-        }
-
-        this.setState({
-            items
-        });
+        fetchGlobalFooterNav();
     }
 
-    renderNav(key) {
-        const items = this.state.items[key];
+    renderNav(item, index) {
         return (
-            <li key={key}>
-                <Link to={`/${items.url}`}>{items.text}</Link>
+            <li key={index}>
+                <Link to={`/${item.url}`}>{item.text}</Link>
             </li>
         )
     }
@@ -63,7 +40,7 @@ export class GlobalFooter extends Component {
             backgroundImage: 'url(' + footerBkgd + ')'
         };
 
-        // const { items } = this.props;
+        const { items } = this.props;
 
         return (
             <div className="global-footer" style={styles}>
@@ -117,7 +94,7 @@ export class GlobalFooter extends Component {
                                     © 2016 Mirum All Rights Reserved
                                 </li>
 
-                                { Object.keys(this.state.items).map(this.renderNav) }
+                                { items.map(this.renderNav) }
 
                             </ul>
                         </div>
@@ -128,32 +105,17 @@ export class GlobalFooter extends Component {
     }
 }
 
-/*
-<li>
-    <Link to="/locations">Directions</Link>
-</li>
-<li>
-    <Link to="/">Your privacy</Link>
-</li>
-<li>
-    <Link to="/news">News</Link>
-</li>
-<li>
-    <Link to="/contact">Connect with Us</Link>
-</li>
-*/
+const mapStateToProps = state => ({
+  items: state.globalFooter.items
+});
 
-// const mapStateToProps = state => ({
-//   items: state.navItems
-// });
+const mapDispatchToProps = {
+  fetchGlobalFooterNav
+};
 
-// const mapDispatchToProps = {
-//   fetchGlobalFooterNav
-// };
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(GlobalFooter);
 
-// export default connect(
-//   mapStateToProps,
-//   mapDispatchToProps
-// )(GlobalFooter);
-
-export default GlobalFooter;
+// export default GlobalFooter;

@@ -5,6 +5,8 @@ import { latestNewsReducer } from '../components/LatestNews/reducers';
 import { careersReducer } from '../components/CareersCollection/reducers';
 import { locationReducer } from '../components/LocationPage/reducers';
 import { workReducer } from '../components/WorkCollection/reducers';
+import { globalFooterReducer } from '../components/GlobalFooter/reducers';
+import { locationsGridReducer } from '../components/LocationsGrid/reducers';
 
 export default combineReducers({
   routing: routerReducer,
@@ -12,5 +14,7 @@ export default combineReducers({
   latestNews: latestNewsReducer,
   careers: careersReducer,
   location: locationReducer,
-  work: workReducer
+  work: workReducer,
+  globalFooter: globalFooterReducer,
+  locationsGrid: locationsGridReducer
 });
