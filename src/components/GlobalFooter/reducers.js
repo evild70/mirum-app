@@ -6,11 +6,10 @@ export const GlobalFooterState = {
 }
 
 export const globalFooterReducer = (state = GlobalFooterState, action) => {
-
     switch (action.type) {
 
         case t.FETCH_GLOBAL_FOOTER_SUCCESS:
-            const { items, location } = action.payload
+            const { items } = action.payload
             return {
                 ...state,
                 items,

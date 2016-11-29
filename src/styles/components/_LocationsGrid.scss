@@ -14,6 +14,7 @@
     color: #000;
     display: flex;
     flex-wrap: wrap;
+    justify-content: flex-start;
     padding: 1px 0 0;
 
     &.open-city {
@@ -23,9 +24,6 @@
 }
 
 .locations-grid__box {
-    flex: 1 1 50%;
-    flex-basis: 50%;
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -35,13 +33,23 @@
     background-color: #fff;
     height: 100px;
 
-    @include breakpoint($breakpoint-medium) {
+    @include breakpoint($breakpoint-very-small) {
+        flex: 0 1 calc(50% - 2px);
+        flex-basis: calc(50% - 2px);
+    }
 
+    @include breakpoint($breakpoint-small) {
+        flex: 0 1 calc(33.3% - 2px);
+        flex-basis: calc(33.3% - 2px);
+    }
+
+    @include breakpoint($breakpoint-medium) {
+        flex: 0 1 calc(25% - 2px);
     }
 
     @include breakpoint($breakpoint-large) {
         max-width: 201px;
-        flex: 1 1 calc(16% - 2px);
+        flex: 0 1 calc(16% - 2px);
         // flex-basis: 0.16666666666667%
     }
 

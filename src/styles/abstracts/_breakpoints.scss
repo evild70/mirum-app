@@ -1,6 +1,7 @@
 // Breakpoint-Sass Media Queries
 // http://breakpoint-sass.com/
-$breakpoint-small: 20em; // 320px
+$breakpoint-very-small: 20em 22.4375em; // 320px to 359px
+$breakpoint-small: 22.5em; // 360px
 $breakpoint-medium: 40em; // 640px
 $breakpoint-large: 60em; // 960px
 $breakpoint-xlarge: 75em; // 1200px

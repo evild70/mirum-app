@@ -1,0 +1,61 @@
+{
+    "headline": "2,403 employees. 42 offices. 1 drive to create.",
+    "locations": {
+        "Chicago": {
+            "hero": "hero.jpg",
+            "image": "contentimage.jpg",
+            "headline": "CITY NAME headline",
+            "content": "This is content.",
+            "timezone": "America/Chicago"
+        },
+        "Hong Kong": {
+            "hero": "hero.jpg",
+            "image": "contentimage.jpg",
+            "headline": "CITY NAME headline",
+            "content": "This is content.",
+            "timezone": "Asia/Hong_Kong"
+        },
+        "London": {
+            "hero": "hero.jpg",
+            "image": "contentimage.jpg",
+            "headline": "CITY NAME headline",
+            "content": "This is content.",
+            "timezone": "Europe/London"
+        },
+        "Miami": {
+            "hero": "hero.jpg",
+            "image": "contentimage.jpg",
+            "headline": "CITY NAME headline",
+            "content": "This is content.",
+            "timezone": "America/New_York"
+        },
+        "Minneapolis": {
+            "hero": "hero.jpg",
+            "image": "contentimage.jpg",
+            "headline": "CITY NAME headline",
+            "content": "This is content.",
+            "timezone": "America/Chicago"
+        },
+        "Montreal": {
+            "hero": "hero.jpg",
+            "image": "contentimage.jpg",
+            "headline": "CITY NAME headline",
+            "content": "This is content.",
+            "timezone": "America/Montreal"
+        },
+        "San Diego": {
+            "hero": "hero.jpg",
+            "image": "contentimage.jpg",
+            "headline": "CITY NAME headline",
+            "content": "This is content.",
+            "timezone": "America/Los_Angeles"
+        },
+        "Tokyo": {
+            "hero": "hero.jpg",
+            "image": "contentimage.jpg",
+            "headline": "CITY NAME headline",
+            "content": "This is content.",
+            "timezone": "Asia/Tokyo"
+        }
+    }
+}
