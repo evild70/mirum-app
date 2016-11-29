@@ -38,4 +38,10 @@
             bottom: 5px;
         }
     }
+
+    &--light {
+        .collection__header {
+            color: white;
+        }
+    }
 }

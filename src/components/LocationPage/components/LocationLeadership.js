@@ -1,22 +1,24 @@
 import React, { PropTypes } from 'react';
-import ThumbnailCollection from '../../ThumbnailCollection';
+import ThumbnailCollectionExpandable from '../../ThumbnailCollectionExpandable';
 
 const LocationLeadership = ({items, location}) => {
-
     return (
-        <div className="collection collection--light">
-            <div className="collection__header">
-                <h1 className="collection__title">{location} Leadership</h1>
-            </div>
+        <div className="leadership-section">
+            <div className="collection collection--light">
 
-            <ThumbnailCollection
-                items={items}
-                image="image"
-                title="name"
-                label="position"
-                loaded={true}
-            />
-            
+                <div className="collection__header">
+                    <h1 className="collection__title">{location} Leadership</h1>
+                </div>
+
+                <ThumbnailCollectionExpandable
+                    items={items}
+                    image="image"
+                    title="name"
+                    label="position"
+                    loaded={true}
+                />
+
+            </div>
         </div>
     );
 

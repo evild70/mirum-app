@@ -1339,6 +1339,10 @@ h4 {
   }
 }
 
+.collection--light .collection__header {
+  color: white;
+}
+
 .main-nav {
   height: 100%;
   position: absolute;
@@ -1428,6 +1432,10 @@ h4 {
   margin-bottom: 46px;
 }
 
+.leadership-section {
+  background-color: #25172a;
+}
+
 .hero {
   height: 95vh;
   width: 100%;
@@ -1461,37 +1469,54 @@ h4 {
 }
 
 .collection-list {
-  *zoom: 1;
+  margin: 0 0;
+  padding: 0 0;
+  margin: 0 0;
 }
 
-.collection-list:before, .collection-list:after {
-  content: ' ';
-  display: table;
+.collection-list--posts {
+  margin: 0 -8px;
 }
 
-.collection-list:after {
-  clear: both;
+.collection-list--thumbnails {
+  margin: 0 -1px;
 }
 
 .collection-list ul {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
 }
 
 .post-item {
-  width: 33.33333%;
-  float: left;
-  background-color: #fff;
   border-top: 1px solid #4cc8ed;
   color: #25172a;
   cursor: pointer;
-  padding: 40px 20px;
+  padding: 1rem 1.5rem;
   transition: all 0.2s cubic-bezier(0, 0, 0.58, 1);
+  margin: 0 8px;
 }
 
-.post-item:last-of-type {
-  margin-right: 0;
+@media (min-width: 40em) {
+  .post-item {
+    -webkit-flex: 0 0 calc(50% - 16px);
+        -ms-flex: 0 0 calc(50% - 16px);
+            flex: 0 0 calc(50% - 16px);
+  }
+}
+
+@media (min-width: 60em) {
+  .post-item {
+    -webkit-flex: 0 0 calc(33.33% - 16px);
+        -ms-flex: 0 0 calc(33.33% - 16px);
+            flex: 0 0 calc(33.33% - 16px);
+  }
 }
 
 .post-item:hover {
@@ -1502,22 +1527,54 @@ h4 {
   text-transform: uppercase;
 }
 
+.post-item__label {
+  font-weight: bold;
+}
+
 .post-item__headline {
   font-size: 1em;
+  margin-bottom: 0.25rem;
 }
 
 .thumbnail-item {
-  width: 33.33333%;
-  float: left;
-  background-color: #fff;
   color: #25172a;
   cursor: pointer;
-  padding: 0px 20px;
+  padding: 0px 0px;
   transition: all 0.2s cubic-bezier(0, 0, 0.58, 1);
+  margin: 0 1px 0 0;
+  color: white;
+}
+
+@media (min-width: 40em) {
+  .thumbnail-item {
+    -webkit-flex: 0 0 calc(50% - 1px);
+        -ms-flex: 0 0 calc(50% - 1px);
+            flex: 0 0 calc(50% - 1px);
+  }
+}
+
+@media (min-width: 60em) {
+  .thumbnail-item {
+    -webkit-flex: 0 0 calc(33.33% - 1px);
+        -ms-flex: 0 0 calc(33.33% - 1px);
+            flex: 0 0 calc(33.33% - 1px);
+  }
 }
 
 .thumbnail-item:last-of-type {
   margin-right: 0;
+}
+
+@media (min-width: 40em) {
+  .thumbnail-item:nth-child(3) {
+    margin-right: 1px;
+  }
+}
+
+@media (min-width: 60em) {
+  .thumbnail-item:nth-child(3) {
+    margin-right: 0;
+  }
 }
 
 .thumbnail-item__headline {
@@ -1528,6 +1585,88 @@ h4 {
 .thumbnail-item__img {
   width: 100%;
   height: auto;
+}
+
+.expandable-item {
+  transition: margin-bottom 0.3s ease-in-out 0.2s;
+}
+
+.expandable-item.is-open {
+  margin-bottom: 250px;
+}
+
+.expandable-wrapper {
+  position: relative;
+}
+
+.expandable-wrapper--sm .expandable-item.is-open {
+  margin-bottom: 200px;
+}
+
+.expandable-wrapper--sm .expandable-container.is-open {
+  height: 200px;
+}
+
+.expandable-wrapper--md .expandable-item.is-open {
+  margin-bottom: 400px;
+}
+
+.expandable-wrapper--md .expandable-container.is-open {
+  height: 400px;
+}
+
+.expandable-wrapper--lg .expandable-item.is-open {
+  margin-bottom: 600px;
+}
+
+.expandable-wrapper--lg .expandable-container.is-open {
+  height: 600px;
+}
+
+.expandable-wrapper--leadership .expandable-item.is-open {
+  margin-bottom: 300px;
+}
+
+.expandable-wrapper--leadership .expandable-container.is-open {
+  height: 370px;
+}
+
+.expandable-container {
+  position: absolute;
+  width: 100%;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  display: block;
+  background-color: white;
+  color: black;
+  overflow: hidden;
+  transition: height 0.4s ease-in-out;
+  height: 0;
+}
+
+.expandable-container__contents {
+  box-sizing: border-box;
+  display: block;
+  padding: 1rem;
+  -webkit-transform: translateY(-100px);
+      -ms-transform: translateY(-100px);
+          transform: translateY(-100px);
+  opacity: 0;
+  transition: -webkit-transform 0.25s;
+  transition: transform 0.25s;
+  transition: transform 0.25s, -webkit-transform 0.25s;
+}
+
+.expandable-container.is-open {
+  height: 250px;
+}
+
+.expandable-container.is-open .expandable-container__contents {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
 }
 
 .nav-overlay {

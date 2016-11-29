@@ -18,7 +18,7 @@ class ThumbnailCollection extends Component {
         const { items, title, image, label, link, loaded, path } = this.props;
 
         return (
-            <div className="collection-list">
+            <div className="collection-list collection-list--thumbnails">
                 { loaded ?
                     <ul>
                         {items.map( (item, index) =>
