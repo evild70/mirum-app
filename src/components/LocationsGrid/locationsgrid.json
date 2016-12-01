@@ -4,58 +4,82 @@
         "Chicago": {
             "hero": "hero.jpg",
             "image": "contentimage.jpg",
-            "headline": "CITY NAME headline",
-            "content": "This is content.",
-            "timezone": "America/Chicago"
+            "timezone": "America/Chicago",
+            "rolloverImg": "rolloverImg.jpg",
+            "fullCityName": "Minneapolis, MN",
+            "employees": "62",
+            "continent": "North America",
+            "backgroundColor": "yellow"
         },
         "Hong Kong": {
             "hero": "hero.jpg",
             "image": "contentimage.jpg",
-            "headline": "CITY NAME headline",
-            "content": "This is content.",
-            "timezone": "Asia/Hong_Kong"
+            "timezone": "Asia/Hong_Kong",
+            "rolloverImg": "rolloverImg.jpg",
+            "fullCityName": "Minneapolis, MN",
+            "employees": "62",
+            "continent": "North America",
+            "backgroundColor": "yellow"
         },
         "London": {
             "hero": "hero.jpg",
             "image": "contentimage.jpg",
-            "headline": "CITY NAME headline",
-            "content": "This is content.",
-            "timezone": "Europe/London"
+            "timezone": "Europe/London",
+            "rolloverImg": "rolloverImg.jpg",
+            "fullCityName": "Minneapolis, MN",
+            "employees": "62",
+            "continent": "North America",
+            "backgroundColor": "yellow"
         },
         "Miami": {
             "hero": "hero.jpg",
             "image": "contentimage.jpg",
-            "headline": "CITY NAME headline",
-            "content": "This is content.",
-            "timezone": "America/New_York"
+            "timezone": "America/New_York",
+            "rolloverImg": "rolloverImg.jpg",
+            "fullCityName": "Minneapolis, MN",
+            "employees": "62",
+            "continent": "North America",
+            "backgroundColor": "yellow"
         },
         "Minneapolis": {
             "hero": "hero.jpg",
             "image": "contentimage.jpg",
-            "headline": "CITY NAME headline",
-            "content": "This is content.",
-            "timezone": "America/Chicago"
+            "timezone": "America/Chicago",
+            "rolloverImg": "rolloverImg.jpg",
+            "fullCityName": "Minneapolis, MN",
+            "employees": "62",
+            "continent": "North America",
+            "backgroundColor": "yellow"
         },
         "Montreal": {
             "hero": "hero.jpg",
             "image": "contentimage.jpg",
-            "headline": "CITY NAME headline",
-            "content": "This is content.",
-            "timezone": "America/Montreal"
+            "timezone": "America/Montreal",
+            "rolloverImg": "rolloverImg.jpg",
+            "fullCityName": "Minneapolis, MN",
+            "employees": "62",
+            "continent": "North America",
+            "backgroundColor": "yellow"
         },
         "San Diego": {
             "hero": "hero.jpg",
             "image": "contentimage.jpg",
-            "headline": "CITY NAME headline",
-            "content": "This is content.",
-            "timezone": "America/Los_Angeles"
+            "timezone": "America/Los_Angeles",
+            "rolloverImg": "rolloverImg.jpg",
+            "fullCityName": "Minneapolis, MN",
+            "employees": "62",
+            "continent": "North America",
+            "backgroundColor": "yellow"
         },
         "Tokyo": {
             "hero": "hero.jpg",
             "image": "contentimage.jpg",
-            "headline": "CITY NAME headline",
-            "content": "This is content.",
-            "timezone": "Asia/Tokyo"
+            "timezone": "Asia/Tokyo",
+            "rolloverImg": "rolloverImg.jpg",
+            "fullCityName": "Minneapolis, MN",
+            "employees": "62",
+            "continent": "North America",
+            "backgroundColor": "yellow"
         }
     }
 }
