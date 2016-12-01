@@ -18,8 +18,7 @@ class PostCollection extends Component {
         const { items, headline, label, published, link, loaded, path } = this.props;
 
         return (
-            <div className="collection-list">
-
+            <div className="collection-list collection-list--posts">
                 { loaded ?
                     <ul>
                         {items.map( (item, index) =>
@@ -35,8 +34,6 @@ class PostCollection extends Component {
                     </ul> :
                     <p>Loading</p>
                 }
-
-
             </div>
         );
     }

@@ -31,8 +31,8 @@ export class LocationPage extends Component {
                 </LocationBanner>
                 <WorkCollection location={this.location} />
                 <CareersCollection location={this.location} />
-                <LatestNewsCollection location={this.location} />
                 <LocationLeadership items={details.leadership} location={this.location} />
+                <LatestNewsCollection location={this.location} />
             </div>
         );
     }

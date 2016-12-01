@@ -8,6 +8,15 @@ const LocationBanner = ({location, bannerImg, children}) => {
         }
     }
 
+    // <section className="hero">
+    //     <div className="hero__content">
+    //         {children}
+    //     </div>
+    //     <div className="hero__media">
+    //         <div className="hero__image" style={styles.media}></div>
+    //     </div>
+    // </section>
+
     return (
         <section className="hero">
             <div className="hero__content">
