@@ -10,16 +10,28 @@
 }
 
 .locations-grid__grid {
-    background-color: transparent;
+    background-color: #fff;
+    // @include grey-bkgd();
     color: #000;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    padding: 1px 0 0;
+    // padding: 1px 0 0;
+    position: relative;
 
     &.open-city {
         color: #fff;
         background-color: #fff;
+    }
+
+    &:after {
+        @include grey-bkgd();
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        content: '';
+        width: 100%;
+        height: 2px;
     }
 }
 
@@ -29,47 +41,179 @@
     align-items: center;
     justify-content: center;
 
-    margin: 0 1px 1px;
-    background-color: #fff;
+    // margin: 0 1px 1px;
+    border-right: 2px solid $color-light-grey;
+    // border-left: 1px solid $color-light-grey;
+    border-bottom: 2px solid $color-light-grey;
+    // border: 1px solid $color-light-grey;
+    // background-color: #fff;
     height: 100px;
 
+
+
     @include breakpoint($breakpoint-very-small) {
-        flex: 0 1 calc(50% - 2px);
-        flex-basis: calc(50% - 2px);
+        // flex: 0 1 calc(50% - 2px);
+        // flex-basis: calc(50% - 2px);
+        flex: 0 1 50%;
+        flex-basis: 50%;
+        max-width: 179.5px;
+
+        &:nth-of-type(2n) {
+            border-right: 0;
+        }
     }
 
     @include breakpoint($breakpoint-small) {
-        flex: 0 1 calc(33.3% - 2px);
-        flex-basis: calc(33.3% - 2px);
+        // flex: 0 1 calc(33.3% - 2px);
+        flex: 0 1 33.3%;
+        flex-basis: 33.3%;
+        max-width: 213px;
+
+
+        &:nth-of-type(2n) {
+            border-right: 2px solid $color-light-grey;
+        }
+
+        &:nth-of-type(3n) {
+            border-right: 0;
+        }
     }
 
     @include breakpoint($breakpoint-medium) {
-        flex: 0 1 calc(25% - 2px);
+        // flex: 0 1 calc(25% - 2px);
+        flex: 0 1 25%;
+        flex-basis: 25%;
+        max-width: 239.75px;
+
+        &:nth-of-type(2n), &:nth-of-type(3n) {
+            border-right: 2px solid $color-light-grey;
+        }
+
+        &:nth-of-type(4n) {
+            border-right: 0;
+        }
     }
 
     @include breakpoint($breakpoint-large) {
-        max-width: 201px;
-        flex: 0 1 calc(16% - 2px);
-        // flex-basis: 0.16666666666667%
+        max-width: 201.66666666666667px;
+        // flex: 0 1 auto;
+        // flex: 0 1 calc(16% - 2px);
+        flex: 0 1 16.666666666667%;
+        flex-basis: 16.666666666667%;
+
+        &:nth-of-type(2n), &:nth-of-type(3n), &:nth-of-type(4n) {
+            border-right: 2px solid $color-light-grey;
+        }
+
+        &:nth-of-type(6n) {
+            border-right: 0;
+        }
     }
 
     &:active {
         background-color: $mirum-dark-purple;
     }
 
-    &:hover {
+    &:hover, &:active {
         background-color: $mirum-dark-purple;
         color: #fff;
     }
 }
 
-.location-grid__city {
-    font-size: em(14);
-    margin-bottom: 5px;
+.locations-grid__city {
+
 }
 
-.location-grid__time {
-    font-size: em(14);
+.locations-grid__time {
+
 }
+
+.locations-grid__choice {
+    @include clearfix;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    .choice-container {
+        @include container;
+        @include grey-bkgd;
+
+        text-align: left;
+
+
+        @include breakpoint($breakpoint-medium) {
+            min-height: 400px;
+        }
+    }
+
+    .choice-content {
+        background-color: $mirum-yellow;
+        padding: 20px;
+
+        @include breakpoint($breakpoint-medium) {
+            @include span(4 of 12);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            min-height: 400px;
+            padding: 0 35px 60px;
+        }
+
+    }
+
+    .choice-image {
+        overflow: hidden;
+        max-height: 200px;
+
+        @include breakpoint($breakpoint-medium) {
+            @include span(8 of 12);
+            max-height: 400px;
+        }
+    }
+
+
+
+    .continent {
+        font-family: $mirum-sans-bold;
+        font-size: em(16);
+        margin: 0 0 5px;
+        text-transform: uppercase;
+    }
+
+    .city-name {
+        margin: 0 0 15px;
+    }
+
+    .office-stats {
+        @include reset-list;
+        margin-bottom: 20px;
+        li {
+            margin-bottom: 3px;
+        }
+    }
+
+    .temp {
+        margin-right: 10px;
+    }
+
+    .time {
+        margin-left: 10px;
+    }
+
+    .meet-link {
+        color: $mirum-dark-purple;
+        font-family: $mirum-sans-bold;
+    }
+}
+
+
+
+
+
+
+
+
+
 
 

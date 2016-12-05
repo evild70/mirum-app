@@ -1,11 +1,13 @@
 import React, { Component, PropTypes } from 'react';
+import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import { fetchLocationsGrid } from './thunks';
 import moment from 'moment-timezone';
 
 import LocationsGridBox from './LocationsGridBox';
 
-
+import bkgdImg from './rolloverImg.jpg';
+import contentImg from './contentImg.jpg';
 
 export class LocationsGrid extends Component {
 
@@ -24,6 +26,7 @@ export class LocationsGrid extends Component {
 
         this.renderGrid = this.renderGrid.bind(this);
         this.getCurrentTime = this.getCurrentTime.bind(this);
+        this.handleMouseOverBox = this.handleMouseOverBox.bind(this);
     }
 
     componentDidMount() {
@@ -31,6 +34,7 @@ export class LocationsGrid extends Component {
         fetchLocationsGrid();
 
         this.getCurrentTime();
+        // getCurrentTime every 10 seconds
         const intervalID = setInterval(this.getCurrentTime, 10000)
 
         this.setState({
@@ -43,11 +47,16 @@ export class LocationsGrid extends Component {
     }
 
     getCurrentTime() {
+        // get the current time from moment-timezone.js
         const time = moment();
 
         this.setState({
             time
         });
+    }
+
+    handleMouseOverBox(index) {
+        // console.log(this.props.locations[index]);
     }
 
     // foo = (location) => {
@@ -59,9 +68,11 @@ export class LocationsGrid extends Component {
         return (
             <LocationsGridBox
                 key={index}
+                index={index}
                 city={box.name}
                 tz={box.timezone}
                 time={this.state.time}
+                handleMouseOverBox={this.handleMouseOverBox}
             />
         )
     }
@@ -69,13 +80,37 @@ export class LocationsGrid extends Component {
     render() {
         const { headline, locations } = this.props;
 
+        const bkgd = {
+            backgroundImage: 'url(' + bkgdImg + ')',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover'
+        }
+
         return (
             <div className="locations-grid">
                 <div className="locations-grid__container">
                     <h1>{headline}</h1>
 
-                    <div className="locations-grid__grid">
+                    <div className="locations-grid__grid" style={bkgd}>
                         { locations.map(this.renderGrid) }
+                        <div className="locations-grid__choice">
+                            <div className="choice-container">
+                                <div className="choice-content">
+                                    <h3 className="continent">North America</h3>
+                                    <h2 className="city-name">Minneapolis, MN</h2>
+                                    <ul className="office-stats">
+                                        <li><span className="temp">72&deg;</span>|<span className="time">4:03 PM</span></li>
+                                        <li><span className="employees">62 Employees</span></li>
+                                    </ul>
+
+                                    <Link to="/" className="meet-link">Meet Mirum Minneapolis</Link>
+                                </div>
+                                <div className="choice-image">
+                                    <img src={contentImg} alt=""/>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -99,36 +134,5 @@ export default connect(
 
 // export default LocationsGrid;
 
-
-/*
-<div className="locations-grid__box">
-    <div className="locations-grid__city">Minneapolis</div>
-    <div className="locations-grid__time">12:07:01 PST</div>
-</div>
-<div className="locations-grid__box">
-    <div className="locations-grid__city">Minneapolis</div>
-    <div className="locations-grid__time">12:07:01 PST</div>
-</div>
-<div className="locations-grid__box">
-    <div className="locations-grid__city">Minneapolis</div>
-    <div className="locations-grid__time">12:07:01 PST</div>
-</div>
-<div className="locations-grid__box">
-    <div className="locations-grid__city">Minneapolis</div>
-    <div className="locations-grid__time">12:07:01 PST</div>
-</div>
-<div className="locations-grid__box">
-    <div className="locations-grid__city">Minneapolis</div>
-    <div className="locations-grid__time">12:07:01 PST</div>
-</div>
-<div className="locations-grid__box">
-    <div className="locations-grid__city">Minneapolis</div>
-    <div className="locations-grid__time">12:07:01 PST</div>
-</div>
-<div className="locations-grid__box">
-    <div className="locations-grid__city">Minneapolis</div>
-    <div className="locations-grid__time">12:07:01 PST</div>
-</div>
-*/
 
 
