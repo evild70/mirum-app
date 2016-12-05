@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import { fetchGlobalFooterNav } from './thunks';
+import MirumLogo from '../svg/MirumLogo';
 
 import footerBkgd from './footer-bkgd.jpg';
 
@@ -48,7 +49,7 @@ export class GlobalFooter extends Component {
                     <div className="gf-logo">
                         <span className="visibly-hidden">Mirum Agency</span>
                         <svg className="icon icon-twitter">
-                            <use xlinkHref="#mirum-logo"></use>
+                            <MirumLogo />
                         </svg>
                     </div>
                     <div className="gf-link-container">

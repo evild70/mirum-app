@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router'
 import { toggleMainNav } from '../../store/actions';
 import mainNavBkgd from '../../images/main-nav-bkgd-fpo.jpg';
+import MirumLogo from '../svg/MirumLogo';
+import MainNavButton from '../svg/MainNavButton';
 
 export class MainNav extends Component {
 
@@ -46,16 +48,13 @@ export class MainNav extends Component {
         return (
             <div className={"main-nav " + (mainNavIsOpen ? 'is-open' : '')}>
                 <div className="main-nav-button" onClick={toggleMainNav}>
-                    <div className="box">
-                    </div>
+                    <MainNavButton isOpen={mainNavIsOpen} />
                 </div>
 
                 <div className="main-nav-container" style={bkgd}>
                     <div className="main-logo">
                         <IndexLink to="/">
-                            <svg className="" viewBox="0 0 562.5 202.4" preserveAspectRatio="xMinYMin meet">
-                                <use xlinkHref="#mirum-logo"></use>
-                            </svg>
+                            <MirumLogo />
                         </IndexLink>
                     </div>
                     { this.renderNavLinks() }

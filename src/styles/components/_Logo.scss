@@ -1,0 +1,11 @@
+.logo {
+    max-width: 200px;
+    g {
+        fill: white;
+    }
+    &--dark {
+        g {
+            fill: $mirum-dark-purple;
+        }
+    }
+}

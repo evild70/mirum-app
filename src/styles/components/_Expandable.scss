@@ -42,6 +42,9 @@
         .expandable-container.is-open {
             height: 370px;
         }
+        .expandable-container__contents {
+            height: 370px;
+        }
     }
 
 }
@@ -65,7 +68,7 @@
         padding: 1rem;
         transform: translateY(-100px);
         opacity: 0;
-        transition: transform 0.25s;
+        transition: transform 0.25s, opacity 0.25s;
     }
 
     &.is-open {
