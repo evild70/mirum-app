@@ -81,7 +81,7 @@ export class LocationsGrid extends Component {
         const { headline, locations } = this.props;
 
         const bkgd = {
-            backgroundImage: 'url(' + bkgdImg + ')',
+            backgroundImage: `url(${bkgdImg})`,
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'cover'

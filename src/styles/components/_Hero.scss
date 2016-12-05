@@ -1,4 +1,6 @@
 .hero {
+    @include container($container-1600);
+
     height: 95vh;
     width: 100%;
     display: flex;

@@ -3,10 +3,13 @@
 // Colors
 $color-white: #ffffff;
 $color-light-grey: #f9f9f9;
+
 $mirum-blue: #4cc8ed;
+$mirum-bone-white: $color-light-grey;
 $mirum-dark-purple: #25172a;
 $mirum-pink: #e24598;
 $mirum-red: #eb2f25;
+$mirum-white: $color-white;
 $mirum-yellow: #faed50;
 
 
@@ -15,3 +18,4 @@ $mirum-yellow: #faed50;
 $mirum-sans-regular: 'mirum_sansregular', Verdana, Helvetica, Arial, sans-serif;
 $mirum-sans-bold: 'mirum_sansregular', Verdana, Helvetica, Arial, sans-serif;
 $mirum-serif-regular: 'mirum_serifregular', Times New Roman, Times, Georgia, serif;
+$monospace: Consolas, Monaco, 'Courier New', Courier, monospace;

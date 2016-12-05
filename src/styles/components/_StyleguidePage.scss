@@ -1,0 +1,63 @@
+
+.styleguide-page {
+
+}
+
+.styleguide-section {
+    @include container($container-1440);
+    padding: 35px 15px;
+
+    h1 {
+        font-family: $mirum-serif-regular;
+    }
+
+    h2.sub-title {
+        font-family: $mirum-sans-bold;
+        font-size: em(20);
+        text-transform: uppercase;
+    }
+}
+
+.sg-inline-code {
+    color: $mirum-pink;
+    border: 1px solid lightgrey;
+    background-color: $color-light-grey;
+    padding: 3px;
+    font-family: $monospace;
+    font-size: em(12);
+    border-radius: 3px;
+}
+
+/*********************
+ COLORS
+*********************/
+.sg-colors {
+    @include container;
+    .color-list {
+        display: flex;
+        flex-wrap: wrap;
+
+        li {
+            flex: 0 1 33.33%;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            margin-bottom: 50px;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .color-circle {
+            border-radius: 50%;
+            border: 1px solid lightgrey;
+            height: 175px;
+            width: 175px;
+
+            &.is-white {
+                border: 2px solid lightgrey;
+            }
+        }
+    }
+}

@@ -9,6 +9,7 @@ import ContactPage from './components/ContactPage/ContactPage';
 import LocationsPage from './components/LocationsPage/LocationsPage';
 import LocationPage from './components/LocationPage/containers/LocationPage';
 import CaseStudyPage from './components/CaseStudyPage/CaseStudyPage';
+import StyleguidePage from './components/StyleguidePage/StyleguidePage';
 
 export const getRoutes = getState => {
     return {
@@ -55,6 +56,10 @@ export const getRoutes = getState => {
             {
                 path: '/locations/:locationId',
                 component: LocationPage
+            },
+            {
+                path: '/styleguide',
+                component: StyleguidePage
             }
         ]
     };
