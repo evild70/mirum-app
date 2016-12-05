@@ -39,9 +39,121 @@
         }
     }
 
+    .collection-list {
+        margin: 0 0;
+        padding: 0 0;
+        margin: 0 0;
+        color: $mirum-dark-purple;
+
+        &--posts {
+            margin: 0 -8px;
+        }
+
+        &--thumbnails {
+            margin: 0 -1px;
+        }
+
+        ul {
+            @include reset-list();
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+
     &--light {
         .collection__header {
             color: white;
         }
+        .collection-list {
+            color: white;
+        }
     }
+
+}
+
+
+
+
+
+.post-item {
+    border-top: 1px solid $mirum-blue;
+    color: $mirum-dark-purple;
+    cursor: pointer;
+    padding: 1rem 1.5rem;
+    transition: all .2s $easeOut;
+    margin: 0 8px 2rem;
+
+    @include breakpoint($breakpoint-medium) {
+        flex: 0 0 calc(50% - 16px);
+    }
+
+    @include breakpoint($breakpoint-large) {
+        flex: 0 0 calc(33.33% - 16px);
+    }
+
+    &:hover {
+        background-color: $mirum-blue;
+    }
+
+    &__type,
+    &__time {
+        text-transform: uppercase;
+    }
+
+    &__label {
+        font-weight: bold;
+    }
+
+    &__time {
+        @extend .numbers-timing;
+    }
+
+    &__headline {
+        font-size: em(16);
+        margin-bottom: 0.25rem;
+    }
+
+}
+
+.thumbnail-item {
+
+    cursor: pointer;
+    padding: 0px 0px;
+    transition: all .2s $easeOut;
+    margin: 0 1px 2rem 0;
+
+    @include breakpoint($breakpoint-medium) {
+        flex: 0 0 calc(50% - 1px);
+    }
+
+    @include breakpoint($breakpoint-large) {
+        flex: 0 0 calc(33.33% - 1px);
+    }
+
+    &:last-of-type {
+        margin-right: 0;
+    }
+
+    &:nth-child(3) {
+        @include breakpoint($breakpoint-medium) {
+            margin-right: 1px;
+        }
+
+        @include breakpoint($breakpoint-large) {
+            margin-right: 0;
+        }
+    }
+
+    &__headline {
+        font-size: em(16);
+        text-transform: uppercase;
+        font-weight: $mirum-sans-bold;
+        margin: 1.25rem 0 0rem;
+    }
+
+    &__img {
+        width: 100%;
+        height: auto;
+    }
+
 }

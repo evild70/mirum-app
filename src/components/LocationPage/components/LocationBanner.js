@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import MirumLogo from '../../svg/MirumLogo';
 
 const LocationBanner = ({location, bannerImg, children}) => {
 
@@ -8,22 +9,22 @@ const LocationBanner = ({location, bannerImg, children}) => {
         }
     }
 
-    // <section className="hero">
-    //     <div className="hero__content">
-    //         {children}
-    //     </div>
-    //     <div className="hero__media">
-    //         <div className="hero__image" style={styles.media}></div>
-    //     </div>
-    // </section>
-
     return (
-        <section className="hero">
-            <div className="hero__content">
-                {children}
-            </div>
-            <div className="hero__media">
-                <div className="hero__image" style={styles.media}></div>
+        <section className="hero-wrapper">
+            <div className="hero">
+                <div className="hero__content">
+                    <div className="hero__copy">
+                        <div className="hero__logo">
+                            <MirumLogo className="logo logo--dark" />
+                        </div>
+                        <div className="hero__details">
+                            {children}
+                        </div>
+                    </div>
+                </div>
+                <div className="hero__media">
+                    <div className="hero__image" style={styles.media}></div>
+                </div>
             </div>
         </section>
     );

@@ -5,7 +5,9 @@ import CareersCollection from '../../CareersCollection/CareersCollection';
 import LocationLeadership from '../components/LocationLeadership';
 import WorkCollection from '../../WorkCollection/WorkCollection';
 import LocationDetails from '../components/LocationDetails';
+import LocationSlideshow from '../components/LocationSlideshow';
 import { fetchLocation } from '../thunks';
+import { capitalizeFirstLetter } from '../../../helpers/capitalize';
 import LatestNewsCollection from '../../LatestNews/LatestNewsCollection';
 
 export class LocationPage extends Component {
@@ -15,8 +17,9 @@ export class LocationPage extends Component {
     }
 
     componentWillMount() {
-        this.location = this.props.params.locationId;
-        this.props.fetchLocation(this.location);
+        this.locationId = this.props.params.locationId;
+        this.locationPretty = capitalizeFirstLetter(this.locationId);
+        this.props.fetchLocation(this.locationId);
     }
 
     render() {
@@ -27,12 +30,13 @@ export class LocationPage extends Component {
         return (
             <div>
                 <LocationBanner bannerImg={details.banner_image}>
-                    <LocationDetails meta={meta} name={this.location} />
+                    <LocationDetails meta={meta} name={this.locationPretty} />
                 </LocationBanner>
-                <WorkCollection location={this.location} />
-                <CareersCollection location={this.location} />
-                <LocationLeadership items={details.leadership} location={this.location} />
-                <LatestNewsCollection location={this.location} />
+                <LocationSlideshow />
+                <WorkCollection location={this.locationPretty} />
+                <CareersCollection location={this.locationPretty} />
+                <LocationLeadership items={details.leadership} location={this.locationPretty} />
+                <LatestNewsCollection location={this.locationPretty} />
             </div>
         );
     }

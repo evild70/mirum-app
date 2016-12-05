@@ -1,22 +1,61 @@
+.hero-wrapper {
+    height: 800px;
+    display: block;
+}
 .hero {
-    height: 95vh;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: nowrap;
     width: 100%;
     display: flex;
+    height: 100%;
+
     &__media {
         height: 100%;
         display: block;
-        flex: 0 0 65%;
+        flex: 0 0 100%;
+
+        @media (min-width: $breakpoint-small) {
+            flex: 1 1 auto;
+            width: 65%;
+        }
     }
+
+    &__content {
+        flex: 0 0 100%;
+        height: 100%;
+        background-color: #F9EB5E;
+        display: block;
+        padding: 1rem 1rem 3rem;
+
+        @media (min-width: $breakpoint-small) {
+            flex: 1 1 auto;
+            width: 35%;
+        }
+
+    }
+
+    &__copy {
+        width: 400px;
+        float: right;
+        display: flex;
+        height: 100%;
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
+
     &__image {
         display: block;
         height: 100%;
         width: 100%;
         background-size: cover;
     }
-    &__content {
-        flex: 0 0 35%;
-        height: 100%;
-        background-color: yellow;
-        display: block;
+
+    &__logo {
+        flex-grow: 1;
     }
+
+    &__details {
+    }
+
 }
