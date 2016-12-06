@@ -4,11 +4,12 @@
 }
 
 .styleguide-section {
-    @include container($container-1440);
+    @include container;
     padding: 35px 15px;
 
-    h1 {
+    h1.section-title {
         font-family: $mirum-serif-regular;
+        margin-bottom: 1em;
     }
 
     h2.sub-title {
@@ -26,6 +27,7 @@
     font-family: $monospace;
     font-size: em(12);
     border-radius: 3px;
+    white-space: nowrap;
 }
 
 /*********************
@@ -34,11 +36,12 @@
 .sg-colors {
     @include container;
     .color-list {
+        @include reset-list;
         display: flex;
         flex-wrap: wrap;
 
         li {
-            flex: 0 1 33.33%;
+            flex: 0 1 20%;
 
             display: flex;
             flex-direction: column;
@@ -47,13 +50,27 @@
             margin-bottom: 50px;
             padding: 0 20px;
             text-align: center;
+
+            p {
+                margin: 0 0 1em;
+            }
+
+            p.hex {
+                line-height: 1.6;
+            }
         }
 
         .color-circle {
             border-radius: 50%;
             border: 1px solid lightgrey;
-            height: 175px;
-            width: 175px;
+            height: 100px;
+            margin: 0 auto 1em;
+            width: 100px;
+
+            @include breakpoint($breakpoint-large) {
+                height: 175px;
+                width: 175px;
+            }
 
             &.is-white {
                 border: 2px solid lightgrey;
@@ -61,3 +78,54 @@
         }
     }
 }
+
+
+/*********************
+ TYPOGRAPHY
+*********************/
+.sg-typography {
+    @include container;
+
+    display: flex;
+
+    .card-column {
+        flex: 0 1 50%;
+        margin-right: 35px;
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+
+    .element-card {
+        border-top: 1px solid #959595;
+        padding: 30px 0;
+        min-height: 210px;
+
+        &__title {
+            font-family: $mirum-sans-bold;
+            font-size: em(18);
+            margin-top: 0;
+
+            span {
+                font-family: $mirum-sans-regular;
+            }
+        }
+
+        &__sample {
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+
+        &__description {
+
+        }
+    }
+}
+
+
+
+
+
+
+

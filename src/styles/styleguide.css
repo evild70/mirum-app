@@ -1049,6 +1049,7 @@ h2.component-header {
 h1, h2, h3, h4, h5, h6 {
   font-family: "mirum_sansregular", Verdana, Helvetica, Arial, sans-serif;
   font-weight: normal;
+  margin: 0;
 }
 
 h1 {
@@ -1061,12 +1062,23 @@ h2 {
 
 h3 {
   font-family: "mirum_sansregular", Verdana, Helvetica, Arial, sans-serif;
-  font-size: 1.125em;
+  font-size: 1em;
   text-transform: uppercase;
 }
 
 h4 {
-  font-size: 1.125em;
+  font-family: "mirum_serifregular", Times New Roman, Times, Georgia, serif;
+  font-size: 1.875em;
+}
+
+h5 {
+  font-family: "mirum_sansregular", Verdana, Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  text-transform: uppercase;
+}
+
+h6 {
+  font-size: 0.75em;
 }
 
 .numbers-timing, .post-item__time {
@@ -2232,7 +2244,7 @@ h4 {
 }
 
 .styleguide-section {
-  max-width: 1440px;
+  max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
   padding: 35px 15px;
@@ -2244,8 +2256,9 @@ h4 {
   clear: both;
 }
 
-.styleguide-section h1 {
+.styleguide-section h1.section-title {
   font-family: "mirum_serifregular", Times New Roman, Times, Georgia, serif;
+  margin-bottom: 1em;
 }
 
 .styleguide-section h2.sub-title {
@@ -2262,6 +2275,7 @@ h4 {
   font-family: Consolas, Monaco, "Courier New", Courier, monospace;
   font-size: 0.75em;
   border-radius: 3px;
+  white-space: nowrap;
 }
 
 /*********************
@@ -2280,6 +2294,9 @@ h4 {
 }
 
 .sg-colors .color-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -2289,9 +2306,9 @@ h4 {
 }
 
 .sg-colors .color-list li {
-  -webkit-flex: 0 1 33.33%;
-      -ms-flex: 0 1 33.33%;
-          flex: 0 1 33.33%;
+  -webkit-flex: 0 1 20%;
+      -ms-flex: 0 1 20%;
+          flex: 0 1 20%;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -2306,13 +2323,79 @@ h4 {
   text-align: center;
 }
 
+.sg-colors .color-list li p {
+  margin: 0 0 1em;
+}
+
+.sg-colors .color-list li p.hex {
+  line-height: 1.6;
+}
+
 .sg-colors .color-list .color-circle {
   border-radius: 50%;
   border: 1px solid lightgrey;
-  height: 175px;
-  width: 175px;
+  height: 100px;
+  margin: 0 auto 1em;
+  width: 100px;
+}
+
+@media (min-width: 60em) {
+  .sg-colors .color-list .color-circle {
+    height: 175px;
+    width: 175px;
+  }
 }
 
 .sg-colors .color-list .color-circle.is-white {
   border: 2px solid lightgrey;
+}
+
+/*********************
+ TYPOGRAPHY
+*********************/
+.sg-typography {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.sg-typography:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+.sg-typography .card-column {
+  -webkit-flex: 0 1 50%;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
+  margin-right: 35px;
+}
+
+.sg-typography .card-column:last-of-type {
+  margin-right: 0;
+}
+
+.sg-typography .element-card {
+  border-top: 1px solid #959595;
+  padding: 30px 0;
+  min-height: 210px;
+}
+
+.sg-typography .element-card__title {
+  font-family: "mirum_sansregular", Verdana, Helvetica, Arial, sans-serif;
+  font-size: 1.125em;
+  margin-top: 0;
+}
+
+.sg-typography .element-card__title span {
+  font-family: "mirum_sansregular", Verdana, Helvetica, Arial, sans-serif;
+}
+
+.sg-typography .element-card__sample {
+  margin-bottom: 20px;
+  margin-top: 20px;
 }

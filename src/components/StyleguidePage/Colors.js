@@ -8,7 +8,7 @@ export class Colors extends Component {
     }
 
     renderColorList(data, index) {
-        const { color, code, desc } = data;
+        const { color, code } = data;
 
         const bgColor = {
             "backgroundColor": `${color}`
@@ -16,9 +16,13 @@ export class Colors extends Component {
 
         return (
             <li key={index}>
+                <div className="color-circle-container">
+
+                </div>
                 <div className="color-circle" style={bgColor}></div>
-                <p>{color} : <span className="sg-inline-code">{code}</span></p>
-                <p dangerouslySetInnerHTML={{__html: desc}}></p>
+
+                <p className="hex">{color}<br /><span className="sg-inline-code">{code}</span></p>
+                {/*<p dangerouslySetInnerHTML={{__html: desc}}></p>*/}
             </li>
         )
     }
@@ -40,6 +44,11 @@ export class Colors extends Component {
                     "color": "#ffffff",
                     "code": "$mirum-white",
                     "desc": "Typography on Dark Backgrounds<br>Background Use"
+                },
+                {
+                    "color": "#14a74a",
+                    "code": "$mirum-green",
+                    "desc": ""
                 },
                 {
                     "color": "#eb2f25",

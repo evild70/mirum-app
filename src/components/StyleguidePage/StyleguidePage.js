@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 // import Data from '../../helpers/styleguide/sample-data.json'
 import StyleguideSection from './StyleguideSection';
 import Colors from './Colors';
+import Typography from './Typography';
 
 // import sgjson from './styleguide-layout.json';
 
@@ -19,7 +20,11 @@ export class StyleguidePage extends Component {
                 </StyleguideSection>
 
                 <StyleguideSection title="02. Typography">
-                    <Colors />
+                    <Typography />
+                </StyleguideSection>
+
+                <StyleguideSection title="03. UI Elements">
+
                 </StyleguideSection>
             </div>
         );

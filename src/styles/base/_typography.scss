@@ -6,6 +6,7 @@ h2.component-header {
 h1, h2, h3, h4, h5, h6 {
     font-family: $mirum-sans-regular;
     font-weight: normal;
+    margin: 0;
 }
 
 h1 {
@@ -18,12 +19,23 @@ h2 {
 
 h3 {
     font-family: $mirum-sans-bold;
-    font-size: em(18);
+    font-size: em(16);
     text-transform: uppercase;
 }
 
 h4 {
-    font-size: em(18);
+    font-family: $mirum-serif-regular;
+    font-size: em(30);
+}
+
+h5 {
+    font-family: $mirum-sans-bold;
+    font-size: em(16);
+    text-transform: uppercase;
+}
+
+h6 {
+    font-size: em(12);
 }
 
 .numbers-timing {

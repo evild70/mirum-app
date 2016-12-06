@@ -1049,6 +1049,7 @@ h2.component-header {
 h1, h2, h3, h4, h5, h6 {
   font-family: "mirum_sansregular", Verdana, Helvetica, Arial, sans-serif;
   font-weight: normal;
+  margin: 0;
 }
 
 h1 {
@@ -1061,12 +1062,23 @@ h2 {
 
 h3 {
   font-family: "mirum_sansregular", Verdana, Helvetica, Arial, sans-serif;
-  font-size: 1.125em;
+  font-size: 1em;
   text-transform: uppercase;
 }
 
 h4 {
-  font-size: 1.125em;
+  font-family: "mirum_serifregular", Times New Roman, Times, Georgia, serif;
+  font-size: 1.875em;
+}
+
+h5 {
+  font-family: "mirum_sansregular", Verdana, Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  text-transform: uppercase;
+}
+
+h6 {
+  font-size: 0.75em;
 }
 
 .numbers-timing, .post-item__time {
