@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import ThumbnailCollectionExpandableItem from './ThumbnailCollectionExpandableItem';
-import { setExpandable } from '../../helpers/expander';
+import { toggleExpandable, initExpandable } from '../../helpers/expander';
 
 class ThumbnailCollectionExpandable extends Component {
 
@@ -28,14 +28,17 @@ class ThumbnailCollectionExpandable extends Component {
         path: PropTypes.string
     }
 
+    componentDidMount() {
+        initExpandable(this.expander.refs.wrapper)
+    }
+
     expand = item => ref => {
         this.setState({
             hasExpandedItem: true,
             expandedItemData: item
         })
         this.expander.refs.item = ref;
-        console.log(this.expander.refs.expanded)
-        setExpandable({
+        toggleExpandable({
             wrapper: this.expander.refs.wrapper,
             item: this.expander.refs.item,
             drawer: this.expander.refs.drawer
@@ -48,32 +51,35 @@ class ThumbnailCollectionExpandable extends Component {
         const { hasExpandedItem, expandedItemData } = this.state;
 
         return (
-            <div className="collection-list collection-list--thumbnails expandable-wrapper expandable-wrapper--leadership" ref={ ref => {this.expander.refs.wrapper = ref} }>
-                { loaded ?
-                    <ul>
+            <div>
+                <div className="collection-list collection-list--thumbnails expandable-wrapper expandable-wrapper--leadership" ref={ ref => {this.expander.refs.wrapper = ref} }>
+                    { loaded ?
+                        <ul>
                         {items.map( (item, index) =>
                             <ThumbnailCollectionExpandableItem
-                                key={index}
-                                title={ item[title] }
-                                image={ item[image] }
-                                label={ item[label] }
-                                link={ item[link] }
-                                path={ path }
-                                expand={ this.expand(item) }
+                            key={index}
+                            title={ item[title] }
+                            image={ item[image] }
+                            label={ item[label] }
+                            link={ item[link] }
+                            path={ path }
+                            expand={ this.expand(item) }
                             />
                         )}
-                    </ul> :
-                    <p>Loading</p>
-                }
+                        </ul> :
+                        <p>Loading</p>
+                    }
 
-                <div className="expandable-container" ref={ ref => {this.expander.refs.drawer = ref} }>
-                    { hasExpandedItem ?
-                        <div className="expandable-container__contents">
+                    <div className="expandable-container" ref={ ref => {this.expander.refs.drawer = ref} }>
+                        { hasExpandedItem ?
+                            <div className="expandable-container__contents">
                             <h1>{expandedItemData[title]}</h1>
                             <h2>{expandedItemData[label]}</h2>
-                        </div> :
-                        null
-                    }
+                            <p>Thingy magij Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            </div> :
+                            null
+                        }
+                    </div>
                 </div>
             </div>
         );

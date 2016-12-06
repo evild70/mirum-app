@@ -1,53 +1,85 @@
-function closeItem(item) {
+/* eslint-disable */
+
+function closePreviousItem(openItem) {
     return new Promise( resolve => {
-        item.classList.remove('is-open');
-        item.addEventListener("transitionend", event => resolve(event), false)
+        $(openItem).removeClass('is-open');
+        openItem.addEventListener("transitionend", event => resolve(event), false)
     });
 }
 
-function findAncestor (el, className) {
-    do {
-        el = el.parentElement
-    }
-    while ( !el.classList.contains(className) );
-    return el;
-}
+function openExpandable(data) {
 
-function addIsOpenToItem(data) {
-    if (data.item.classList.contains('expandable-item')) {
-        data.item.classList.add('is-open');
+    var bottom = data.item.offsetHeight + data.item.offsetTop,
+        itemIsExpander = data.item.classList.contains('expandable-item'),
+        itemHeight = data.item.offsetHeight,
+        drawerHeight,
+        itemMarginBottom,
+        addedMargin,
+        ancestor,
+        ancestorHeight,
+        ancestorMarginBottom;
+
+    $(data.drawer).css('top', `${bottom}px`)
+
+    if (itemIsExpander) {
+        $(data.item).addClass('is-open')
+
+        setTimeout( () => {
+            data.drawer.classList.add('is-open');
+            drawerHeight = $(data.drawer).height()
+            $(data.item).css('margin-bottom', `${drawerHeight}px`)
+        }, 400)
+
     }
     else {
-        var itemAncestor = findAncestor(data.item, 'expandable-item')
-        itemAncestor.classList.add('is-open');
+
+        ancestor = $(data.item).closest('.expandable-item')
+        ancestorHeight = ancestor.height()
+        ancestorMarginBottom = ancestor.css('marginBottom').replace('px', '')
+
+        ancestor.addClass('is-open');
+
+        setTimeout( () => {
+            $(data.drawer).addClass('is-open')
+            drawerHeight = $(data.drawer).height()
+            addedMargin = drawerHeight - (ancestorHeight - itemHeight);
+            ancestor.css('margin-bottom', `${addedMargin}px`)
+        }, 400)
     }
 }
 
+export function toggleExpandable(data) {
 
-function afterCloseItem(data) {
-    var bottom = data.item.offsetHeight + data.item.offsetTop;
-    data.drawer.style.top = bottom + 'px';
-    addIsOpenToItem(data);
-    setTimeout( () => {
-        data.drawer.classList.add('is-open');
-    }, 400)
-}
-
-
-
-export function setExpandable(data) {
-
-
-
-    data.drawer.classList.remove('is-open');
     var openItem = data.wrapper.getElementsByClassName('is-open')[0]
+    data.drawer.classList.remove('is-open');
+
     if (openItem) {
-        closeItem(openItem).then( () => {
-            afterCloseItem(data)
+        $(openItem).css('margin-bottom', '');
+
+        closePreviousItem(openItem).then( () => {
+            openExpandable(data);
         });
     }
     else {
-        afterCloseItem(data)
+        openExpandable(data);
     }
-
 };
+
+export function initExpandable(target) {
+
+    var _target = $(target),
+        _window = $(window),
+        resizeTimer,
+        windowWidth = _window.width();
+
+    $(window).on('resize', function(e) {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+            if (_window.width() !== windowWidth) {
+                windowWidth = _window.width();
+                _target.find('.expandable-container').removeClass('is-open');
+                _target.find('.expandable-item').removeClass('is-open is-inactive');
+            }
+        }, 100);
+    });
+}
