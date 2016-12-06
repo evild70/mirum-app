@@ -10,7 +10,9 @@ class ThumbnailCollectionExpandableItem extends Component {
 
         return (
             <li className="thumbnail-item expandable-item" onClick={this.onClick}>
-                <img className="thumbnail-item__img" src={image} role="presentation" ref={ ref => { this.itemRef = ref } } />
+                <div className="thumbnail-item__img" style={{backgroundImage: `url(${image})`}} ref={ ref => { this.itemRef = ref } }>
+                    <img src={image} role="presentation" />
+                </div>
                 <h3 className="thumbnail-item__headline">
                     {title}
                 </h3>
