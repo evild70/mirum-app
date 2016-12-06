@@ -15,7 +15,6 @@ export class LocationSlideshow extends Component {
     render() {
       return (
         <div className="module module-slider">
-          <div className="container">
             <div className="slider-container">
               <a href="#" className="close module-slider__close  js-kill-slider">Close<span className="visibly-hidden"> the slider</span></a>
               <div className="slider slider--unset">
@@ -37,10 +36,9 @@ export class LocationSlideshow extends Component {
               </div>
             </div>
             <div className="content">
-              <h1>Lorem Ipsum</h1>
+              <h1>This is where we work.</h1>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             </div>
-          </div>
         </div>
       );
     }
@@ -98,11 +96,11 @@ function initSlider() {
 
       if (_slider.hasClass('slider--unset')) {
 
-        var slidelength = 3;
+        var slidelength = 4;
         var timeout = 0;
 
         for (var i = 0; i < slidelength; i++) {
-          if (i === 1 || i === 2) {
+          if (i > 0 && i < 4) {
             $(_slides[i]).addClass('slide--transform');
             timeout += transitionend($(_slides[i]));
           }
