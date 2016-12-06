@@ -6,7 +6,7 @@ export class StyleguideSection extends Component {
 
         return (
             <div className="styleguide-section">
-                <h1>{title}</h1>
+                <h1 className="section-title">{title}</h1>
                 { children }
             </div>
         );
