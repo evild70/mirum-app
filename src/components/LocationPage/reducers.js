@@ -1,4 +1,4 @@
-import * as t from './actionTypes';
+import t from './actions';
 
 export const LocationState = {
     details: {

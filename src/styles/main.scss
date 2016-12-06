@@ -14,6 +14,7 @@
 
 // Vendors
 @import 'vendor/breakpoint';
+@import 'vendor/slick';
 
 // Base stuff
 @import
@@ -43,6 +44,7 @@
     'components/MapCircle',
     'components/Logo',
     'components/Expandable',
+    'components/Slider',
     'components/NavOverlay';
 
 // Page-specific styles
