@@ -5,22 +5,43 @@
 }
 
 .container-lrg {
+    @include clearfix;
     margin: 0 auto;
     max-width: 1600px;
-    overflow: hidden;
 }
 
 .container-reg {
+    @include clearfix;
     margin: 0 auto;
     max-width: 1230px;
     padding: 0 15px;
-    overflow: hidden;
 }
 
-.grey-bkgd {
-    @include grey-bkgd;
+
+.grey-bg {
+    @include grey-bg;
 }
 
-.purple-bkgd {
+.purple-bg {
     background-color: $mirum-dark-purple;
+}
+
+.blue-bg {
+    background-color: $mirum-blue;
+}
+
+.pink-bg {
+    background-color: $mirum-pink;
+}
+
+.green-bg {
+    background-color: $mirum-green;
+}
+
+.yellow-bg {
+    background-color: $mirum-yellow;
+}
+
+.red-bg {
+    background-color: $mirum-red;
 }

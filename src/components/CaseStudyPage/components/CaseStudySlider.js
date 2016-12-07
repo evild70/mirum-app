@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { initSlider, destroySlider } from '../../../helpers/slider';
 
-export class LocationSlideshow extends Component {
+export class CaseStudySlideshow extends Component {
 
     componentDidMount() {
       initSlider()
@@ -36,8 +36,8 @@ export class LocationSlideshow extends Component {
             </div>
             <div className="content">
                 <div className="content-box">
-                  <h1>This is where we work.</h1>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                  <h1>Advice thats tailor-made for the dreamer.</h1>
+                  <p>A brief description of how Mirum approached the task, elevated value and produced results. This is a summary of Mirum and our approach to work--not a summary of a client and their product. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                   <button className="primary-button">View Gallery</button>
                 </div>
             </div>
@@ -46,4 +46,4 @@ export class LocationSlideshow extends Component {
     }
 }
 
-export default LocationSlideshow;
+export default CaseStudySlideshow;

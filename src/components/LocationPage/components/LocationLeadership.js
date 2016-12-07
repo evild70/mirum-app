@@ -3,7 +3,7 @@ import ThumbnailCollectionExpandable from '../../ThumbnailCollectionExpandable';
 
 const LocationLeadership = ({items, location}) => {
     return (
-        <div className="leadership-section section--padding purple-bkgd">
+        <div className="leadership-section section--padding purple-bg">
             <div className="container-reg">
                 <div className="collection collection--light">
 

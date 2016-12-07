@@ -27,7 +27,7 @@
 
     &__inner {
         @include container();
-        @include grey-bkgd();
+        @include grey-bg();
         box-sizing: border-box;
         display: block;
         padding: 60px 1rem;

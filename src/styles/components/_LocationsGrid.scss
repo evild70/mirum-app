@@ -8,7 +8,7 @@
 
 .locations-grid__grid {
     background-color: #fff;
-    // @include grey-bkgd();
+    // @include grey-bg();
     color: #000;
     display: flex;
     flex-wrap: wrap;
@@ -22,7 +22,7 @@
     }
 
     &:after {
-        @include grey-bkgd();
+        @include grey-bg();
         position: absolute;
         left: 0;
         bottom: 0;
@@ -136,7 +136,7 @@
 
     .choice-container {
         @include container;
-        @include grey-bkgd;
+        @include grey-bg;
 
         text-align: left;
 

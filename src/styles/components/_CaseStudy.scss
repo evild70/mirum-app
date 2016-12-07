@@ -1,9 +1,21 @@
 .project-synopsis {
     &__item {
         @include span(4 of 12);
+        padding-top: 15px;
+        padding-bottom: 15px;
         border-top: 2px solid $mirum-dark-purple;
         &:last-of-type {
             margin-right: 0;
         }
     }
+}
+
+.article-section {
+    max-width: 600px;
+    display: block;
+    margin: 0 auto 30px;
+}
+
+.article-tags {
+    padding: 15px 0;
 }

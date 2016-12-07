@@ -3,7 +3,6 @@ import { IndexLink } from 'react-router';
 import { connect } from 'react-redux';
 import { Link } from 'react-router'
 import { toggleMainNav } from '../../store/actions';
-import mainNavBkgd from '../../images/main-nav-bkgd-fpo.jpg';
 import MirumLogo from '../svg/MirumLogo';
 
 export class MainNav extends Component {
@@ -36,11 +35,6 @@ export class MainNav extends Component {
     }
 
     render() {
-        const bkgd = {
-            backgroundImage: 'url(' + mainNavBkgd + ')',
-            backgroundPosition: '0 0',
-            backgroundRepeat: 'no-repeat'
-        }
 
         const { mainNavIsOpen, toggleMainNav } = this.props;
 
@@ -52,7 +46,7 @@ export class MainNav extends Component {
                     <span className="burger" />
                 </div>
 
-                <div className="main-nav-container" style={bkgd}>
+                <div className="main-nav-container">
                     <div className="main-logo">
                         <IndexLink to="/">
                             <MirumLogo />
