@@ -9,7 +9,6 @@ export class StyleguideSection extends Component {
                 <div className="container-reg">
                     <h1 className="section-title">{title}</h1>
                 </div>
-
                 { children }
             </div>
         );

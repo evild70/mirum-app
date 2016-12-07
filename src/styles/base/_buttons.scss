@@ -3,13 +3,15 @@
     -webkit-appearance: none;
     background-color: #fff;
     border: 1px solid #fff;
+    color: $mirum-dark-purple;
     font-family: $mirum-sans-bold;
     font-size: em(16);
     line-height: 1;
     margin: 0;
     min-height: 40px;
     padding: 0 0;
-    transition: all .2s $easeInOut;
+    cursor: pointer;
+    transition: padding .2s $easeInOut, border .2s $easeInOut;
 
     &:hover,
     &:focus,
@@ -36,4 +38,61 @@
         background-color: $mirum-blue;
         border: 1px solid $mirum-blue;
     }
+
+    .grey-bg & {
+        border-color: $mirum-bone-white;
+        background-color: $mirum-bone-white;
+    }
+
+    .yellow-bg & {
+        border-color: $mirum-yellow;
+        background-color: $mirum-yellow;
+    }
+
+    .grey-bg &,
+    .yellow-bg & {
+        &:hover,
+        &.sg-hover {
+            background-color: #fff;
+            border: 1px solid $mirum-blue;
+        }
+
+        &:focus,
+        &.sg-focus {
+            border: 1px solid $mirum-pink;
+        }
+
+        &:active,
+        &.sg-active {
+            background-color: $mirum-blue;
+            border: 1px solid $mirum-blue;
+        }
+    }
+
+    .green-bg &,
+    .pink-bg &,
+    .dark-purple-bg & {
+        background-color: transparent;
+        border-color: transparent;
+        color: #fff;
+
+        &:hover,
+        &.sg-hover {
+            border: 1px solid #fff;
+        }
+
+        &:focus,
+        &.sg-focus {
+            border: 1px solid #fff;
+        }
+
+        &:active,
+        &.sg-active {
+            background-color: $mirum-blue;
+            border: 1px solid $mirum-dark-purple;
+            color: $mirum-dark-purple;
+        }
+    }
 }
+
+

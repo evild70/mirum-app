@@ -74,7 +74,7 @@ export class Colors extends Component {
         }
 
         return (
-            <div>
+            <div className="container-reg">
                 <div className="sg-colors">
                     <ul className="color-list">
                         {

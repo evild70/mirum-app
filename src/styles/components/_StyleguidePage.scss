@@ -13,6 +13,7 @@
         font-family: $mirum-sans-bold;
         font-size: em(18);
         text-transform: uppercase;
+        margin-bottom: 15px;
     }
 }
 
@@ -82,9 +83,11 @@
  TYPOGRAPHY
 *********************/
 .sg-typography {
-    @include clearfix;
 
-    display: flex;
+    .card-column-container {
+        @include clearfix;
+        display: flex;
+    }
 
     .card-column {
         flex: 0 1 50%;
@@ -149,6 +152,10 @@
 
 .buttons-guide {
     min-height: 275px;
+
+    &.dark-purple-bg, &.green-bg, &.pink-bg {
+        color: #fff;
+    }
 
     &__container {
         @include clearfix;
