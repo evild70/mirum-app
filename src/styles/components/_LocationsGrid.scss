@@ -1,12 +1,9 @@
-.locations-grid {
-    @include grey-bkgd();
-}
-
 .locations-grid__container {
-    @include container();
-    @include component-padding();
-
     text-align: center;
+
+    h1 {
+        margin-bottom: 60px;
+    }
 }
 
 .locations-grid__grid {
@@ -48,8 +45,6 @@
     // border: 1px solid $color-light-grey;
     // background-color: #fff;
     height: 100px;
-
-
 
     @include breakpoint($breakpoint-very-small) {
         // flex: 0 1 calc(50% - 2px);
@@ -129,6 +124,10 @@
 }
 
 .locations-grid__choice {
+    display: none;
+
+
+
     @include clearfix;
     position: absolute;
     top: 0;
@@ -159,7 +158,6 @@
             min-height: 400px;
             padding: 0 35px 60px;
         }
-
     }
 
     .choice-image {
@@ -171,8 +169,6 @@
             max-height: 400px;
         }
     }
-
-
 
     .continent {
         font-family: $mirum-sans-bold;

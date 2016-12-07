@@ -1,20 +1,17 @@
-
 .styleguide-page {
 
 }
 
 .styleguide-section {
-    @include container;
-    padding: 35px 15px;
-
-    h1.section-title {
+    border-bottom: 1px solid $mirum-bone-white;
+    .section-title {
         font-family: $mirum-serif-regular;
         margin-bottom: 1em;
     }
 
-    h2.sub-title {
+    .sub-title {
         font-family: $mirum-sans-bold;
-        font-size: em(20);
+        font-size: em(18);
         text-transform: uppercase;
     }
 }
@@ -34,7 +31,8 @@
  COLORS
 *********************/
 .sg-colors {
-    @include container;
+    @include clearfix;
+
     .color-list {
         @include reset-list;
         display: flex;
@@ -84,7 +82,7 @@
  TYPOGRAPHY
 *********************/
 .sg-typography {
-    @include container;
+    @include clearfix;
 
     display: flex;
 
@@ -123,6 +121,51 @@
     }
 }
 
+/*********************
+ UI ELEMENTS
+*********************/
+.sg-ui-elements {
+
+    .primary-button {
+        // &.sg-hover, &.sg-focus, &.sg-active {
+        //     padding-left: 30px;
+        //     padding-right: 30px;
+        // }
+
+        // &.sg-hover {
+        //     border: 1px solid $mirum-blue;
+        // }
+
+        // &.sg-focus {
+        //     border: 1px solid $mirum-pink;
+        // }
+
+        // &.sg-active {
+        //     background-color: $mirum-blue;
+        //     border: 1px solid $mirum-blue;
+        // }
+    }
+}
+
+.buttons-guide {
+
+    &__container {
+        @include clearfix;
+    }
+
+    &__card {
+        @include span(6 of 12);
+        margin-bottom: 15px;
+
+        @include breakpoint($breakpoint-large) {
+            @include span(3 of 12);
+
+            &:last-of-type {
+                @include span(last 3 of 12);
+            }
+        }
+    }
+}
 
 
 

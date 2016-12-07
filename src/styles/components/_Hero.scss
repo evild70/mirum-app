@@ -4,7 +4,7 @@
 }
 .hero {
 
-    @include container($container-1600);
+    @include container;
 
     height: 95vh;
 

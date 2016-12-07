@@ -15,5 +15,3 @@ build
 .DS_Store
 .env
 npm-debug.log
-main.css
-styleguide.css

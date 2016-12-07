@@ -88,26 +88,27 @@ export class LocationsGrid extends Component {
         }
 
         return (
-            <div className="locations-grid">
-                <div className="locations-grid__container">
-                    <h1>{headline}</h1>
+            <div className="locations-grid section section--padding grey-bkgd">
+                <div className="container-reg">
+                    <div className="locations-grid__container">
+                        <h1>{headline}</h1>
+                        <div className="locations-grid__grid" style={bkgd}>
+                            { locations.map(this.renderGrid) }
+                            <div className="locations-grid__choice">
+                                <div className="choice-container">
+                                    <div className="choice-content">
+                                        <h3 className="continent">North America</h3>
+                                        <h2 className="city-name">Minneapolis, MN</h2>
+                                        <ul className="office-stats">
+                                            <li><span className="temp">72&deg;</span>|<span className="time">4:03 PM</span></li>
+                                            <li><span className="employees">62 Employees</span></li>
+                                        </ul>
 
-                    <div className="locations-grid__grid" style={bkgd}>
-                        { locations.map(this.renderGrid) }
-                        <div className="locations-grid__choice">
-                            <div className="choice-container">
-                                <div className="choice-content">
-                                    <h3 className="continent">North America</h3>
-                                    <h2 className="city-name">Minneapolis, MN</h2>
-                                    <ul className="office-stats">
-                                        <li><span className="temp">72&deg;</span>|<span className="time">4:03 PM</span></li>
-                                        <li><span className="employees">62 Employees</span></li>
-                                    </ul>
-
-                                    <Link to="/" className="meet-link">Meet Mirum Minneapolis</Link>
-                                </div>
-                                <div className="choice-image">
-                                    <img src={contentImg} alt=""/>
+                                        <Link to="/" className="meet-link">Meet Mirum Minneapolis</Link>
+                                    </div>
+                                    <div className="choice-image">
+                                        <img src={contentImg} alt=""/>
+                                    </div>
                                 </div>
                             </div>
                         </div>

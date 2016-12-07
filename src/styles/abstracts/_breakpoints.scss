@@ -9,38 +9,8 @@ $breakpoint-xlarge: 75em; // 1200px
 // Susy layout
 $susy: (
     columns: 12,
-    container: 1280px,
-    gutters: 0,
-    global-box-sizing: content-box,
-    math: fluid,
-    output: float,
-    debug: (
-        image: hide,
-        color: rgba(#66f, .25),
-        output: background,
-        toggle: top right,
-    )
-);
-
-$container-1600: (
-    columns: 12,
-    container: 1600px,
-    gutters: 0,
-    global-box-sizing: content-box,
-    math: fluid,
-    output: float,
-    debug: (
-        image: hide,
-        color: rgba(#66f, .25),
-        output: background,
-        toggle: top right,
-    )
-);
-
-$container-1440: (
-    columns: 12,
-    container: 1440px,
-    gutters: 0,
+    container: 1200px,
+    gutters: 30px/70px,
     global-box-sizing: content-box,
     math: fluid,
     output: float,

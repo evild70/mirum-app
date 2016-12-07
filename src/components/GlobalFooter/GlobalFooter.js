@@ -44,60 +44,62 @@ export class GlobalFooter extends Component {
         const { items } = this.props;
 
         return (
-            <div className="global-footer" style={styles}>
-                <div className="gf-container">
-                    <div className="gf-logo">
-                        <span className="visibly-hidden">Mirum Agency</span>
-                        <svg className="icon icon-twitter">
-                            <MirumLogo />
-                        </svg>
-                    </div>
-                    <div className="gf-link-container">
-                        <div className="gf-social">
-                            <ul>
-                                <li>
-                                    <a href="#" target="_blank">
-                                      <span className="visibly-hidden">Twitter</span>
-                                      <svg className="icon icon-twitter">
-                                        <use xlinkHref="#icon-twitter"></use>
-                                      </svg>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" target="_blank">
-                                      <span className="visibly-hidden">Facebook</span>
-                                      <svg className="icon icon-facebook">
-                                        <use xlinkHref="#icon-facebook"></use>
-                                      </svg>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" target="_blank">
-                                      <span className="visibly-hidden">Instagram</span>
-                                      <svg className="icon icon-instagram">
-                                        <use xlinkHref="#icon-instagram"></use>
-                                      </svg>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" target="_blank">
-                                      <span className="visibly-hidden">LinkedIn</span>
-                                      <svg className="icon icon-linkedin">
-                                        <use xlinkHref="#icon-linkedin"></use>
-                                      </svg>
-                                    </a>
-                                </li>
-                            </ul>
+            <div className="global-footer section section--padding" style={styles}>
+                <div className="container-reg">
+                    <div className="gf-container">
+                        <div className="gf-logo">
+                            <span className="visibly-hidden">Mirum Agency</span>
+                            <svg className="icon icon-twitter">
+                                <MirumLogo />
+                            </svg>
                         </div>
-                        <div className="gf-nav">
-                            <ul>
-                                <li>
-                                    © 2016 Mirum All Rights Reserved
-                                </li>
+                        <div className="gf-link-container">
+                            <div className="gf-social">
+                                <ul>
+                                    <li>
+                                        <a href="#" target="_blank">
+                                          <span className="visibly-hidden">Twitter</span>
+                                          <svg className="icon icon-twitter">
+                                            <use xlinkHref="#icon-twitter"></use>
+                                          </svg>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank">
+                                          <span className="visibly-hidden">Facebook</span>
+                                          <svg className="icon icon-facebook">
+                                            <use xlinkHref="#icon-facebook"></use>
+                                          </svg>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank">
+                                          <span className="visibly-hidden">Instagram</span>
+                                          <svg className="icon icon-instagram">
+                                            <use xlinkHref="#icon-instagram"></use>
+                                          </svg>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank">
+                                          <span className="visibly-hidden">LinkedIn</span>
+                                          <svg className="icon icon-linkedin">
+                                            <use xlinkHref="#icon-linkedin"></use>
+                                          </svg>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div className="gf-nav">
+                                <ul>
+                                    <li>
+                                        © 2016 Mirum All Rights Reserved
+                                    </li>
 
-                                { items.map(this.renderNav) }
+                                    { items.map(this.renderNav) }
 
-                            </ul>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
