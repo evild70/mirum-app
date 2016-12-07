@@ -5,7 +5,6 @@ import { Link } from 'react-router'
 import { toggleMainNav } from '../../store/actions';
 import mainNavBkgd from '../../images/main-nav-bkgd-fpo.jpg';
 import MirumLogo from '../svg/MirumLogo';
-import MainNavButton from '../svg/MainNavButton';
 
 export class MainNav extends Component {
 
@@ -47,8 +46,10 @@ export class MainNav extends Component {
 
         return (
             <div className={"main-nav " + (mainNavIsOpen ? 'is-open' : '')}>
-                <div className="main-nav-button" onClick={toggleMainNav}>
-                    <MainNavButton isOpen={mainNavIsOpen} />
+                <div className="hamburger" onClick={toggleMainNav}>
+                    <span className="lettuce" />
+                    <span className="cheese" />
+                    <span className="burger" />
                 </div>
 
                 <div className="main-nav-container" style={bkgd}>

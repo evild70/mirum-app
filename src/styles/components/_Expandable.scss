@@ -1,8 +1,12 @@
 .expandable-item {
-    transition: margin-bottom 0.4s ease-in-out 0.3s;
+    transition: margin-bottom 0.4s ease-in-out 0.3s, opacity 0.2s;
 
     &.is-open {
-        transition: margin-bottom 0.4s ease-in-out 0s;
+        transition: margin-bottom 0.4s ease-in-out 0s, opacity 0.2s;
+    }
+
+    &.is-not-open {
+        opacity: 0.4;
     }
 }
 
@@ -11,27 +15,46 @@
 }
 
 .expandable-container {
+
     position: absolute;
-    width: 100%;
+    color: $mirum-dark-purple;
+    width: calc(100% - 2px);
     z-index: 99;
     top: 0px;
     left: 0px;
     display: block;
     overflow: hidden;
 
-    &__contents {
-        color: black;
-        background-color: white;
+    &__inner {
+        @include container();
+        @include grey-bkgd();
         box-sizing: border-box;
         display: block;
-        padding: 1rem;
+        padding: 60px 1rem;
         transform: translateY(-100px);
         opacity: 0;
         transition: transform 0.3s ease-in-out 0s, opacity 0.3s ease-in-out 0s;
     }
 
+    &__contents {
+        @include pre(2 of 12);
+        @include span(8 of 12);
+
+        @include breakpoint($breakpoint-very-small) {
+            @include pre(3 of 12);
+            @include span(6 of 12);
+        }
+    }
+
+    &__close {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        cursor: pointer;
+    }
+
     &.is-open {
-        .expandable-container__contents {
+        .expandable-container__inner {
             opacity: 1;
             transform: translateY(0);
             transition: transform 0.3s ease-in-out 0.5s, opacity 0.3s ease-in-out 0.5s;

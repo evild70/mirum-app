@@ -64,7 +64,7 @@
 
         .slide-image {
             width: 1038px;
-            height: 700px;
+            height: 600px;
             background-size: cover;
             display: block;
             margin: 0 auto;
@@ -74,11 +74,9 @@
 
     @media (min-width: $breakpoint-small) {
         padding-bottom: 0px;
-        .content,
-        .slider-container {
-            width: 40%;
-        }
+
         .content {
+            width: 40%;
             order: initial;
         }
         .content-box {
@@ -87,7 +85,7 @@
         .slider-container {
             order: initial;
             max-width: 100%;
-            width: 60%;
+            width: 50%;
             margin-top: 0px;
             padding-right: 0px;
         }

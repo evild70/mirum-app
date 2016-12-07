@@ -19,19 +19,19 @@ export class LocationSlideshow extends Component {
               <a href="#" className="close module-slider__close  js-kill-slider">Close<span className="visibly-hidden"> the slider</span></a>
               <div className="slider slider--unset">
                   <div className="slide">
-                      <div className="slide-image" style={{backgroundImage: "url('http://www.fillmurray.com//1000/700')"}} />
+                      <div className="slide-image" style={{backgroundImage: "url('http://imgur.com/eXQaM7P.jpg')"}} />
                   </div>
                   <div className="slide">
-                      <div className="slide-image" style={{backgroundImage: "url('http://www.fillmurray.com//1000/700')"}} />
+                      <div className="slide-image" style={{backgroundImage: "url('http://imgur.com/Fc7KPMu.jpg')"}} />
                   </div>
                   <div className="slide">
-                      <div className="slide-image" style={{backgroundImage: "url('http://www.fillmurray.com/g/1000/700')"}} />
+                      <div className="slide-image" style={{backgroundImage: "url('http://imgur.com/eEGQQo5.jpg')"}} />
                   </div>
                   <div className="slide">
-                      <div className="slide-image" style={{backgroundImage: "url('http://www.fillmurray.com//1000/700')"}} />
+                      <div className="slide-image" style={{backgroundImage: "url('http://imgur.com/vvTYqyU.jpg')"}} />
                   </div>
                   <div className="slide">
-                      <div className="slide-image" style={{backgroundImage: "url('http://www.fillmurray.com/g/1000/700')"}} />
+                      <div className="slide-image" style={{backgroundImage: "url('http://imgur.com/dBwokW4.jpg')"}} />
                   </div>
               </div>
             </div>
