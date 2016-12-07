@@ -98,6 +98,26 @@ export class CaseStudyPage extends Component {
                     </div>
                 </div>
 
+                <div className="section--padding">
+                    <div className="container-reg">
+                        <div className="imagegrid">
+                            <div className="imagegrid__col imagegrid__col--half">
+                                <div className="imagegrid__img" style={{backgroundImage: 'url(http://imgur.com/Fc7KPMu.jpg)'}}>
+                                    <img src="http://imgur.com/Fc7KPMu.jpg" alt="grid item" />
+                                </div>
+                            </div>
+                            <div className="imagegrid__col imagegrid__col--half">
+                                <div className="imagegrid__img" style={{backgroundImage: 'url(http://imgur.com/vvTYqyU.jpg)'}}>
+                                    <img src="http://imgur.com/vvTYqyU.jpg" alt="grid item" />
+                                </div>
+                                <div className="imagegrid__img" style={{backgroundImage: 'url(http://imgur.com/dBwokW4.jpg)'}}>
+                                    <img src="http://imgur.com/dBwokW4.jpg" alt="grid item" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
         );
