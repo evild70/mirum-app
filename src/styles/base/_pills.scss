@@ -1,0 +1,28 @@
+.pill {
+    display: inline-block;
+    padding: 5px 20px;
+    margin: 3px 6px 3px 0;
+    border: 1px solid $mirum-blue;
+    border-radius: 100px;
+    line-height: 1;
+
+    &--purple {
+        border-color: $mirum-dark-purple;
+    }
+
+    &--green {
+        border-color: $mirum-green;
+    }
+
+    &--pink {
+        border-color: $mirum-pink;
+    }
+
+    &--red {
+        border-color: $mirum-red;
+    }
+
+    &--yellow {
+        border-color: $mirum-yellow;
+    }
+}

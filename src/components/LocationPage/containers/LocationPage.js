@@ -29,12 +29,28 @@ export class LocationPage extends Component {
 
         return (
             <div>
-                <LocationBanner bannerImg={details.banner_image}>
-                    <LocationDetails meta={meta} name={this.locationPretty} />
-                </LocationBanner>
-                <LocationSlideshow />
-                <WorkCollection location={this.locationPretty} />
-                <CareersCollection location={this.locationPretty} />
+                <div className="section">
+                    <div className="container-lrg">
+                        <LocationBanner bannerImg={details.banner_image}>
+                            <LocationDetails meta={meta} name={this.locationPretty} />
+                        </LocationBanner>
+                    </div>
+                </div>
+                <div className="section--padding">
+                    <div className="container-lrg">
+                        <LocationSlideshow />
+                    </div>
+                </div>
+                <div className="section--padding">
+                    <div className="container-reg">
+                        <WorkCollection location={this.locationPretty} />
+                    </div>
+                </div>
+                <div className="section--padding">
+                    <div className="container-reg">
+                        <CareersCollection location={this.locationPretty} />
+                    </div>
+                </div>
                 <LocationLeadership items={details.leadership} location={this.locationPretty} />
                 <LatestNewsCollection location={this.locationPretty} />
             </div>

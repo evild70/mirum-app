@@ -38,27 +38,6 @@
         }
     }
 
-    .collection-list {
-        margin: 0 0;
-        padding: 0 0;
-        margin: 0 0;
-        color: $mirum-dark-purple;
-
-        &--posts {
-            margin: 0 -8px;
-        }
-
-        &--thumbnails {
-            margin: 0 -1px;
-        }
-
-        ul {
-            @include reset-list();
-            display: flex;
-            flex-wrap: wrap;
-        }
-    }
-
     &--light {
         .collection__header {
             color: white;
@@ -68,6 +47,27 @@
         }
     }
 
+}
+
+.collection-list {
+    margin: 0 0;
+    padding: 0 0;
+    margin: 0 0;
+    color: $mirum-dark-purple;
+
+    &--posts {
+        margin: 0 -8px;
+    }
+
+    &--thumbnails {
+        margin: 0 -1px;
+    }
+
+    ul {
+        @include reset-list();
+        display: flex;
+        flex-wrap: wrap;
+    }
 }
 
 

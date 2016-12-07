@@ -88,7 +88,7 @@ export class LocationsGrid extends Component {
         }
 
         return (
-            <div className="locations-grid section section--padding grey-bkgd">
+            <div className="locations-grid section section--padding grey-bg">
                 <div className="container-reg">
                     <div className="locations-grid__container">
                         <h1>{headline}</h1>

@@ -5,18 +5,25 @@
 }
 
 .container-lrg {
+    @include clearfix;
     margin: 0 auto;
     max-width: 1600px;
 }
 
 .container-reg {
+    @include clearfix;
     margin: 0 auto;
     max-width: 1230px;
     padding: 0 15px;
 }
 
-.grey-bkgd, .grey-bg {
-    @include grey-bkgd;
+
+.grey-bg {
+    @include grey-bg;
+}
+
+.purple-bg {
+    background-color: $mirum-dark-purple;
 }
 
 .blue-bg {
