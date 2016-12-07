@@ -1,7 +1,4 @@
 .collection {
-    @include container();
-    @include component-padding();
-
     &__header {
         position: relative;
     }
@@ -12,6 +9,7 @@
         margin-left: auto;
         margin-right: auto;
         margin-top: 0;
+        margin-bottom: 60px;
 
         @include breakpoint($breakpoint-medium) {
             font-size: em(36);

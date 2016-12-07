@@ -20,29 +20,30 @@ export class LatestNewsCollection extends Component {
         const { news, location } = this.props;
 
         return (
-            <div className="collection">
-                <div className="collection__header">
-                    <h1 className="collection__title">
-                        { location ?
-                            `${location} News` :
-                            `Sometimes what we make is headlines`
-                        }
-                    </h1>
-                    <div className="collection__action">
-                        <Link to="/news">View All News</Link>
+            <div className="collection section section--padding">
+                <div className="container-reg">
+                    <div className="collection__header">
+                        <h1 className="collection__title">
+                            { location ?
+                                `${location} News` :
+                                `Sometimes what we make is headlines`
+                            }
+                        </h1>
+                        <div className="collection__action">
+                            <Link to="/news">View All News</Link>
+                        </div>
                     </div>
+
+                    <PostCollection
+                        items={news.items}
+                        headline="title"
+                        label="type"
+                        link="key"
+                        published="published"
+                        loaded={news.hasLoaded}
+                        path='/news'
+                    />
                 </div>
-
-                <PostCollection
-                    items={news.items}
-                    headline="title"
-                    label="type"
-                    link="key"
-                    published="published"
-                    loaded={news.hasLoaded}
-                    path='/news'
-                />
-
             </div>
         );
     }
