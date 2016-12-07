@@ -1,0 +1,9 @@
+.project-synopsis {
+    &__item {
+        @include span(4 of 12);
+        border-top: 2px solid $mirum-dark-purple;
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+}

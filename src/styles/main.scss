@@ -22,7 +22,8 @@
     'base/fonts',
     'base/typography',
     'base/helpers',
-    'base/buttons';
+    'base/buttons',
+    'base/pills';
 
 // Layout-related sections
 @import
@@ -34,18 +35,17 @@
 // Components
 @import
     'components/App',
-    'components/buttons',
     'components/ExperimentsContainer',
     'components/GlobalFooter',
     'components/LocationsGrid',
     'components/Collection',
     'components/MainNav',
-    'components/LeadershipSection',
     'components/Hero',
     'components/MapCircle',
     'components/Logo',
     'components/Expandable',
     'components/Slider',
+    'components/CaseStudy',
     'components/NavOverlay';
 
 // Page-specific styles

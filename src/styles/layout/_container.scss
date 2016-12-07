@@ -7,14 +7,20 @@
 .container-lrg {
     margin: 0 auto;
     max-width: 1600px;
+    overflow: hidden;
 }
 
 .container-reg {
     margin: 0 auto;
     max-width: 1230px;
     padding: 0 15px;
+    overflow: hidden;
 }
 
 .grey-bkgd {
     @include grey-bkgd;
+}
+
+.purple-bkgd {
+    background-color: $mirum-dark-purple;
 }

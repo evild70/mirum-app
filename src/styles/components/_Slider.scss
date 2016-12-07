@@ -1,6 +1,5 @@
 .module-slider {
     padding-bottom: 80px;
-    margin: 100px 0;
     align-items: center;
     display: flex;
     flex-wrap: wrap;
@@ -24,7 +23,7 @@
     }
 
     .slider-container {
-        left: -65px;
+        left: 0;
         transition-property: transform, left;
         transition: all 0.25s ease-in-out;
         z-index: 2;

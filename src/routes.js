@@ -8,7 +8,7 @@ import CareersPage from './components/CareersPage/CareersPage';
 import ContactPage from './components/ContactPage/ContactPage';
 import LocationsPage from './components/LocationsPage/LocationsPage';
 import LocationPage from './components/LocationPage/containers/LocationPage';
-import CaseStudyPage from './components/CaseStudyPage/CaseStudyPage';
+import CaseStudyPage from './components/CaseStudyPage/containers/CaseStudyPage';
 import StyleguidePage from './components/StyleguidePage/StyleguidePage';
 
 export const getRoutes = getState => {
