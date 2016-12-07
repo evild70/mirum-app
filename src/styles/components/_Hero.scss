@@ -5,9 +5,7 @@
 .hero {
 
     @include container;
-
     height: 95vh;
-
     justify-content: space-between;
     flex-direction: row;
     flex-wrap: nowrap;

@@ -46,12 +46,15 @@ function openExpandable(data) {
             ancestor.css('margin-bottom', `${addedMargin}px`)
         }, 400)
     }
+    console.log($(data.wrapper).children('.expandable-item:not(.is-open)'))
+    $(data.wrapper).find('.expandable-item:not(.is-open)').addClass('is-not-open')
 }
 
 export function toggleExpandable(data) {
 
     var openItem = data.wrapper.getElementsByClassName('is-open')[0]
     data.drawer.classList.remove('is-open');
+    $(data.wrapper).find('.is-not-open').removeClass('is-not-open')
 
     if (openItem) {
         $(openItem).css('margin-bottom', '');

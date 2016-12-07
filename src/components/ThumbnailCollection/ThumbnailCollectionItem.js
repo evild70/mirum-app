@@ -19,7 +19,9 @@ class ThumbnailCollectionItem extends Component {
 
         return (
             <li className="thumbnail-item" onClick={this.handleClick}>
-                <img className="thumbnail-item__img" src={image} role="presentation" />
+                <div className="thumbnail-item__img" style={{backgroundImage: `url(${image})`}}>
+                    <img src={image} role="presentation" />
+                </div>
                 <h3 className="thumbnail-item__headline">
                     {title}
                 </h3>

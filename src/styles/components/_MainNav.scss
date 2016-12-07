@@ -22,17 +22,39 @@
     }
 }
 
-.main-nav-button {
-    z-index: 500;
+.hamburger {
     position: absolute;
     top: 29px;
     left: -125px;
     cursor: pointer;
-    transition: all .1s $easeOut;
-    svg {
-        width: 35px;
-        height: 35px;
-        transition: all .2s $easeOut;
+    transition: all 0.1s $easeOut;
+    z-index: 500;
+    .lettuce, .cheese, .burger {
+        height: 3px;
+        background-color: black;
+        display: block;
+        transition: all 0.3s $easeOut;
+    }
+    .lettuce, .cheese {
+        width: 22px;
+        margin-bottom: 4px;
+    }
+    .burger {
+        width: 17px;
+        margin-bottom: 0;
+    }
+
+    &:hover,
+    &:focus {
+        .lettuce {
+            width: 19px;
+        }
+        .cheese {
+            width: 12px;
+        }
+        .burger {
+            width: 22px;
+        }
     }
 }
 
