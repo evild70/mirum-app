@@ -119,7 +119,7 @@ export class Buttons extends Component {
                     </div>
                 </div>
 
-                <div className="buttons-guide section--padding dark-purple-bg">
+                <div className="buttons-guide section--padding purple-bg">
                     <div className="container-reg">
                         <div className="buttons-guide__container">
                             <div className="buttons-guide__card">
