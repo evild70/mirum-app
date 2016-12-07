@@ -1558,25 +1558,6 @@ h6 {
   font-family: "mirum_sansregular", Verdana, Helvetica, Arial, sans-serif;
 }
 
-.collection {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 35px 15px;
-}
-
-.collection:after {
-  content: " ";
-  display: block;
-  clear: both;
-}
-
-@media (min-width: 60em) {
-  .collection {
-    padding: 70px 35px;
-  }
-}
-
 .collection__header {
   position: relative;
   margin-bottom: 60px;
@@ -1588,6 +1569,7 @@ h6 {
   margin-left: auto;
   margin-right: auto;
   margin-top: 0;
+  margin-bottom: 60px;
 }
 
 @media (min-width: 40em) {
