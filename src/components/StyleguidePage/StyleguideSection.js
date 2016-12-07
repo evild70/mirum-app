@@ -8,8 +8,9 @@ export class StyleguideSection extends Component {
             <div className="styleguide-section section section--padding">
                 <div className="container-reg">
                     <h1 className="section-title">{title}</h1>
-                    { children }
                 </div>
+
+                { children }
             </div>
         );
     }

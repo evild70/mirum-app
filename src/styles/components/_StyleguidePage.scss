@@ -148,6 +148,7 @@
 }
 
 .buttons-guide {
+    min-height: 275px;
 
     &__container {
         @include clearfix;
@@ -162,6 +163,19 @@
 
             &:last-of-type {
                 @include span(last 3 of 12);
+            }
+        }
+    }
+
+    &__description {
+        header {
+            font-family: $mirum-sans-bold;
+            margin-top: 30px;
+        }
+        ul {
+            @include reset-list;
+            li {
+                margin-bottom: 5px;
             }
         }
     }
