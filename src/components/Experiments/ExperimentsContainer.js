@@ -5,8 +5,10 @@ import Experiment from './Experiment';
 export class ExperimentsContainer extends Component {
     render() {
         return (
-            <div className="experiments-container">
-                <Experiment />
+            <div className="experiments-container section">
+                <div className="container-lrg">
+                    <Experiment />
+                </div>
             </div>
         );
     }

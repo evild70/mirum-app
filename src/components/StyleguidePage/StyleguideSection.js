@@ -5,9 +5,11 @@ export class StyleguideSection extends Component {
         const { children, title } = this.props;
 
         return (
-            <div className="styleguide-section">
-                <h1 className="section-title">{title}</h1>
-                { children }
+            <div className="styleguide-section section section--padding">
+                <div className="container-reg">
+                    <h1 className="section-title">{title}</h1>
+                    { children }
+                </div>
             </div>
         );
     }
