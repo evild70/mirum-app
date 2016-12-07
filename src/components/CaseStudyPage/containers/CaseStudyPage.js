@@ -76,10 +76,31 @@ export class CaseStudyPage extends Component {
                     </div>
                 </div>
 
+                <div className="section--padding">
+                    <div className="container-reg text-center">
+                        <h2 className="title">Lorem ipsum about design</h2>
+                        <img src="http://imgur.com/vvTYqyU.jpg" className="casestudy-img full-width" alt="case study" />
+                        <button className="primary-button">Visit live site</button>
+                    </div>
+                </div>
+
                 <div className="section--padding grey-bg">
                     <div className="container-reg">
-                        <h4>"Mirum didn't just make a video serious. They created a cohesive, multidimensional campaign that inspired people to Dream Fearlessly."</h4>
-                        <p>Bobbie Bobberson, CMO, American Family Insurance</p>
+                        <h4 className="title">Great work. Great results.</h4>
+                        <div className="stats">
+                            <div className="stats__item">
+                                <h5 className="h1">12M</h5>
+                                <p>Video views</p>
+                            </div>
+                            <div className="stats__item">
+                                <h5 className="h1">10,461</h5>
+                                <p>People coached</p>
+                            </div>
+                            <div className="stats__item">
+                                <h5 className="h1">87%</h5>
+                                <p>Increase in Lead Gen</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -115,6 +136,12 @@ export class CaseStudyPage extends Component {
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+
+                <div className="section--padding purple-bg">
+                    <div className="container-reg">
+                        <h3 className="title title--light">Related Work</h3>
                     </div>
                 </div>
 
