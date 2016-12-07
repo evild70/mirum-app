@@ -4,11 +4,10 @@ export class Buttons extends Component {
     render() {
         return (
             <div className="sg-ui-elements">
-                <div className="container-reg">
-                    <h5 className="sub-title">Primary Buttons</h5>
-                </div>
+
                 <div className="buttons-guide section--padding">
                     <div className="container-reg">
+                        <h5 className="sub-title">Primary Buttons</h5>
                         <div className="buttons-guide__container">
                             <div className="buttons-guide__card">
                                 <button className="primary-button">Meet Mirum</button>
@@ -52,6 +51,10 @@ export class Buttons extends Component {
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div className="container-reg">
+                    <h5 className="sub-title">Primary Button Background color OPTIONS</h5>
                 </div>
 
                 <div className="buttons-guide section--padding grey-bg">
@@ -116,7 +119,7 @@ export class Buttons extends Component {
                     </div>
                 </div>
 
-                <div className="buttons-guide section--padding dark-purple-bg">
+                <div className="buttons-guide section--padding purple-bg">
                     <div className="container-reg">
                         <div className="buttons-guide__container">
                             <div className="buttons-guide__card">
@@ -207,6 +210,10 @@ export class Buttons extends Component {
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div className="container-reg">
+                    <h5 className="sub-title">Primary Buttons</h5>
                 </div>
             </div>
         );

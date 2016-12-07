@@ -4,6 +4,7 @@ import StyleguideSection from './StyleguideSection';
 import Colors from './Colors';
 import Typography from './Typography';
 import Buttons from './Buttons';
+import PostCollection from '../PostCollection/';
 
 // import sgjson from './styleguide-layout.json';
 
@@ -26,6 +27,10 @@ export class StyleguidePage extends Component {
 
                 <StyleguideSection title="03. UI Elements">
                     <Buttons />
+                </StyleguideSection>
+
+                <StyleguideSection title="04. Components">
+                    <PostCollection />
                 </StyleguideSection>
             </div>
         );
