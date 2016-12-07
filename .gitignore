@@ -2,6 +2,8 @@
 
 # dependencies
 node_modules
+src/styles/main.css
+src/styles/styleguide.css
 
 # testing
 coverage
