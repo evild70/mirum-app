@@ -126,12 +126,9 @@
 .locations-grid__choice {
     display: none;
 
-
-
-    @include clearfix;
+    left: 0;
     position: absolute;
     top: 0;
-    left: 0;
     width: 100%;
 
     .choice-container {

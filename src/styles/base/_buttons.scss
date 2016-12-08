@@ -1,16 +1,16 @@
-.primary-button {
+.primary-btn {
     -moz-appearance: none;
     -webkit-appearance: none;
     background-color: #fff;
     border: 1px solid #fff;
     color: $mirum-dark-purple;
+    cursor: pointer;
     font-family: $mirum-sans-bold;
     font-size: em(16);
     line-height: 1;
     margin: 0;
     min-height: 40px;
     padding: 0 0;
-    cursor: pointer;
     transition: padding .2s $easeInOut, border .2s $easeInOut;
 
     &:hover,
@@ -38,17 +38,20 @@
         background-color: $mirum-blue;
         border: 1px solid $mirum-blue;
     }
-
+    &--grey,
     .grey-bg & {
         border-color: $mirum-bone-white;
         background-color: $mirum-bone-white;
     }
 
+    &--yellow,
     .yellow-bg & {
         border-color: $mirum-yellow;
         background-color: $mirum-yellow;
     }
 
+    &--grey,
+    &--yellow,
     .grey-bg &,
     .yellow-bg & {
         &:hover,
@@ -69,6 +72,9 @@
         }
     }
 
+    &--green,
+    &--pink,
+    &--purple,
     .green-bg &,
     .pink-bg &,
     .purple-bg & {

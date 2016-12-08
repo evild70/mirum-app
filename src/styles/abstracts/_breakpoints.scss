@@ -9,7 +9,7 @@ $breakpoint-xlarge: 75em; // 1200px
 // Susy layout
 $susy: (
     columns: 12,
-    container: 1200px,
+    container-style: fluid,
     gutters: 30px/70px,
     global-box-sizing: content-box,
     math: fluid,

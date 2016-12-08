@@ -1,5 +1,18 @@
 .styleguide-page {
+    @include clearfix;
+    display: flex;
+}
 
+.sg-nav {
+    flex: 0 1 20%;
+    padding: 30px;
+    margin-right: 45px;
+    max-width: 300px;
+    border-right: 1px solid $mirum-dark-purple;
+}
+
+.sg-content {
+    flex: 0 1 auto;
 }
 
 .styleguide-section {
@@ -129,7 +142,7 @@
 *********************/
 .sg-ui-elements {
 
-    .primary-button {
+    .primary-btn {
         // &.sg-hover, &.sg-focus, &.sg-active {
         //     padding-left: 30px;
         //     padding-right: 30px;

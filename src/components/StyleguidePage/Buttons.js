@@ -10,7 +10,7 @@ export class Buttons extends Component {
                         <h5 className="sub-title">Primary Buttons</h5>
                         <div className="buttons-guide__container">
                             <div className="buttons-guide__card">
-                                <button className="primary-button">Meet Mirum</button>
+                                <button className="primary-btn">Meet Mirum</button>
                                 <div className="buttons-guide__description">
                                     <header>cta: Default</header>
                                     <ul>
@@ -19,7 +19,7 @@ export class Buttons extends Component {
                                 </div>
                             </div>
                             <div className="buttons-guide__card">
-                                <button className="primary-button sg-hover">Meet Mirum</button>
+                                <button className="primary-btn sg-hover">Meet Mirum</button>
                                 <div className="buttons-guide__description">
                                     <header>cta: Hover</header>
                                     <ul>
@@ -31,7 +31,7 @@ export class Buttons extends Component {
                                 </div>
                             </div>
                             <div className="buttons-guide__card">
-                                <button className="primary-button sg-focus">Meet Mirum</button>
+                                <button className="primary-btn sg-focus">Meet Mirum</button>
                                 <div className="buttons-guide__description">
                                     <header>cta: Focus</header>
                                     <ul>
@@ -41,7 +41,7 @@ export class Buttons extends Component {
                                 </div>
                             </div>
                             <div className="buttons-guide__card">
-                                <button className="primary-button sg-active">Meet Mirum</button>
+                                <button className="primary-btn sg-active">Meet Mirum</button>
                                 <div className="buttons-guide__description">
                                     <header>cta: Active</header>
                                     <ul>
@@ -61,25 +61,25 @@ export class Buttons extends Component {
                     <div className="container-reg">
                         <div className="buttons-guide__container">
                             <div className="buttons-guide__card">
-                                <button className="primary-button">Meet Mirum</button>
+                                <button className="primary-btn">Meet Mirum</button>
                                 <div className="buttons-guide__description">
                                     <header>cta: Default</header>
                                 </div>
                             </div>
                             <div className="buttons-guide__card">
-                                <button className="primary-button sg-hover">Meet Mirum</button>
+                                <button className="primary-btn sg-hover">Meet Mirum</button>
                                 <div className="buttons-guide__description">
                                     <header>cta: Hover</header>
                                 </div>
                             </div>
                             <div className="buttons-guide__card">
-                                <button className="primary-button sg-focus">Meet Mirum</button>
+                                <button className="primary-btn sg-focus">Meet Mirum</button>
                                 <div className="buttons-guide__description">
                                     <header>cta: Focus</header>
                                 </div>
                             </div>
                             <div className="buttons-guide__card">
-                                <button className="primary-button sg-active">Meet Mirum</button>
+                                <button className="primary-btn sg-active">Meet Mirum</button>
                                 <div className="buttons-guide__description">
                                     <header>cta: Active</header>
                                 </div>
@@ -92,25 +92,25 @@ export class Buttons extends Component {
                     <div className="container-reg">
                         <div className="buttons-guide__container">
                             <div className="buttons-guide__card">
-                                <button className="primary-button">Meet Mirum</button>
+                                <button className="primary-btn">Meet Mirum</button>
                                 <div className="buttons-guide__description">
                                     <header>cta: Default</header>
                                 </div>
                             </div>
                             <div className="buttons-guide__card">
-                                <button className="primary-button sg-hover">Meet Mirum</button>
+                                <button className="primary-btn sg-hover">Meet Mirum</button>
                                 <div className="buttons-guide__description">
                                     <header>cta: Hover</header>
                                 </div>
                             </div>
                             <div className="buttons-guide__card">
-                                <button className="primary-button sg-focus">Meet Mirum</button>
+                                <button className="primary-btn sg-focus">Meet Mirum</button>
                                 <div className="buttons-guide__description">
                                     <header>cta: Focus</header>
                                 </div>
                             </div>
                             <div className="buttons-guide__card">
-                                <button className="primary-button sg-active">Meet Mirum</button>
+                                <button className="primary-btn sg-active">Meet Mirum</button>
                                 <div className="buttons-guide__description">
                                     <header>cta: Active</header>
                                 </div>
@@ -123,25 +123,25 @@ export class Buttons extends Component {
                     <div className="container-reg">
                         <div className="buttons-guide__container">
                             <div className="buttons-guide__card">
-                                <button className="primary-button">Meet Mirum</button>
+                                <button className="primary-btn">Meet Mirum</button>
                                 <div className="buttons-guide__description">
                                     <header>cta: Default</header>
                                 </div>
                             </div>
                             <div className="buttons-guide__card">
-                                <button className="primary-button sg-hover">Meet Mirum</button>
+                                <button className="primary-btn sg-hover">Meet Mirum</button>
                                 <div className="buttons-guide__description">
                                     <header>cta: Hover</header>
                                 </div>
                             </div>
                             <div className="buttons-guide__card">
-                                <button className="primary-button sg-focus">Meet Mirum</button>
+                                <button className="primary-btn sg-focus">Meet Mirum</button>
                                 <div className="buttons-guide__description">
                                     <header>cta: Focus</header>
                                 </div>
                             </div>
                             <div className="buttons-guide__card">
-                                <button className="primary-button sg-active">Meet Mirum</button>
+                                <button className="primary-btn sg-active">Meet Mirum</button>
                                 <div className="buttons-guide__description">
                                     <header>cta: Active</header>
                                 </div>
@@ -154,25 +154,25 @@ export class Buttons extends Component {
                     <div className="container-reg">
                         <div className="buttons-guide__container">
                             <div className="buttons-guide__card">
-                                <button className="primary-button">Meet Mirum</button>
+                                <button className="primary-btn">Meet Mirum</button>
                                 <div className="buttons-guide__description">
                                     <header>cta: Default</header>
                                 </div>
                             </div>
                             <div className="buttons-guide__card">
-                                <button className="primary-button sg-hover">Meet Mirum</button>
+                                <button className="primary-btn sg-hover">Meet Mirum</button>
                                 <div className="buttons-guide__description">
                                     <header>cta: Hover</header>
                                 </div>
                             </div>
                             <div className="buttons-guide__card">
-                                <button className="primary-button sg-focus">Meet Mirum</button>
+                                <button className="primary-btn sg-focus">Meet Mirum</button>
                                 <div className="buttons-guide__description">
                                     <header>cta: Focus</header>
                                 </div>
                             </div>
                             <div className="buttons-guide__card">
-                                <button className="primary-button sg-active">Meet Mirum</button>
+                                <button className="primary-btn sg-active">Meet Mirum</button>
                                 <div className="buttons-guide__description">
                                     <header>cta: Active</header>
                                 </div>
@@ -185,25 +185,25 @@ export class Buttons extends Component {
                     <div className="container-reg">
                         <div className="buttons-guide__container">
                             <div className="buttons-guide__card">
-                                <button className="primary-button">Meet Mirum</button>
+                                <button className="primary-btn">Meet Mirum</button>
                                 <div className="buttons-guide__description">
                                     <header>cta: Default</header>
                                 </div>
                             </div>
                             <div className="buttons-guide__card">
-                                <button className="primary-button sg-hover">Meet Mirum</button>
+                                <button className="primary-btn sg-hover">Meet Mirum</button>
                                 <div className="buttons-guide__description">
                                     <header>cta: Hover</header>
                                 </div>
                             </div>
                             <div className="buttons-guide__card">
-                                <button className="primary-button sg-focus">Meet Mirum</button>
+                                <button className="primary-btn sg-focus">Meet Mirum</button>
                                 <div className="buttons-guide__description">
                                     <header>cta: Focus</header>
                                 </div>
                             </div>
                             <div className="buttons-guide__card">
-                                <button className="primary-button sg-active">Meet Mirum</button>
+                                <button className="primary-btn sg-active">Meet Mirum</button>
                                 <div className="buttons-guide__description">
                                     <header>cta: Active</header>
                                 </div>

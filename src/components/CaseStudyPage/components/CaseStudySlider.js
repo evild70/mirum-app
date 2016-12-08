@@ -38,7 +38,7 @@ export class CaseStudySlideshow extends Component {
                 <div className="content-box">
                   <h1>Advice thats tailor-made for the dreamer.</h1>
                   <p>A brief description of how Mirum approached the task, elevated value and produced results. This is a summary of Mirum and our approach to work--not a summary of a client and their product. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                  <button className="primary-button">View Gallery</button>
+                  <button className="primary-btn">View Gallery</button>
                 </div>
             </div>
         </div>

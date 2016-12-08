@@ -4,7 +4,6 @@ import StyleguideSection from './StyleguideSection';
 import Colors from './Colors';
 import Typography from './Typography';
 import Buttons from './Buttons';
-import PostCollection from '../PostCollection/';
 
 // import sgjson from './styleguide-layout.json';
 
@@ -15,23 +14,30 @@ export class StyleguidePage extends Component {
     render() {
         return (
             <div className="styleguide-page">
-                <h1>Mirumagency.com Styleguide</h1>
+                <div className="sg-nav">
+                    Style Guide Nav
+                </div>
 
-                <StyleguideSection title="01. Color">
-                    <Colors />
-                </StyleguideSection>
+                <div className="sg-content">
+                    <h1>Mirumagency.com Styleguide</h1>
 
-                <StyleguideSection title="02. Typography">
-                    <Typography />
-                </StyleguideSection>
+                    <StyleguideSection title="01. Color">
+                        <Colors />
+                    </StyleguideSection>
 
-                <StyleguideSection title="03. UI Elements">
-                    <Buttons />
-                </StyleguideSection>
+                    <StyleguideSection title="02. Typography">
+                        <Typography />
+                    </StyleguideSection>
 
-                <StyleguideSection title="04. Components">
-                    <PostCollection />
-                </StyleguideSection>
+                    <StyleguideSection title="03. UI Elements">
+                        <Buttons />
+                    </StyleguideSection>
+
+                    <StyleguideSection title="04. Components">
+
+                    </StyleguideSection>
+                </div>
+
             </div>
         );
     }

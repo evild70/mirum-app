@@ -38,7 +38,7 @@ export class LocationSlideshow extends Component {
                 <div className="content-box">
                   <h1>This is where we work.</h1>
                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                  <button className="primary-button">View Gallery</button>
+                  <button className="primary-btn">View Gallery</button>
                 </div>
             </div>
         </div>
