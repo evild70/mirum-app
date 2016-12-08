@@ -10,7 +10,11 @@ export class HomePage extends Component {
             <div>
                 <ExperimentsContainer />
                 <LatestNewsCollection />
-                <LocationsGrid />
+                <div className="section">
+                    <div className="container-lrg">
+                        <LocationsGrid />
+                    </div>
+                </div>
             </div>
         );
     }

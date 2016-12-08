@@ -10,9 +10,7 @@
     background-color: #fff;
     // @include grey-bg();
     color: #000;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+
     // padding: 1px 0 0;
     position: relative;
 
@@ -29,6 +27,15 @@
         content: '';
         width: 100%;
         height: 2px;
+    }
+
+    ul {
+        @include reset-list;
+        list-style: none;
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
     }
 }
 

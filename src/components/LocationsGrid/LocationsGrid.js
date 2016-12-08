@@ -4,8 +4,9 @@ import { connect } from 'react-redux';
 import { fetchLocationsGrid } from './thunks';
 import moment from 'moment-timezone';
 
-import LocationsGridBox from './LocationsGridBox';
+import LocationsGridItem from './LocationsGridItem';
 
+import { toggleExpandable, initExpandable } from '../../helpers/expander';
 import bkgdImg from './rolloverImg.jpg';
 import contentImg from './contentImg.jpg';
 
@@ -21,7 +22,15 @@ export class LocationsGrid extends Component {
 
         this.state = {
             time: "",
-            intervalID: {}
+            intervalID: {},
+            hasExpandedItem: false,
+            expandedItemData: {},
+            expandedContainerRef: {},
+            expandedItemRef: {}
+        }
+
+        this.expander = {
+            refs: {}
         }
 
         this.renderGrid = this.renderGrid.bind(this);
@@ -33,6 +42,8 @@ export class LocationsGrid extends Component {
         const { fetchLocationsGrid  } = this.props;
         fetchLocationsGrid();
 
+        initExpandable(this.expander.refs.wrapper);
+
         this.getCurrentTime();
         // getCurrentTime every 10 seconds
         const intervalID = setInterval(this.getCurrentTime, 10000)
@@ -40,6 +51,19 @@ export class LocationsGrid extends Component {
         this.setState({
             intervalID
         });
+    }
+
+    expand = item => ref => {
+        this.setState({
+            hasExpandedItem: true,
+            expandedItemData: item
+        })
+        this.expander.refs.item = ref;
+        toggleExpandable({
+            wrapper: this.expander.refs.wrapper,
+            item: this.expander.refs.item,
+            drawer: this.expander.refs.drawer
+        })
     }
 
     componentWillUnmount() {
@@ -59,14 +83,9 @@ export class LocationsGrid extends Component {
         // console.log(this.props.locations[index]);
     }
 
-    // foo = (location) => {
-    //     console.log(location)
-    // }
-    //  foo={(location, ref) => foo(location, ref)}
-
     renderGrid(box, index) {
         return (
-            <LocationsGridBox
+            <LocationsGridItem
                 key={index}
                 index={index}
                 city={box.name}
@@ -79,6 +98,7 @@ export class LocationsGrid extends Component {
 
     render() {
         const { headline, locations } = this.props;
+        const { hasExpandedItem, expandedItemData } = this.state;
 
         const bkgd = {
             backgroundImage: `url(${bkgdImg})`,
@@ -93,7 +113,10 @@ export class LocationsGrid extends Component {
                     <div className="locations-grid__container">
                         <h1>{headline}</h1>
                         <div className="locations-grid__grid" style={bkgd}>
-                            { locations.map(this.renderGrid) }
+                            <ul>
+                                { locations.map(this.renderGrid) }
+                            </ul>
+
                             <div className="locations-grid__choice">
                                 <div className="choice-container">
                                     <div className="choice-content">

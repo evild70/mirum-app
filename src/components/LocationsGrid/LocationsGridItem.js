@@ -9,14 +9,18 @@ export class LocationsGridBox extends Component {
         handleMouseOverBox: PropTypes.func
     }
 
+    onClick = () => {
+        this.props.expand(this.itemRef);
+    }
+
     render() {
         const { index, city, tz, time } = this.props;
 
         return (
-            <div className="locations-grid__box" onMouseOver={(e) => this.props.handleMouseOverBox(index)}>
+            <li className="locations-grid__box" onMouseOver={(e) => this.props.handleMouseOverBox(index)}>
                 <div className="locations-grid__city">{city}</div>
                 <div className="locations-grid__time">{getTimeZone(time,`${tz}`)}</div>
-            </div>
+            </li>
         );
     }
 }
