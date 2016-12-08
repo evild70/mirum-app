@@ -38,7 +38,46 @@ h6 {
     font-size: em(12);
 }
 
+.h1 {
+    font-family: $mirum-sans-regular;
+    font-size: em(36);
+}
+.h2 {
+    font-family: $mirum-sans-regular;
+    font-size: em(22);
+}
+.h3 {
+    font-family: $mirum-sans-bold;
+    font-size: em(16);
+    text-transform: uppercase;
+}
+.h4 {
+    font-family: $mirum-serif-regular;
+    font-size: em(30);
+}
+.h5 {
+    font-family: $mirum-sans-bold;
+    font-size: em(16);
+    text-transform: uppercase;
+}
+.h6 {
+    font-family: $mirum-sans-regular;
+    font-size: em(12);
+}
+
 .numbers-timing {
     font-size: em(14);
     text-transform: uppercase;
+}
+
+.title {
+    font-size: em(36);
+    font-family: $mirum-sans-regular;
+    text-align: center;
+    text-transform: none;
+    font-weight: 300;
+    margin-bottom: 60px;
+    &--light {
+        color: white;
+    }
 }
