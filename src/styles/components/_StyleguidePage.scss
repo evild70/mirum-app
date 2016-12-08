@@ -142,24 +142,67 @@
 *********************/
 .sg-ui-elements {
 
-    .primary-btn {
-        // &.sg-hover, &.sg-focus, &.sg-active {
-        //     padding-left: 30px;
-        //     padding-right: 30px;
-        // }
+}
 
-        // &.sg-hover {
-        //     border: 1px solid $mirum-blue;
-        // }
+.primary-btn {
+    &.sg-hover,
+    &.sg-focus,
+    &.sg-active {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
 
-        // &.sg-focus {
-        //     border: 1px solid $mirum-pink;
-        // }
+    &.sg-hover {
+        border: 1px solid $mirum-blue;
+    }
 
-        // &.sg-active {
-        //     background-color: $mirum-blue;
-        //     border: 1px solid $mirum-blue;
-        // }
+    &.sg-focus {
+        border: 1px solid $mirum-pink;
+    }
+
+    &.sg-active {
+        background-color: $mirum-blue;
+        border: 1px solid $mirum-blue;
+    }
+
+    &--grey,
+    &--yellow,
+    .grey-bg &,
+    .yellow-bg & {
+        &.sg-hover {
+            background-color: #fff;
+            border: 1px solid $mirum-blue;
+        }
+
+        &.sg-focus {
+            border: 1px solid $mirum-pink;
+        }
+
+        &.sg-active {
+            background-color: $mirum-blue;
+            border: 1px solid $mirum-blue;
+        }
+    }
+
+    &--green,
+    &--pink,
+    &--purple,
+    .green-bg &,
+    .pink-bg &,
+    .purple-bg & {
+        &.sg-hover {
+            border: 1px solid #fff;
+        }
+
+        &.sg-focus {
+            border: 1px solid #fff;
+        }
+
+        &.sg-active {
+            background-color: $mirum-blue;
+            border: 1px solid $mirum-dark-purple;
+            color: $mirum-dark-purple;
+        }
     }
 }
 

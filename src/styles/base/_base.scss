@@ -20,12 +20,12 @@ html {
 }
 
 body {
+    color: $mirum-dark-purple;
     font-family: $mirum-sans-regular;
     font-size: em(16);
-    color: $mirum-dark-purple;
+    line-height: 1.2;
     margin: 0;
     padding: 0;
-    line-height: 1.2;
 }
 
 #svg-icons {

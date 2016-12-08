@@ -1,3 +1,7 @@
+// When changing any :pseudo-class attributes
+// make sure to duplicate the changes in styles/_StyleguidePage.scss
+// under UI Elements -> .primary-btn
+
 .primary-btn {
     -moz-appearance: none;
     -webkit-appearance: none;
@@ -15,29 +19,24 @@
 
     &:hover,
     &:focus,
-    &:active,
-    &.sg-hover,
-    &.sg-focus,
-    &.sg-active {
+    &:active {
         padding-left: 30px;
         padding-right: 30px;
     }
 
-    &:hover,
-    &.sg-hover {
+    &:hover {
         border: 1px solid $mirum-blue;
     }
 
-    &:focus,
-    &.sg-focus {
+    &:focus {
         border: 1px solid $mirum-pink;
     }
 
-    &:active,
-    &.sg-active {
+    &:active {
         background-color: $mirum-blue;
         border: 1px solid $mirum-blue;
     }
+
     &--grey,
     .grey-bg & {
         border-color: $mirum-bone-white;
@@ -54,19 +53,16 @@
     &--yellow,
     .grey-bg &,
     .yellow-bg & {
-        &:hover,
-        &.sg-hover {
+        &:hover {
             background-color: #fff;
             border: 1px solid $mirum-blue;
         }
 
-        &:focus,
-        &.sg-focus {
+        &:focus {
             border: 1px solid $mirum-pink;
         }
 
-        &:active,
-        &.sg-active {
+        &:active {
             background-color: $mirum-blue;
             border: 1px solid $mirum-blue;
         }
@@ -82,18 +78,15 @@
         border-color: transparent;
         color: #fff;
 
-        &:hover,
-        &.sg-hover {
+        &:hover {
             border: 1px solid #fff;
         }
 
-        &:focus,
-        &.sg-focus {
+        &:focus {
             border: 1px solid #fff;
         }
 
-        &:active,
-        &.sg-active {
+        &:active {
             background-color: $mirum-blue;
             border: 1px solid $mirum-dark-purple;
             color: $mirum-dark-purple;
