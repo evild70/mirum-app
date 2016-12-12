@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CaseStudyBanner from '../components/CaseStudyBanner';
-import CaseStudySlideshow from '../components/CaseStudySlider';
+import CaseStudySlider from '../components/CaseStudySlider';
+import CaseStudyInlineSlider from '../components/CaseStudyInlineSlider';
 
 export class CaseStudyPage extends Component {
     render() {
@@ -45,6 +46,10 @@ export class CaseStudyPage extends Component {
                             </p>
                         </div>
 
+                        <div className="article-media">
+                            <CaseStudyInlineSlider />
+                        </div>
+
                         <div className="article-section">
                             <p>
                                 A brief description of how Mirum approached the task, elevated value and produced results. This is a summary of Mirum and our approach to work not a summary of a client and their product. Lorem ipsum dolor sit amet, Cras tristique consectetur velit, fringilla commodo justo sollicitudin eu. Aenean pulvinar posuere interdum.
@@ -76,11 +81,11 @@ export class CaseStudyPage extends Component {
                     </div>
                 </div>
 
-                <div className="section--padding">
+                <div className="section--padding section--has-divider">
                     <div className="container-reg text-center">
                         <h2 className="title">Lorem ipsum about design</h2>
                         <img src="http://imgur.com/vvTYqyU.jpg" className="casestudy-img full-width" alt="case study" />
-                        <button className="primary-button">Visit live site</button>
+                        <button className="primary-btn">Visit live site</button>
                     </div>
                 </div>
 
@@ -115,7 +120,7 @@ export class CaseStudyPage extends Component {
 
                 <div className="section--padding">
                     <div className="container-lrg">
-                        <CaseStudySlideshow />
+                        <CaseStudySlider />
                     </div>
                 </div>
 
@@ -139,9 +144,27 @@ export class CaseStudyPage extends Component {
                     </div>
                 </div>
 
+                <div className="section">
+                    <div className="banner-img" style={{backgroundImage: 'url("http://imgur.com/eXQaM7P.jpg")'}}>
+                        <img src="http://imgur.com/eXQaM7P.jpg" alt="banner closeup" />
+                    </div>
+                </div>
+
                 <div className="section--padding purple-bg">
                     <div className="container-reg">
                         <h3 className="title title--light">Related Work</h3>
+                        <div className="related-work">
+                            <div className="related-work__content">
+                                <h5>Anderson Windows</h5>
+                                <h4 className="h1">Lorem ipsum dolor sit amet</h4>
+                            </div>
+                            <div className="related-work__media" style={{backgroundImage: 'url("http://imgur.com/vvTYqyU.jpg")'}}>
+                                <img src="http://imgur.com/vvTYqyU.jpg" alt="thingy majig" />
+                            </div>
+                        </div>
+                        <div className="text-center">
+                            <button className="primary-btn">View All Work</button>
+                        </div>
                     </div>
                 </div>
 

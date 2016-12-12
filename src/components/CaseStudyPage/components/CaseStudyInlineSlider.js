@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { initSlider, destroySlider } from '../../../helpers/slider';
 
-export class LocationSlideshow extends Component {
+export class CaseStudyInlineSlider extends Component {
 
     componentDidMount() {
-        initSlider(this.sliderRef, 'click')
+        initSlider(this.sliderRef, 'load')
     }
 
     componentWillUnmount() {
@@ -13,10 +13,9 @@ export class LocationSlideshow extends Component {
 
     render() {
         return (
-            <div className="module module-slider">
+            <div className="module module-slider-inline">
                 <div className="slider-container">
-                    <a href="#" className="close module-slider__close  js-kill-slider">Close<span className="visibly-hidden"> the slider</span></a>
-                    <div className="slider slider--unset" ref={ ref => { this.sliderRef = ref} }>
+                    <div className="slider" ref={ ref => { this.sliderRef = ref} }>
                         <div className="slide">
                             <div className="slide-image" style={{backgroundImage: "url('http://imgur.com/eXQaM7P.jpg')"}} />
                         </div>
@@ -34,16 +33,9 @@ export class LocationSlideshow extends Component {
                         </div>
                     </div>
                 </div>
-                <div className="content">
-                    <div className="content-box">
-                        <h1>This is where we work.</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        <button className="primary-btn">View Gallery</button>
-                    </div>
-                </div>
             </div>
         );
     }
 }
 
-export default LocationSlideshow;
+export default CaseStudyInlineSlider;
