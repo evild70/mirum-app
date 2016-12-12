@@ -3,18 +3,34 @@ import CaseStudyBanner from '../components/CaseStudyBanner';
 import CaseStudySlider from '../components/CaseStudySlider';
 import CaseStudyInlineSlider from '../components/CaseStudyInlineSlider';
 
+// <div className="container-lrg">
+//     <CaseStudyBanner bannerImg="http://imgur.com/eXQaM7P.jpg">
+//         <h2>American Family Insurance</h2>
+//         <h1>Kid Coach Campaign: Big dreams require small experts.</h1>
+//     </CaseStudyBanner>
+// </div>
 export class CaseStudyPage extends Component {
     render() {
         return (
             <div>
+
                 <div className="section">
                     <div className="container-lrg">
-                        <CaseStudyBanner bannerImg="http://imgur.com/eXQaM7P.jpg">
-                            <h2>American Family Insurance</h2>
-                            <h1>Kid Coach Campaign: Big dreams require small experts.</h1>
-                        </CaseStudyBanner>
+                        <div className="bann bann--purple">
+                            <div className="bann__bg" style={{backgroundImage: 'url("http://imgur.com/Fc7KPMu.jpg")'}}></div>
+                            <div className="container-reg">
+                                <div className="bann__content-wrapper">
+                                    <div className="bann__content">
+                                        <h5>North America</h5>
+                                        <h1>Lorem ipsum dolor sit amet, consectetur</h1>
+                                        <a href="">northamerica@mirumagency.com</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
                 <div className="section--padding grey-bg">
                     <div className="container-reg project-synopsis">
                         <div className="project-synopsis__item">
