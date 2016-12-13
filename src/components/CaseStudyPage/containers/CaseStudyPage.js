@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CaseStudyBanner from '../components/CaseStudyBanner';
+// import CaseStudyBanner from '../components/CaseStudyBanner';
 import CaseStudySlider from '../components/CaseStudySlider';
 import CaseStudyInlineSlider from '../components/CaseStudyInlineSlider';
 
