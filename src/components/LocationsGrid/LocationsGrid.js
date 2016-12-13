@@ -9,7 +9,7 @@ import LocationsGridItem from './LocationsGridItem';
 import { toggleExpandable, initExpandable, closeExpandable } from '../../helpers/expander';
 import { getTimeZone } from '../../helpers/timezone.js';
 
-// import bkgdImg from './rolloverImg.jpg';
+import bkgdImg from './rolloverImg.jpg';
 import contentImg from './contentImg.jpg';
 
 export class LocationsGrid extends Component {
@@ -111,7 +111,6 @@ export class LocationsGrid extends Component {
 
     render() {
         const { headline, locations } = this.props;
-<<<<<<< HEAD
         const { hasExpandedItem, expandedItemData } = this.state;
 
         const bkgd = {
@@ -120,15 +119,6 @@ export class LocationsGrid extends Component {
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'cover'
         }
-=======
-        const { expandedItemData, hasExpandedItem } = this.state;
-        // const bkgd = {
-        //     backgroundImage: `url(${bkgdImg})`,
-        //     backgroundPosition: 'center',
-        //     backgroundRepeat: 'no-repeat',
-        //     backgroundSize: 'cover'
-        // }
->>>>>>> 1b40b45feec2d3b3b276042b98ef0408856ff464
 
         // console.log(expandedItemData.name);
 
