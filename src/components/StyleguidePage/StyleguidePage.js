@@ -4,6 +4,7 @@ import StyleguideSection from './StyleguideSection';
 import Colors from './Colors';
 import Typography from './Typography';
 import Buttons from './Buttons';
+import HeroBanner from '../HeroBanner/HeroBanner';
 
 // import sgjson from './styleguide-layout.json';
 
@@ -16,6 +17,9 @@ export class StyleguidePage extends Component {
             <div className="styleguide-page">
                 <div className="sg-nav">
                     Style Guide Nav
+                    <div className="sg-nav-tab">
+
+                    </div>
                 </div>
 
                 <div className="sg-content">
@@ -34,7 +38,7 @@ export class StyleguidePage extends Component {
                     </StyleguideSection>
 
                     <StyleguideSection title="04. Components">
-
+                        <HeroBanner />
                     </StyleguideSection>
                 </div>
 

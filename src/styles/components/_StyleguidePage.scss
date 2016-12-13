@@ -9,10 +9,38 @@
     margin-right: 45px;
     max-width: 300px;
     border-right: 1px solid $mirum-dark-purple;
+    position: relative;
+    background-color: $mirum-bone-white;
+
+    &.is-closed {
+
+        margin-right: 0;
+    }
+}
+
+.sg-nav-tab {
+    background-color: yellow;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    &:before {
+        content: '<<';
+    }
+
+
+    .is-closed & {
+        &:before {
+            content: '>>';
+        }
+        right: -40px;
+    }
 }
 
 .sg-content {
-    flex: 0 1 auto;
+    flex: 0 1 100%;
 }
 
 .styleguide-section {

@@ -9,10 +9,7 @@
 
 .locations-grid__grid {
     background-color: #fff;
-    // @include grey-bg();
     color: $mirum-dark-purple;
-
-    // padding: 1px 0 0;
     position: relative;
 
     &.open-city {
@@ -196,12 +193,6 @@
 }
 
 .locations-grid__choice {
-    // display: none;
-
-    // left: 0;
-    // position: absolute;
-    // top: 0;
-    // width: 100%;
 
     .choice-container {
         @include container();
