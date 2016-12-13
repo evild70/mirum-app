@@ -111,6 +111,8 @@ export class LocationsGrid extends Component {
 
     render() {
         const { headline, locations } = this.props;
+        const { hasExpandedItem, expandedItemData } = this.state;
+
         const bkgd = {
             backgroundImage: `url(${bkgdImg})`,
             backgroundPosition: 'center',
