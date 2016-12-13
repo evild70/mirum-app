@@ -66,6 +66,7 @@
     }
 }
 
+<<<<<<< HEAD
 .expandable-container--locationsgrid {
     &.is-open {
         // border-bottom: 1px solid #fff;
@@ -84,3 +85,20 @@
 
 
 
+=======
+.expandable-container-enter {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out 0.5s;
+    &.expandable-container-enter-active {
+        opacity: 1;
+    }
+}
+
+.expandable-container-leave {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out 0.5s;
+    &.expandable-container-leave-active {
+        opacity: 0;
+    }
+}
+>>>>>>> master

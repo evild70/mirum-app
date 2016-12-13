@@ -1,11 +1,9 @@
 /* eslint-disable */
 import slick from 'slick-carousel';
 
-export function initSlider() {
-  $('.slider').each(function() {
-
+export function initSlider(sliderRef, eventType) {
     //the slider object
-    var _slider = $(this),
+    var _slider = $(sliderRef),
         _sliderContainer = _slider.parents('.slider-container'),
         _slideClose = _sliderContainer.find('.js-kill-slider'),
         _slides = _slider.find('.slide');
@@ -20,44 +18,57 @@ export function initSlider() {
       });
     });
 
-    _slideClose.on('click', function(event){
+    _slideClose.on('click', function(event) {
+        event.preventDefault();
+        initCloseButton(_slider, _slides)
+    })
 
-      event.preventDefault();
-      var timeout;
+    if (eventType === 'load') {
+        initSlick(_slider)
+    } else {
+        _slider.on(eventType, function() {
+            expandSlider(_slider, _slides)
+        })
+    }
 
-      if (_slider.slick('slickCurrentSlide') > 0) {
+}
+
+function initCloseButton(_slider, _slides) {
+
+    var timeout;
+
+    if (_slider.slick('slickCurrentSlide') > 0) {
         _slider.slick('slickGoTo', 0);
         timeout = 500;
-      }
-      else {
+    }
+    else {
         timeout = 50;
-      }
+    }
 
-      setTimeout(function(){
+    setTimeout(function(){
         _slider.addClass('slider--unset');
         _slider.slick('unslick');
         _slider.parents('.module-slider').removeClass('has-active-slider');
 
         //quick timeout for dom
         setTimeout(function(){
-          _slides.removeClass('slide--transform');
+            _slides.removeClass('slide--transform');
         }, 50);
-      }, timeout);
-    });
+    }, timeout);
+}
 
+function expandSlider(_slider, _slides) {
     //animate and setup the slider
-    _slider.on('click', function(){
-
-      if (_slider.hasClass('slider--unset')) {
+    if (_slider.hasClass('slider--unset')) {
 
         var slidelength = 4;
         var timeout = 0;
 
         for (var i = 0; i < slidelength; i++) {
-          if (i > 0 && i < 4) {
-            $(_slides[i]).addClass('slide--transform');
-            timeout += transitionend($(_slides[i]));
-          }
+            if (i > 0 && i < 4) {
+                $(_slides[i]).addClass('slide--transform');
+                timeout += transitionend($(_slides[i]));
+            }
         }
 
         timeout += 50;
@@ -65,24 +76,22 @@ export function initSlider() {
         _slider.parents('.module-slider').addClass('has-active-slider');
 
         setTimeout(function(){
-          _slider.removeClass('slider--unset');
-          _slider.slick({
-            arrows: false,
-            autoplay: false,
-            infinite: false
-          });
+            _slider.removeClass('slider--unset');
+            initSlick(_slider);
         }, timeout);
-      }
-    });
-
-  //end each
-  });
+    }
 }
 
-export function destroySlider() {
-  $('.slider').each(function() {
-    $(this).slick('unslick')
-  });
+function initSlick(_slider) {
+    _slider.slick({
+        arrows: false,
+        autoplay: false,
+        infinite: false
+    });
+}
+
+export function destroySlider(slider) {
+    $(slider).slick('unslick')
 }
 
 /**

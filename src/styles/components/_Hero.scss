@@ -1,9 +1,36 @@
+.bann {
+    position: relative;
+    height: 700px;
+    width: 100%;
+    &--purple {
+        background-color: $mirum-dark-purple;
+    }
+    &__bg {
+        background-size: cover;
+        width: 60%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+    }
+    &__content-wrapper {
+        @include span(4 of 12)
+        height: 700px;
+    }
+    &__content {
+        color: white;
+    }
+    a {
+        color: white;
+    }
+}
+
 .hero-wrapper {
-    height: 800px;
+    height: 700px;
     display: block;
 }
-.hero {
 
+.hero {
     height: 95vh;
     justify-content: space-between;
     flex-direction: row;

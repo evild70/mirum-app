@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { initSlider, destroySlider } from '../../../helpers/slider';
 
-export class CaseStudySlideshow extends Component {
+export class CaseStudySlider extends Component {
 
     componentDidMount() {
-      initSlider()
+      initSlider(this.sliderRef, 'click')
     }
 
     componentWillUnmount() {
-      destroySlider()
+      destroySlider(this.sliderRef)
     }
 
     render() {
@@ -16,7 +16,7 @@ export class CaseStudySlideshow extends Component {
         <div className="module module-slider">
             <div className="slider-container">
               <a href="#" className="close module-slider__close  js-kill-slider">Close<span className="visibly-hidden"> the slider</span></a>
-              <div className="slider slider--unset">
+              <div className="slider slider--unset" ref={ ref => { this.sliderRef = ref} }>
                   <div className="slide">
                       <div className="slide-image" style={{backgroundImage: "url('http://imgur.com/eXQaM7P.jpg')"}} />
                   </div>
@@ -46,4 +46,4 @@ export class CaseStudySlideshow extends Component {
     }
 }
 
-export default CaseStudySlideshow;
+export default CaseStudySlider;

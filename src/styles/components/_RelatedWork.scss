@@ -1,0 +1,30 @@
+.related-work {
+    @include container();
+    height: 400px;
+    margin-bottom: 60px;
+
+    &__content {
+        padding: 30px;
+        height: 100%;
+        background-color: $mirum-blue;
+        color: white;
+        @include with-layout(inside no-gutters) {
+            @include span(4 of 12);
+        }
+    }
+
+    &__media {
+        height: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        @include with-layout(inside no-gutters) {
+            @include span(8 of 12);
+        }
+        img {
+            height: 0;
+            opacity: 0;
+        }
+    }
+
+}
