@@ -18,16 +18,16 @@
 
     position: absolute;
     color: $mirum-dark-purple;
-    width: calc(100% - 2px);
-    z-index: 99;
+    width: 100%;
+    z-index: -1;
     top: 0px;
     left: 0px;
     display: block;
     overflow: hidden;
 
     &__inner {
-        @include container();
-        @include grey-bg();
+        @include container;
+        @include grey-bg;
         box-sizing: border-box;
         display: block;
         padding: 60px 1rem;
@@ -53,6 +53,10 @@
         cursor: pointer;
     }
 
+    &.is-closing, &.is-open {
+        z-index: 99;
+    }
+
     &.is-open {
         .expandable-container__inner {
             opacity: 1;
@@ -61,3 +65,22 @@
         }
     }
 }
+
+.expandable-container--locationsgrid {
+    &.is-open {
+        // border-bottom: 1px solid #fff;
+    }
+    .expandable-container__inner {
+        padding: 0;
+    }
+
+    .expandable-container__contents {
+        @include full;
+    }
+}
+
+
+
+
+
+

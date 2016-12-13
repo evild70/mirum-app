@@ -6,7 +6,9 @@ import moment from 'moment-timezone';
 
 import LocationsGridItem from './LocationsGridItem';
 
-import { toggleExpandable, initExpandable } from '../../helpers/expander';
+import { toggleExpandable, initExpandable, closeExpandable } from '../../helpers/expander';
+import { getTimeZone } from '../../helpers/timezone.js';
+
 import bkgdImg from './rolloverImg.jpg';
 import contentImg from './contentImg.jpg';
 
@@ -26,16 +28,22 @@ export class LocationsGrid extends Component {
             hasExpandedItem: false,
             expandedItemData: {},
             expandedContainerRef: {},
-            expandedItemRef: {}
+            expandedItemRef: {},
+            gridRolloverImg: ''
         }
 
         this.expander = {
             refs: {}
         }
 
-        this.renderGrid = this.renderGrid.bind(this);
+        // this.style = {
+        //     bkgd: {
+
+        //     }
+
+        // }
+
         this.getCurrentTime = this.getCurrentTime.bind(this);
-        this.handleMouseOverBox = this.handleMouseOverBox.bind(this);
     }
 
     componentDidMount() {
@@ -66,6 +74,14 @@ export class LocationsGrid extends Component {
         })
     }
 
+    close = ref => {
+        closeExpandable({
+            wrapper: this.expander.refs.wrapper,
+            item: this.expander.refs.item,
+            drawer: this.expander.refs.drawer
+        });
+    }
+
     componentWillUnmount() {
         clearInterval(this.state.intervalID);
     }
@@ -79,21 +95,18 @@ export class LocationsGrid extends Component {
         });
     }
 
-    handleMouseOverBox(index) {
-        // console.log(this.props.locations[index]);
-    }
-
-    renderGrid(box, index) {
-        return (
-            <LocationsGridItem
-                key={index}
-                index={index}
-                city={box.name}
-                tz={box.timezone}
-                time={this.state.time}
-                handleMouseOverBox={this.handleMouseOverBox}
-            />
-        )
+    handleMouseOverBox = ref => {
+        // console.log(ref);
+        // let gridRolloverImg = `./${ref}`;
+        // this.setState({
+        //     gridRolloverImg: gridRolloverImg
+        // });
+        // this.style.bkgd = {
+        //     backgroundImage: `url(${gridRolloverImg})`,
+        //     backgroundPosition: 'center',
+        //     backgroundRepeat: 'no-repeat',
+        //     backgroundSize: 'cover'
+        // }
     }
 
     render() {
@@ -107,32 +120,60 @@ export class LocationsGrid extends Component {
             backgroundSize: 'cover'
         }
 
+        // console.log(expandedItemData.name);
+
         return (
             <div className="locations-grid section section--padding grey-bg">
                 <div className="container-reg">
                     <div className="locations-grid__container">
                         <h1>{headline}</h1>
-                        <div className="locations-grid__grid" style={bkgd}>
+                        <div className="locations-grid__grid expandable-wrapper" ref={ ref => {this.expander.refs.wrapper = ref} }>
+
                             <ul>
-                                { locations.map(this.renderGrid) }
+                                {locations.map( (item, index) =>
+                                    <LocationsGridItem
+                                        key={index}
+                                        index={index}
+                                        city={item.name}
+                                        tz={item.timezone}
+                                        time={this.state.time}
+                                        gridRolloverImg={item.gridRolloverImg}
+                                        handleMouseOverBox={this.handleMouseOverBox}
+                                        expand={ this.expand(item) }
+                                    />
+                                )}
                             </ul>
 
-                            <div className="locations-grid__choice">
-                                <div className="choice-container">
-                                    <div className="choice-content">
-                                        <h3 className="continent">North America</h3>
-                                        <h2 className="city-name">Minneapolis, MN</h2>
-                                        <ul className="office-stats">
-                                            <li><span className="temp">72&deg;</span>|<span className="time">4:03 PM</span></li>
-                                            <li><span className="employees">62 Employees</span></li>
-                                        </ul>
+                            <div className="expandable-container expandable-container--locationsgrid" ref={ ref => {this.expander.refs.drawer = ref} }>
+                                { hasExpandedItem ?
+                                    <div className="expandable-container__inner">
+                                        <div className="expandable-container__contents">
+                                            <div className="locations-grid__choice">
+                                                <div className="choice-container">
+                                                    <div className="choice-content">
+                                                        <h3 className="continent">{expandedItemData.continent}</h3>
+                                                        <h2 className="city-name">{expandedItemData.fullCityName}</h2>
+                                                        <ul className="office-stats">
+                                                            <li>
+                                                                <span className="temp">72&deg;</span>|<span className="time">{getTimeZone(this.state.time,`${expandedItemData.timezone}`)}</span>
+                                                            </li>
+                                                            <li>
+                                                                <span className="employees">{expandedItemData.employees} Employees</span>
+                                                            </li>
+                                                        </ul>
 
-                                        <Link to="/" className="meet-link">Meet Mirum Minneapolis</Link>
-                                    </div>
-                                    <div className="choice-image">
-                                        <img src={contentImg} alt=""/>
-                                    </div>
-                                </div>
+                                                        <Link to="/" className="meet-link">Meet Mirum Minneapolis</Link>
+                                                    </div>
+                                                    <div className="choice-image">
+                                                        <img src={contentImg} alt=""/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="expandable-container__close" tabIndex="0" onClick={this.close} ref={ ref => {this.expander.refs.close = ref} }>Close</div>
+                                    </div> :
+                                    null
+                                }
                             </div>
                         </div>
                     </div>

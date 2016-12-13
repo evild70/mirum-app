@@ -46,13 +46,36 @@ function openExpandable(data) {
             ancestor.css('margin-bottom', `${addedMargin}px`)
         }, 400)
     }
-    console.log($(data.wrapper).children('.expandable-item:not(.is-open)'))
+    // console.log($(data.wrapper).children('.expandable-item:not(.is-open)'))
     $(data.wrapper).find('.expandable-item:not(.is-open)').addClass('is-not-open')
+}
+
+function close(data) {
+
+    // add is-closeing to keep z-index
+    $(data.drawer).addClass('is-closing').removeClass('is-open');
+
+    setTimeout( () => {
+        // remove bottom margin from expandable item
+        $(data.item).css('margin-bottom', '');
+        // remove all -open classes from expandable-items
+        $(data.wrapper).find('.expandable-item').removeClass('is-not-open is-open');
+        // remove is-closing to set z-index: -1
+        $(data.drawer).removeClass('is-closing');
+    }, 400)
+}
+
+export function closeExpandable(data) {
+    close(data);
 }
 
 export function toggleExpandable(data) {
 
-    var openItem = data.wrapper.getElementsByClassName('is-open')[0]
+    if ($(data.item).hasClass('is-open')) {
+        return false;
+    }
+
+    var openItem = data.wrapper.getElementsByClassName('is-open')[0];
     data.drawer.classList.remove('is-open');
     $(data.wrapper).find('.is-not-open').removeClass('is-not-open')
 
@@ -81,7 +104,7 @@ export function initExpandable(target) {
             if (_window.width() !== windowWidth) {
                 windowWidth = _window.width();
                 _target.find('.expandable-container').removeClass('is-open');
-                _target.find('.expandable-item').removeClass('is-open is-inactive');
+                _target.find('.expandable-item').removeClass('is-open is-not-open is-inactive').css('margin-bottom', '');
             }
         }, 100);
     });

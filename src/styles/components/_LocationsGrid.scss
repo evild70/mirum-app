@@ -2,6 +2,7 @@
     text-align: center;
 
     h1 {
+        line-height: 1;
         margin-bottom: 60px;
     }
 }
@@ -9,7 +10,7 @@
 .locations-grid__grid {
     background-color: #fff;
     // @include grey-bg();
-    color: #000;
+    color: $mirum-dark-purple;
 
     // padding: 1px 0 0;
     position: relative;
@@ -29,13 +30,15 @@
         height: 2px;
     }
 
-    ul {
+    > ul {
         @include reset-list;
         list-style: none;
 
         display: flex;
         flex-wrap: wrap;
         justify-content: flex-start;
+
+        z-index: 100;
     }
 }
 
@@ -46,12 +49,36 @@
     justify-content: center;
 
     // margin: 0 1px 1px;
-    border-right: 2px solid $color-light-grey;
+    border-right: 1px solid $color-light-grey;
     // border-left: 1px solid $color-light-grey;
-    border-bottom: 2px solid $color-light-grey;
+    border-bottom: 1px solid $color-light-grey;
+    border-top: 1px solid $color-light-grey;
     // border: 1px solid $color-light-grey;
     // background-color: #fff;
     height: 100px;
+
+    &.expandable-item {
+        transition: margin-bottom 0.4s ease-in-out 0.3s, opacity 0;
+
+        &.is-open {
+            background-color: $mirum-dark-purple;
+            color: #fff;
+            transition: margin-bottom 0.4s ease-in-out 0s, opacity 0;
+        }
+
+        &.is-not-open {
+            opacity: 1;
+            > div {
+                opacity: 0.2;
+            }
+
+            &:hover {
+                > div {
+                    opacity: 1;
+                }
+            }
+        }
+    }
 
     @include breakpoint($breakpoint-very-small) {
         // flex: 0 1 calc(50% - 2px);
@@ -59,6 +86,11 @@
         flex: 0 1 50%;
         flex-basis: 50%;
         max-width: 179.5px;
+        margin-top: 0;
+
+        &:nth-of-type(n+3) {
+            margin-top: -1px;
+        }
 
         &:nth-of-type(2n) {
             border-right: 0;
@@ -71,9 +103,16 @@
         flex-basis: 33.3%;
         max-width: 213px;
 
+        &:nth-of-type(n+3) {
+            margin-top: 0;
+        }
+
+        &:nth-of-type(n+4) {
+            margin-top: -1px;
+        }
 
         &:nth-of-type(2n) {
-            border-right: 2px solid $color-light-grey;
+            border-right: 1px solid $color-light-grey;
         }
 
         &:nth-of-type(3n) {
@@ -87,8 +126,16 @@
         flex-basis: 25%;
         max-width: 239.75px;
 
+        &:nth-of-type(n+3), &:nth-of-type(n+4) {
+            margin-top: 0;
+        }
+
+        &:nth-of-type(n+5) {
+            margin-top: -1px;
+        }
+
         &:nth-of-type(2n), &:nth-of-type(3n) {
-            border-right: 2px solid $color-light-grey;
+            border-right: 1px solid $color-light-grey;
         }
 
         &:nth-of-type(4n) {
@@ -103,8 +150,17 @@
         flex: 0 1 16.666666666667%;
         flex-basis: 16.666666666667%;
 
+
+        &:nth-of-type(n+3), &:nth-of-type(n+4), &:nth-of-type(n+5) {
+            margin-top: 0;
+        }
+
+        &:nth-of-type(n+7) {
+            margin-top: -1px;
+        }
+
         &:nth-of-type(2n), &:nth-of-type(3n), &:nth-of-type(4n) {
-            border-right: 2px solid $color-light-grey;
+            border-right: 1px solid $color-light-grey;
         }
 
         &:nth-of-type(6n) {
@@ -116,9 +172,14 @@
         background-color: $mirum-dark-purple;
     }
 
-    &:hover, &:active {
+    &:hover {
         background-color: $mirum-dark-purple;
         color: #fff;
+        transition: background .2s $easeInOut, color .2s $easeInOut;
+
+        div {
+            opacity: 1;
+        }
     }
 }
 
@@ -131,19 +192,17 @@
 }
 
 .locations-grid__choice {
-    display: none;
+    // display: none;
 
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
+    // left: 0;
+    // position: absolute;
+    // top: 0;
+    // width: 100%;
 
     .choice-container {
-        @include container;
+        @include container();
         @include grey-bg;
-
         text-align: left;
-
 
         @include breakpoint($breakpoint-medium) {
             min-height: 400px;
@@ -155,7 +214,10 @@
         padding: 20px;
 
         @include breakpoint($breakpoint-medium) {
-            @include span(4 of 12);
+            @include with-layout(inside no-gutters) {
+                @include span(4 of 12);
+            }
+
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
@@ -169,7 +231,10 @@
         max-height: 200px;
 
         @include breakpoint($breakpoint-medium) {
-            @include span(8 of 12);
+            @include with-layout(inside no-gutters) {
+                @include span(8 of 12);
+            }
+
             max-height: 400px;
         }
     }
@@ -205,6 +270,15 @@
         color: $mirum-dark-purple;
         font-family: $mirum-sans-bold;
     }
+}
+
+.bg-holder {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
 
 
