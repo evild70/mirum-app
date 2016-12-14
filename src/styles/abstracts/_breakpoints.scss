@@ -22,3 +22,17 @@ $susy: (
         toggle: top right,
     )
 );
+
+$after: layout(12 30px/72.5px after);
+$no-gutters: layout(inside no-gutters);
+
+// EXAMPLE
+// .col2 {
+//    @include with-layout($after) {
+//       @include span(4 of 12);
+//
+//       &:last-of-type {
+//          @include span(last 4 of 12);
+//       }
+//    }
+// }
