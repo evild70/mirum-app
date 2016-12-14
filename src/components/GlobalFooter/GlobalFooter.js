@@ -47,12 +47,14 @@ export class GlobalFooter extends Component {
             <div className="global-footer section section--padding" style={styles}>
                 <div className="container-reg">
                     <div className="gf-container">
-                        <div className="gf-logo">
-                            <span className="visibly-hidden">Mirum Agency</span>
-                            <svg className="icon icon-twitter">
+                        <div className="gf-top-container">
+                            <div className="gf-logo">
+                                <span className="visibly-hidden">Mirum Agency</span>
                                 <MirumLogo />
-                            </svg>
+                            </div>
+                            <Link to="/" className="bold white">Connect with Us</Link>
                         </div>
+
                         <div className="gf-link-container">
                             <div className="gf-social">
                                 <ul>
@@ -120,5 +122,3 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(GlobalFooter);
-
-// export default GlobalFooter;

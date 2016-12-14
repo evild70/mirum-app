@@ -10,17 +10,26 @@
     }
 
     @include breakpoint($breakpoint-large) {
-        min-height: 381px;
+        padding: 0 0px 60px;
     }
 }
 
-.gf-container {
+.gf-top-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
 
+    margin-bottom: 30px;
+}
+
+.gf-logo {
+    height: 60px;
+    width: 160px;
 }
 
 .gf-link-container {
     border-top: 1px solid #000;
-    padding-top: 34px;
+    padding-top: 30px;
 
     @include breakpoint($breakpoint-medium) {
         display: block;
@@ -30,13 +39,6 @@
         display: flex;
         align-items: flex-end;
         justify-content: space-between;
-    }
-}
-
-.gf-logo {
-
-    @include breakpoint($breakpoint-medium) {
-
     }
 }
 
@@ -62,15 +64,7 @@
     }
 }
 
-.gf-logo {
-    height: 165px;
-    margin: 0 auto;
-    width: 165px;
 
-    .icon {
-        width: 100%;
-    }
-}
 
 .gf-social {
     li {

@@ -54,3 +54,25 @@
 @mixin grey-bg {
     background-color: $color-light-grey;
 }
+
+@mixin bg-color-modifiers {
+    &--purple {
+        background-color: $mirum-dark-purple;
+    }
+
+    &--yellow {
+        background-color: $mirum-yellow;
+    }
+
+    &--red {
+        background-color: $mirum-red;
+    }
+
+    &--pink {
+        background-color: $mirum-pink;
+    }
+
+    &--blue {
+        background-color: $mirum-blue;
+    }
+}
