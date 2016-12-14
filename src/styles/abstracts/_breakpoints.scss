@@ -11,6 +11,7 @@ $susy: (
     columns: 12,
     container-style: fluid,
     gutters: 30px/70px,
+    gutter-position: inside,
     global-box-sizing: content-box,
     math: fluid,
     output: float,
@@ -21,3 +22,6 @@ $susy: (
         toggle: top right,
     )
 );
+
+$after: layout(12 30px/72.5px after);
+$no-gutters: layout(inside no-gutters);
