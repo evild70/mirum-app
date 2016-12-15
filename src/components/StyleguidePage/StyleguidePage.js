@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 // import Data from '../../helpers/styleguide/sample-data.json'
 import StyleguideSection from './StyleguideSection';
+// import StyleguideSubSection from './StyleguideSubSection';
 import Colors from './Colors';
 import Typography from './Typography';
 import Buttons from './Buttons';
 import HeroBanner from '../HeroBanner/HeroBanner';
 
 // import sgjson from './styleguide-layout.json';
-
+import MirumLogo from '../svg/MirumLogo';
 import '../../styles/styleguide.css'
 
 export class StyleguidePage extends Component {
@@ -16,7 +17,20 @@ export class StyleguidePage extends Component {
         return (
             <div className="styleguide-page">
                 <div className="sg-nav">
-                    Style Guide Nav
+                    <MirumLogo className="fill-purple" />
+                    <ul className="nav">
+                        <li className="nav__item"><a href="#introduction">Introduction</a></li>
+                        <li className="nav__item">Colors</li>
+                        <li className="nav__item"><a href="#typography">Typography</a></li>
+                        <li className="nav__item reveal">
+                            UI Elements
+                            <ul className="subnav">
+                                <li><a href="#buttons">Buttons</a></li>
+                                <li>Tags</li>
+                            </ul>
+                        </li>
+                        <li className="nav__item reveal">Components</li>
+                    </ul>
                     <div className="sg-nav-tab">
 
                     </div>
@@ -25,11 +39,15 @@ export class StyleguidePage extends Component {
                 <div className="sg-content">
                     <h1>Mirumagency.com Styleguide</h1>
 
-                    <StyleguideSection title="01. Color">
+                    <StyleguideSection title="Introduction" name="introduction">
+                        <p>This is an introduction to the style guide.</p>
+                    </StyleguideSection>
+
+                    <StyleguideSection title="01. Color" name="color">
                         <Colors />
                     </StyleguideSection>
 
-                    <StyleguideSection title="02. Typography">
+                    <StyleguideSection title="02. Typography" name="typography">
                         <Typography />
                     </StyleguideSection>
 
