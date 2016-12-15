@@ -5,31 +5,69 @@
 
 .sg-nav {
     flex: 0 1 20%;
-    padding: 30px;
+
+    background-color: $mirum-bone-white;
+    border-right: 1px solid $mirum-dark-purple;
     margin-right: 45px;
     max-width: 300px;
-    border-right: 1px solid $mirum-dark-purple;
+    padding: 30px;
     position: relative;
-    background-color: $mirum-bone-white;
+    transition: margin .2s $easeInOut;
 
     &.is-closed {
-
+        margin-left: -20%;
         margin-right: 0;
+    }
+
+    .mirum-logo {
+        display: block;
+        margin-bottom: 45px;
+        max-width: 180px;
+    }
+
+    .nav {
+        @include reset-list;
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        &__item {
+
+            margin-left: 20px;
+            position: relative;
+
+            &.reveal {
+                &:before {
+                    position: absolute;
+                    top: 0;
+                    left: -20px;
+                    height: 100%;
+                    width: 20px;
+                    content: '^';
+                }
+            }
+        }
+
+        a {
+
+        }
     }
 }
 
 .sg-nav-tab {
     background-color: yellow;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 40px;
     height: 40px;
     padding: 10px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: right .2s $easeInOut;
+    width: 40px;
+
     &:before {
         content: '<<';
     }
-
 
     .is-closed & {
         &:before {
@@ -45,6 +83,7 @@
 
 .styleguide-section {
     border-bottom: 1px solid $mirum-bone-white;
+
     .section-title {
         font-family: $mirum-serif-regular;
         margin-bottom: 1em;
@@ -53,19 +92,19 @@
     .sub-title {
         font-family: $mirum-sans-bold;
         font-size: em(18);
-        text-transform: uppercase;
         margin-bottom: 15px;
+        text-transform: uppercase;
     }
 }
 
 .sg-inline-code {
-    color: $mirum-pink;
-    border: 1px solid lightgrey;
     background-color: $color-light-grey;
-    padding: 3px;
+    border-radius: 3px;
+    border: 1px solid lightgrey;
+    color: $mirum-pink;
     font-family: $monospace;
     font-size: em(12);
-    border-radius: 3px;
+    padding: 3px;
     white-space: nowrap;
 }
 
@@ -132,6 +171,7 @@
 
     .card-column {
         flex: 0 1 50%;
+
         margin-right: 35px;
 
         &:last-of-type {
@@ -141,8 +181,8 @@
 
     .element-card {
         border-top: 1px solid #959595;
-        padding: 30px 0;
         min-height: 210px;
+        padding: 30px 0;
 
         &__title {
             font-family: $mirum-sans-bold;
