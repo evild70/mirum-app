@@ -3,13 +3,10 @@ import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import { fetchLocationsGrid } from './thunks';
 import moment from 'moment-timezone';
-
+import { throttle } from 'lodash';
 import LocationsGridItem from './LocationsGridItem';
-
 import { toggleExpandable, initExpandable, closeExpandable } from '../../helpers/expander';
 import { getTimeZone } from '../../helpers/timezone.js';
-
-import bkgdImg from './rolloverImg.jpg';
 import contentImg from './contentImg.jpg';
 
 export class LocationsGrid extends Component {
@@ -26,23 +23,15 @@ export class LocationsGrid extends Component {
             time: "",
             intervalID: {},
             hasExpandedItem: false,
+            drawerOpen: false,
             expandedItemData: {},
             expandedContainerRef: {},
             expandedItemRef: {},
-            gridRolloverImg: ''
+            gridBg: ''
         }
 
-        this.expander = {
-            refs: {}
-        }
-
-        // this.style = {
-        //     bkgd: {
-
-        //     }
-
-        // }
-
+        this.mouseOverGridItem = throttle(this.mouseOverGridItem, 300);
+        this.expander = { refs: {} }
         this.getCurrentTime = this.getCurrentTime.bind(this);
     }
 
@@ -56,15 +45,15 @@ export class LocationsGrid extends Component {
         // getCurrentTime every 10 seconds
         const intervalID = setInterval(this.getCurrentTime, 10000)
 
-        this.setState({
-            intervalID
-        });
+        this.setState({ intervalID });
     }
 
     expand = item => ref => {
         this.setState({
             hasExpandedItem: true,
-            expandedItemData: item
+            drawerOpen: true,
+            expandedItemData: item,
+            gridBg: item.gridRolloverImg
         })
         this.expander.refs.item = ref;
         toggleExpandable({
@@ -75,6 +64,10 @@ export class LocationsGrid extends Component {
     }
 
     close = ref => {
+        this.setState({
+            gridBg: '',
+            drawerOpen: false
+        })
         closeExpandable({
             wrapper: this.expander.refs.wrapper,
             item: this.expander.refs.item,
@@ -95,32 +88,15 @@ export class LocationsGrid extends Component {
         });
     }
 
-    handleMouseOverBox = ref => {
-        // console.log(ref);
-        // let gridRolloverImg = `./${ref}`;
-        // this.setState({
-        //     gridRolloverImg: gridRolloverImg
-        // });
-        // this.style.bkgd = {
-        //     backgroundImage: `url(${gridRolloverImg})`,
-        //     backgroundPosition: 'center',
-        //     backgroundRepeat: 'no-repeat',
-        //     backgroundSize: 'cover'
-        // }
+    mouseOverGridItem(img) {
+        if (!this.state.drawerOpen) {
+            this.setState({ gridBg: img })
+        }
     }
 
     render() {
         const { headline, locations } = this.props;
-        const { hasExpandedItem, expandedItemData } = this.state;
-
-        const bkgd = {
-            backgroundImage: `url(${bkgdImg})`,
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover'
-        }
-
-        // console.log(expandedItemData.name);
+        const { hasExpandedItem, expandedItemData, gridBg } = this.state;
 
         return (
             <div className="locations-grid section section--padding grey-bg">
@@ -129,6 +105,7 @@ export class LocationsGrid extends Component {
                         <h1>{headline}</h1>
                         <div className="locations-grid__grid expandable-wrapper" ref={ ref => {this.expander.refs.wrapper = ref} }>
 
+                            <div className="locations-grid__grid-bg" style={{backgroundImage: `url('${gridBg}')`}}/>
                             <ul>
                                 {locations.map( (item, index) =>
                                     <LocationsGridItem
@@ -137,8 +114,7 @@ export class LocationsGrid extends Component {
                                         city={item.name}
                                         tz={item.timezone}
                                         time={this.state.time}
-                                        gridRolloverImg={item.gridRolloverImg}
-                                        handleMouseOverBox={this.handleMouseOverBox}
+                                        mouseOver={() => this.mouseOverGridItem(item.gridRolloverImg)}
                                         expand={ this.expand(item) }
                                     />
                                 )}
@@ -147,26 +123,24 @@ export class LocationsGrid extends Component {
                             <div className="expandable-container expandable-container--locationsgrid" ref={ ref => {this.expander.refs.drawer = ref} }>
                                 { hasExpandedItem ?
                                     <div className="expandable-container__inner">
-                                        <div className="expandable-container__contents">
-                                            <div className="locations-grid__choice">
-                                                <div className="choice-container">
-                                                    <div className="choice-content">
-                                                        <h3 className="continent">{expandedItemData.continent}</h3>
-                                                        <h2 className="city-name">{expandedItemData.fullCityName}</h2>
-                                                        <ul className="office-stats">
-                                                            <li>
-                                                                <span className="temp">72&deg;</span>|<span className="time">{getTimeZone(this.state.time,`${expandedItemData.timezone}`)}</span>
-                                                            </li>
-                                                            <li>
-                                                                <span className="employees">{expandedItemData.employees} Employees</span>
-                                                            </li>
-                                                        </ul>
+                                        <div className="locations-grid__choice">
+                                            <div className="choice-container">
+                                                <div className="choice-content">
+                                                    <h3 className="continent">{expandedItemData.continent}</h3>
+                                                    <h2 className="city-name">{expandedItemData.fullCityName}</h2>
+                                                    <ul className="office-stats">
+                                                        <li>
+                                                            <span className="temp">72&deg;</span>|<span className="time">{getTimeZone(this.state.time,`${expandedItemData.timezone}`)}</span>
+                                                        </li>
+                                                        <li>
+                                                            <span className="employees">{expandedItemData.employees} Employees</span>
+                                                        </li>
+                                                    </ul>
 
-                                                        <Link to="/" className="meet-link">Meet Mirum Minneapolis</Link>
-                                                    </div>
-                                                    <div className="choice-image">
-                                                        <img src={contentImg} alt=""/>
-                                                    </div>
+                                                    <Link to="/" className="meet-link">Meet Mirum Minneapolis</Link>
+                                                </div>
+                                                <div className="choice-image">
+                                                    <img src={contentImg} alt=""/>
                                                 </div>
                                             </div>
                                         </div>

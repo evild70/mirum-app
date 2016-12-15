@@ -7,14 +7,23 @@
     }
 }
 
-.locations-grid__grid {
+.locations-grid__grid-bg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-position: top left;
+    background-size: cover;
+    display: block;
     background-color: #fff;
+    z-index: 0;
+}
+
+.locations-grid__grid {
     color: $mirum-dark-purple;
     position: relative;
 
     &.open-city {
         color: #fff;
-        background-color: #fff;
     }
 
     &:after {
@@ -30,11 +39,10 @@
     > ul {
         @include reset-list;
         list-style: none;
-
         display: flex;
         flex-wrap: wrap;
         justify-content: flex-start;
-
+        position: relative;
         z-index: 100;
     }
 }
@@ -275,14 +283,3 @@
     left: 0;
     z-index: -1;
 }
-
-
-
-
-
-
-
-
-
-
-
